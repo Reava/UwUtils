@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UdonSharp;
@@ -9,15 +9,16 @@ using TMPro;
 
 public class PlayerListManager : UdonSharpBehaviour
 {
-    private string[] listedPlayers;
-    private int[] playerIds;
+    private string[] listedPlayers = null;
+    private int[] playersIDs = null;
+    private int selectedUser = 0;
+    private string InstanceMaster = "null";
+    private string SelectedUserName = "null";
     public GameObject VisitCountDisplay;
     public GameObject InstanceMasterDisplay;
     public GameObject SelectedUserDisplay;
     public GameObject ActionsParent;
-    public GameObject Playerlist_Containers;
-    private string InstanceMaster;
-    private string SelectedUserName;
+    public GameObject PlayerlistContainers;
     private int visitCount = 0;
     public string default_Tag = "Visitor";
     public string VIP_Tag = "VIP";
@@ -25,46 +26,111 @@ public class PlayerListManager : UdonSharpBehaviour
     public Color Default_color = new Color(1, 1, 1);
     public Color VIP_color = new Color(1, 1, 0);
     public Color Admin_color = new Color(1, 0, 0);
-    private int[] playersIDs = new int[82];
 
-    VRCPlayerApi[] players = new VRCPlayerApi[82];
+    //VRCPlayerApi[] currentPlayers;
+    private void InitializeIdsIfNull()
+    {
+        Debug.Log("Init IDs");
+        if (playersIDs == null)
+        {
+            playersIDs = new int[80];
+            listedPlayers = new string[80];
+            for (int i = 0; i < playersIDs.Length; i++)
+            {
+                // Assuming that the player ID does not contain -1, leave -1 blank. 
+                playersIDs[i] = -1;
+                listedPlayers[i] = "";
+            }
+        }
+    }
 
     public void Start()
     {
-        UpdateVisitCount();
-        /*TextMeshPro TMPcField = VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshPro>();
-        TMPcField.SetText("Visits: " + visitCount);*/
-
-        /*for (int i = 0; i < UI_containers.Length; i++)
-        {
-            UI_containers[i].transform.getChild(0).gameObject.getChild(0).gameObject.GetComponent<Text>().text = "" + visitCount;
-        }*/
-    }
-
-    public void UpdateVisitCount()
-    {
-        //VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "Visits: " + visitCount;
+        InitializeIdsIfNull();
+        Debug.Log("start");
         VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Visits: " + visitCount;
+        InstanceMasterDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Loading..";
+        SelectedUserDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Loading..";
+
+        UpdatePlayerList();
+        //currentPlayers = VRCPlayerApi.GetPlayers(currentPlayers);
+
+        //first try method, using playerList from VRCApi player list
+        /*for (int i = 0; i < currentPlayers.Length; i++)
+        {
+            if (currentPlayers != null)
+            {
+                listedPlayers[i] = currentPlayers[i].displayName;
+                playersIDs[i] = i;
+                if (currentPlayers[i].isMaster)
+                {
+                    InstanceMaster = currentPlayers[i].displayName;
+                    Debug.Log("master is: " + InstanceMaster);
+                }
+                PlayerlistContainers.transform.GetChild(0+i).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = listedPlayers[i];
+            }
+            //Debug.Log(player.displayName);
+        }*/
+    }
+    
+    public void UpdatePlayerList()
+    {
+        Debug.Log("Entering UpdatePlayerList Function");
+        for (int i = 0; i < playersIDs.Length; i++)
+        {
+            Debug.Log("entering loop");
+            if (playersIDs[i] != -1)
+            {
+                Debug.Log("player id != -1");
+                var player = VRCPlayerApi.GetPlayerById(playersIDs[i]);
+                listedPlayers[i] = player.displayName;
+                PlayerlistContainers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = player.displayName;
+                if (player.isMaster)
+                {
+                    InstanceMaster = player.displayName;
+                    Debug.Log("Found instance master");
+                }
+                Debug.Log(string.Format("id: {0}, name: {1} \r \n ", player.playerId.ToString(), player.displayName));
+            }
+        }
+        Debug.Log("Exited loop");
+        VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Visits: " + visitCount;
+        InstanceMasterDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = InstanceMaster;
+        PlayerlistContainers.transform.GetChild(79).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "80";
+    }
+    
+    public override void OnPlayerJoined(VRCPlayerApi player)
+    {
+        Debug.Log("Player Join");
+        visitCount = visitCount + 1;
+        InitializeIdsIfNull();
+
+        for (int i = 0; i < playersIDs.Length; i++)
+        {
+            if (playersIDs[i] == -1)
+            {
+                playersIDs[i] = player.playerId;
+                break;
+            }
+        }
+
+        UpdatePlayerList();
     }
 
-    public void OnPlayerJoined(VRCPlayerApi player)
+    public override void OnPlayerLeft(VRCPlayerApi player)
     {
-        VRCPlayerApi.GetPlayers(players);
-        visitCount = visitCount + 1;
-        UpdateVisitCount();
-        /*foreach (VRCPlayerApi playerD in players)
-        {
-            if (playerD == null)
-            {
-                foreach (string listedPlayer in listedPlayers)
-                {
-                    if (playerD.displayName == listedPlayer)
-                    {
+        Debug.Log("Player leave");
+        InitializeIdsIfNull();
 
-                    }
-                }
-                Debug.Log(player.displayName);
+        for (int i = 0; i < playersIDs.Length; i++)
+        {
+            if (playersIDs[i] == player.playerId)
+            {
+                playersIDs[i] = -1;
+                break;
             }
-        }*/
+        }
+
+        UpdatePlayerList();
     }
 }
