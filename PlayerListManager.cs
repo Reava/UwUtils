@@ -15,11 +15,12 @@ public class PlayerListManager : UdonSharpBehaviour
     private string InstanceMaster = "null";
     private string SelectedUserName = "null";
     public GameObject VisitCountDisplay;
+    public GameObject CurrentPlayerCount;
     public GameObject InstanceMasterDisplay;
     public GameObject SelectedUserDisplay;
     public GameObject ActionsParent;
     public GameObject PlayerlistContainers;
-    private int visitCount = 0;
+    [UdonSynced] private int visitCount = 0;
     public string default_Tag = "Visitor";
     public string VIP_Tag = "VIP";
     public string Admin_Tag = "Admin";
@@ -51,6 +52,7 @@ public class PlayerListManager : UdonSharpBehaviour
         VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Visits: " + visitCount;
         InstanceMasterDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Loading..";
         SelectedUserDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Loading..";
+        SelectedUserDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = VIP_color;
 
         UpdatePlayerList();
         //currentPlayers = VRCPlayerApi.GetPlayers(currentPlayers);
@@ -84,11 +86,24 @@ public class PlayerListManager : UdonSharpBehaviour
                 Debug.Log("player id != -1");
                 var player = VRCPlayerApi.GetPlayerById(playersIDs[i]);
                 listedPlayers[i] = player.displayName;
-                PlayerlistContainers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = player.displayName;
                 if (player.isMaster)
                 {
                     InstanceMaster = player.displayName;
                     Debug.Log("Found instance master");
+                }
+                PlayerlistContainers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = player.displayName;
+                string playerRank = player.GetPlayerTag("rank");
+                if (playerRank == Admin_Tag)
+                {
+                    PlayerlistContainers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Admin_color;
+                }
+                if (playerRank == VIP_Tag)
+                {
+                    PlayerlistContainers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = VIP_color;
+                }
+                if (playerRank == default_Tag)
+                {
+                    PlayerlistContainers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Default_color;
                 }
                 Debug.Log(string.Format("id: {0}, name: {1} \r \n ", player.playerId.ToString(), player.displayName));
             }
@@ -96,13 +111,14 @@ public class PlayerListManager : UdonSharpBehaviour
         Debug.Log("Exited loop");
         VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Visits: " + visitCount;
         InstanceMasterDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = InstanceMaster;
-        PlayerlistContainers.transform.GetChild(79).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "80";
+        SelectedUserDisplay.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = listedPlayers[selectedUser];
     }
     
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
         Debug.Log("Player Join");
         visitCount = visitCount + 1;
+        CurrentPlayerCount.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Players: " + VRCPlayerApi.GetPlayerCount();
         InitializeIdsIfNull();
 
         for (int i = 0; i < playersIDs.Length; i++)
