@@ -44,7 +44,7 @@ public class PlayerListManager : UdonSharpBehaviour
     public void UpdateVisitCount()
     {
         //VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = "Visits: " + visitCount;
-        VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Visits: " + 0;
+        VisitCountDisplay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Visits: " + visitCount;
     }
 
     public void OnPlayerJoined(VRCPlayerApi player)
