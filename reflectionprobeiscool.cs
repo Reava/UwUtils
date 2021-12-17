@@ -1,25 +1,29 @@
-﻿using UdonSharp;
+using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
 public class reflectionprobeiscool : UdonSharpBehaviour
 {
-public ReflectionProbe ReflectionProbeSource;
-    private int framedelay = 5;
-	private float currentDelay;
+    #region References
 
-	void Update()
-	{
-	if (framedelay >= 5)
-	{
-	framedelay = 0;
-	ReflectionProbeSource.RenderProbe();
-	
-	}
-	else
-	{
-	framedelay++;
-}
-}
+    [Header("References")]
+
+    #endregion
+    [Range(0, 30)]
+    public float updateInterval = 7f;
+    public ReflectionProbe reflectionProbeSource;
+
+    public void OnEnable()
+    {
+        UpdateReflections();
+    }
+
+    public void UpdateReflections()
+    {
+        reflectionProbeSource.RenderProbe();
+
+        SendCustomEventDelayedSeconds(nameof(UpdateReflections), updateInterval);
+    }
 }
