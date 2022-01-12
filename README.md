@@ -16,6 +16,12 @@ If you got the correct Tag to your name on interact with the behavior, teleports
 - **reflectionprobeiscool**:
 RelfectionProbes are cool! make them real time, scripted and add this script to change the frequency they refresh at !
 
+- **Spinny**:
+A script to rotate things on any axis, at any speed, and even at weird update speeds (like 30 degrees but only once a second)
+
+- **UnityFogToggle**:
+Just an interact toggle that toggles ON/OFF Unity's fog... that's it. Call it with a trigger or a UI button, it'll work.
+
 ## **Requirements**
 Check updates before reporting issues.
 
