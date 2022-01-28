@@ -1,4 +1,4 @@
-# Udon
+# Udon UwUtils
 Reava makes Udon stuff.
 
 - **InteractSwitch**:
@@ -21,6 +21,9 @@ A script to rotate things on any axis, at any speed, and even at weird update sp
 
 - **UnityFogToggle**:
 Just an interact toggle that toggles ON/OFF Unity's fog... that's it. Call it with a trigger or a UI button, it'll work.
+
+- **SceneInitializer**:
+Want to have things enabled for the first few seconds an user enters your world then disable ? the opposite ? both ? Just use that, ezpz
 
 ## **Requirements**
 Check updates before reporting issues.
