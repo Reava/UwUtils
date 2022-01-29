@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UdonSharp;
@@ -23,20 +23,19 @@ public class TagAssigner : UdonSharpBehaviour
             if (userArray[i] == localPlayer.displayName)
             {
                 localPlayer.SetPlayerTag("rank", playerTag);
-                foreach (GameObject toggleObject in toggleObjectsON)
+                foreach (GameObject toggleObjectON in toggleObjectsON)
                 {
-                    toggleObject.SetActive(true);
+                    toggleObjectON.SetActive(true);
                 }
-                foreach (GameObject toggleObject in toggleObjectsOFF)
+                foreach (GameObject toggleObjectOFF in toggleObjectsOFF)
                 {
-                    toggleObject.SetActive(false);
+                    toggleObjectOFF.SetActive(false);
                 }
                 break;
             }
             else
             {
                 localPlayer.SetPlayerTag("rank", "Visitor");
-                break;
             }
         }
     }
