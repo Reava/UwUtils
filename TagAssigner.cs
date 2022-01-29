@@ -15,6 +15,8 @@ public class TagAssigner : UdonSharpBehaviour
     public GameObject[] toggleObjectsON;
     [Tooltip("List of objects to toggle OFF for VIPs")]
     public GameObject[] toggleObjectsOFF;
+    public bool tpPlayerOnJoin = false;
+    public Transform tpLocation;
     void Start()
     {
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
@@ -31,6 +33,7 @@ public class TagAssigner : UdonSharpBehaviour
                 {
                     toggleObjectOFF.SetActive(false);
                 }
+                if (Networking.LocalPlayer != null && tpPlayerOnJoin) Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
                 break;
             }
             else
