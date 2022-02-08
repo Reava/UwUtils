@@ -8,7 +8,7 @@ public class TagDebugger : UdonSharpBehaviour
 {
     private string playerTag;
     [Header("interacting with this behavior will update the display & log.")]
-    public GameObject TMP_Display;
+    public GameObject Text_Display;
     [Header("Output to text?")]
     public bool textOutput = false;
     public bool usingTMP = false;
@@ -42,16 +42,16 @@ public class TagDebugger : UdonSharpBehaviour
                 {
                     if (GUI_Text)
                     {
-                        TMP_Display.GetComponent<TextMeshProUGUI>().text = playerTag;
+                        Text_Display.GetComponent<TextMeshProUGUI>().text = playerTag;
                     }
                     else
                     {
-                        TMP_Display.GetComponent<TextMeshPro>().text = playerTag;
+                        Text_Display.GetComponent<TextMeshPro>().text = playerTag;
                     }
                 }
                 else
                 {
-                    TMP_Display.GetComponent<Text>().text = playerTag;
+                    Text_Display.GetComponent<Text>().text = playerTag;
                 }
             }
         }
@@ -67,16 +67,16 @@ public class TagDebugger : UdonSharpBehaviour
                 {
                     if (GUI_Text)
                     {
-                        TMP_Display.GetComponent<TextMeshProUGUI>().text = "No tag detected";
+                        Text_Display.GetComponent<TextMeshProUGUI>().text = "No tag detected";
                     }
                     else
                     {
-                        TMP_Display.GetComponent<TextMeshPro>().text = "No tag detected";
+                        Text_Display.GetComponent<TextMeshPro>().text = "No tag detected";
                     }
                 }
                 else
                 {
-                    TMP_Display.GetComponent<Text>().text = "No tag detected";
+                    Text_Display.GetComponent<Text>().text = "No tag detected";
                 }
             }
         }
