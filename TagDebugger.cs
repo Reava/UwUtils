@@ -9,6 +9,8 @@ public class TagDebugger : UdonSharpBehaviour
     private string playerTag;
     [Header("interacting with this behavior will update the display & log.")]
     public GameObject TMP_Display;
+    [Header("Output to text?")]
+    public bool textOutput = false;
     public bool usingTMP = false;
     [Header("Is the TMP text GUI or classic ?")]
     public bool GUI_Text = false;
@@ -34,20 +36,23 @@ public class TagDebugger : UdonSharpBehaviour
             {
                 Debug.Log(playerTag);
             }
-            if (usingTMP)
+            if (textOutput)
             {
-                if (GUI_Text)
+                if (usingTMP)
                 {
-                    TMP_Display.GetComponent<TextMeshProUGUI>().text = playerTag;
+                    if (GUI_Text)
+                    {
+                        TMP_Display.GetComponent<TextMeshProUGUI>().text = playerTag;
+                    }
+                    else
+                    {
+                        TMP_Display.GetComponent<TextMeshPro>().text = playerTag;
+                    }
                 }
                 else
                 {
-                    TMP_Display.GetComponent<TextMeshPro>().text = playerTag;
+                    TMP_Display.GetComponent<Text>().text = playerTag;
                 }
-            }
-            else
-            {
-                TMP_Display.GetComponent<Text>().text = playerTag;
             }
         }
         else
@@ -56,20 +61,23 @@ public class TagDebugger : UdonSharpBehaviour
             {
                 Debug.Log("No tag detected.");
             }
-            if (usingTMP)
+            if (textOutput)
             {
-                if (GUI_Text)
+                if (usingTMP)
                 {
-                    TMP_Display.GetComponent<TextMeshProUGUI>().text = "No tag detected";
+                    if (GUI_Text)
+                    {
+                        TMP_Display.GetComponent<TextMeshProUGUI>().text = "No tag detected";
+                    }
+                    else
+                    {
+                        TMP_Display.GetComponent<TextMeshPro>().text = "No tag detected";
+                    }
                 }
                 else
                 {
-                    TMP_Display.GetComponent<TextMeshPro>().text = "No tag detected";
+                    TMP_Display.GetComponent<Text>().text = "No tag detected";
                 }
-            }
-            else
-            {
-                TMP_Display.GetComponent<Text>().text = "No tag detected";
             }
         }
     }
