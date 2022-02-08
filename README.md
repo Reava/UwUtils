@@ -45,3 +45,5 @@ Check updates before reporting issues.
 
 My work is heavily inspired and i'm a begginer at U#, if you have any issues, feel free to DM me / Join this discord:
 - https://discord.gg/TxYwUFKbUS
+
+***Example world:*** https://vrchat.com/home/world/wrld_bd34e017-bdbd-4150-9577-660cd1ff29f7
