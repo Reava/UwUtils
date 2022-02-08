@@ -1,5 +1,6 @@
 # Udon UwUtils
 Reava makes Udon stuff.
+You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
 
 - **InteractSwitch**:
 On interact, enables an array of gameOjbects, and disables a second array. Does NOT revert once pressed again, it SETS the state and is NOT synced.
@@ -24,6 +25,15 @@ Just an interact toggle that toggles ON/OFF Unity's fog... that's it. Call it wi
 
 - **SceneInitializer**:
 Want to have things enabled for the first few seconds an user enters your world then disable ? the opposite ? both ? Just use that, ezpz
+
+- **tagSetter**:
+Set a pre determined tag to the local user on interact. that's it.
+
+- **TagDebugger**:
+Handy tool to display the local user's tag and output it to the debugLogs or text (Compatible with UnityUI, TMP & TMP GUI), updates on Interact & on Start.
+
+- **TagArrayTP**:
+Have a lot of tags & want each one to TP the user to a different spot ? Well... this does it all for ya! Even has a fallback target when the user doesn't have a tag (can be disabled to disallow TPing when no matching ranks are found)
 
 ## **Requirements**
 Check updates before reporting issues.
