@@ -12,7 +12,7 @@ namespace UdonSharp.Examples.Utilities
         public string[] tagAllowed;
         [Header("TP Targets (Target1 for Tag1, T2 to T2...")]
         public Transform[] targetLocation;
-        [Header("TP to fallback location when no matching tag ?")]
+        [Header("TP to fallback location when no matching tag ? If disabled, player won't get TP'd at all")]
         public bool tpFallbackEnabled;
         [Header("Fallback Location")]
         public Transform targetFallback;
