@@ -18,15 +18,15 @@ public class TagDebugger : UdonSharpBehaviour
     public bool debugEnabled = true;
     void Start()
     {
-        updateDebugDisplay();
+        _updateDebugDisplay();
     }
 
     public override void Interact()
     {
-        updateDebugDisplay();
+        _updateDebugDisplay();
     }
 
-    public void updateDebugDisplay()
+    public void _updateDebugDisplay()
     {
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
         if (Networking.LocalPlayer.GetPlayerTag("rank") != null)
