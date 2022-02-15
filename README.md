@@ -42,6 +42,9 @@ Check updates before reporting issues.
 - **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v2021.11.24.16.19)
 - **[UdonSharp](https://github.com/MerlinVR/UdonSharp/)** (Tested: v0.20.3)
 
+## **Extras**
+- **UwUtils_AxisGuides**
+A package containing a Blender & Unity Axis model for debugging or display, <1kb texture & 1 Meter scale (bounds)
 
 My work is heavily inspired and i'm a begginer at U#, if you have any issues, feel free to DM me / Join this discord:
 - https://discord.gg/TxYwUFKbUS
