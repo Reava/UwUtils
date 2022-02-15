@@ -3,7 +3,7 @@ Reava makes Udon stuff.
 You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
 
 - **InteractSwitch**:
-On interact, enables an array of gameOjbects, and disables a second array. Does NOT revert once pressed again, it SETS the state and is NOT synced.
+On interact, enables an array of gameObjects, and disables a second array. Does NOT revert once pressed again, it SETS the state and is NOT synced.
 
 - **PlayerListManager**:
 Not ready for public use yet, this will be part of a prefab once ready.
