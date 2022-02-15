@@ -46,8 +46,10 @@ Check updates before reporting issues.
 - **UwUtils_AxisGuides**
 A package containing a Blender & Unity Axis model for debugging or display, <1kb texture & 1 Meter scale (bounds)
 
+## **Links**
 My work is heavily inspired and i'm a begginer at U#, if you have any issues, feel free to DM me / Join this discord:
 - https://discord.gg/TxYwUFKbUS
 
 ***Example world:*** https://vrchat.com/home/world/wrld_bd34e017-bdbd-4150-9577-660cd1ff29f7
+
 *This world currently only shows Spinny & the varying Tag scripts and aims to show more in the future.*
