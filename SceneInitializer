@@ -7,7 +7,7 @@ using VRC.Udon;
 public class OnSpawnActions : UdonSharpBehaviour
 {
     [Header("Toggle state of objects X seconds after Start()")]
-    public int updateDelay = 10;
+    public int updateDelay = 1;
     [Tooltip("List of objects to toggle ON")]
     public GameObject[] toggleObjectsON;
     [Tooltip("List of objects to toggle OFF")]
