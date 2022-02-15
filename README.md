@@ -47,3 +47,4 @@ My work is heavily inspired and i'm a begginer at U#, if you have any issues, fe
 - https://discord.gg/TxYwUFKbUS
 
 ***Example world:*** https://vrchat.com/home/world/wrld_bd34e017-bdbd-4150-9577-660cd1ff29f7
+*This world currently only shows Spinny & the varying Tag scripts and aims to show more in the future.*
