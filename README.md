@@ -2,6 +2,9 @@
 Reava makes Udon stuff.
 You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
 
+- **iTP**:
+Literally just TPs you on interact, that's it.
+
 - **InteractSwitch**:
 On interact, enables an array of gameObjects, and disables a second array. Does NOT revert once pressed again, it SETS the state and is NOT synced.
 
