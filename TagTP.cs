@@ -6,7 +6,7 @@ using VRC.Udon;
 
 namespace UdonSharp.Examples.Utilities
 {
-    public class InteractToggleTag : UdonSharpBehaviour
+    public class TagTP : UdonSharpBehaviour
     {
         [Header("Tag name allowed")]
         public string tagAllowed;
