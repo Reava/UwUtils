@@ -31,7 +31,7 @@ public class TagAssigner : UdonSharpBehaviour
                 {
                     toggleObjectOFF.SetActive(false);
                 }
-                if (Networking.LocalPlayer != null && tpPlayerOnJoin) Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
+                if (tpPlayerOnJoin) Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
                 break;
             }
             else
