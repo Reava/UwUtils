@@ -12,7 +12,7 @@ On interact, enables an array of gameObjects, and disables a second array. Does 
 Not ready for public use yet, this will be part of a prefab once ready.
 
 - **TagAssigner**:
-Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, also behaves like the InteractSwitch if your username matches. has a toggle to TP the whitelisted user on Join.
+Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, also behaves like the InteractSwitch if your username matches. has a toggle to TP the whitelisted user on Join (currently not functionning).
 
 - **TagTP**:
 If you got the correct Tag to your name on interact with the behavior, teleports you to the target, if not, teleports you to the second target (or doesn't if empty / disabled)
