@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UdonSharp;
-using VRC.SDK3.Components;
 using VRC.SDKBase;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
 public class TagAssigner : UdonSharpBehaviour
 {
     [Tooltip("Name of the tag")]
