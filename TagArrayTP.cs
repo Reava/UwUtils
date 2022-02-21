@@ -1,18 +1,16 @@
 using UnityEngine;
-using VRC.SDK3.Components;
-using UdonSharp;
 using VRC.SDKBase;
-using VRC.Udon;
 
 namespace UdonSharp.Examples.Utilities
 {
-    public class TagArrayTP : UdonSharpBehaviour
+    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
+    public class InteractTpTagArray : UdonSharpBehaviour
     {
         [Header("Tag name array (Tag 1 TPs to Target 1, 2 to 2...")]
         public string[] tagAllowed;
         [Header("TP Targets (Target1 for Tag1, T2 to T2...")]
         public Transform[] targetLocation;
-        [Header("TP to fallback location when no matching tag ? If disabled, player won't get TP'd at all")]
+        [Header("TP to fallback location when no matching tag ?")]
         public bool tpFallbackEnabled;
         [Header("Fallback Location")]
         public Transform targetFallback;
