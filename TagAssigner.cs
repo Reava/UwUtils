@@ -2,41 +2,60 @@ using UnityEngine;
 using UdonSharp;
 using VRC.SDKBase;
 
-[UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
-public class TagAssigner : UdonSharpBehaviour
+namespace UdonSharp.Examples.Utilities
 {
-    [Tooltip("Name of the tag")]
-    public string playerTag;
-    [Tooltip("List of users who will inherit the tag")]
-    public string[] userArray;
-    [Tooltip("List of objects to toggle ON for VIPs")]
-    public GameObject[] toggleObjectsON;
-    [Tooltip("List of objects to toggle OFF for VIPs")]
-    public GameObject[] toggleObjectsOFF;
-    public bool tpPlayerOnJoin = false;
-    public Transform tpLocation;
-    void Start()
+    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
+    public class TagAssigner : UdonSharpBehaviour
     {
-        VRCPlayerApi localPlayer = Networking.LocalPlayer;
-        for (int i = 0; i < userArray.Length; i++)
+        [Tooltip("Name of the tag")]
+        public string playerTag;
+        [Tooltip("List of users who will inherit the tag")]
+        public string[] userArray;
+        [Tooltip("List of objects to toggle ON for VIPs")]
+        public GameObject[] toggleObjectsON;
+        [Tooltip("List of objects to toggle OFF for VIPs")]
+        public GameObject[] toggleObjectsOFF;
+        public bool tpPlayerOnJoin = true;
+        public Transform tpLocation;
+        void Start()
         {
-            if (userArray[i] == localPlayer.displayName)
+            VRCPlayerApi localPlayer = Networking.LocalPlayer;
+            for (int i = 0; i < userArray.Length; i++)
             {
-                localPlayer.SetPlayerTag("rank", playerTag);
-                foreach (GameObject toggleObjectON in toggleObjectsON)
+                if (userArray[i] == localPlayer.displayName)
                 {
-                    toggleObjectON.SetActive(true);
+                    localPlayer.SetPlayerTag("rank", playerTag);
+                    if (tpPlayerOnJoin)
+                    {
+                        Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
+                    }
+                    foreach (GameObject toggleObjectON in toggleObjectsON)
+                    {
+                        toggleObjectON.SetActive(true);
+                    }
+                    foreach (GameObject toggleObjectOFF in toggleObjectsOFF)
+                    {
+                        toggleObjectOFF.SetActive(false);
+                    }
+                    break;
                 }
-                foreach (GameObject toggleObjectOFF in toggleObjectsOFF)
+                else
                 {
-                    toggleObjectOFF.SetActive(false);
+                    localPlayer.SetPlayerTag("rank", "Visitor");
                 }
-                if (tpPlayerOnJoin) Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
-                break;
             }
-            else
+        }
+        public void _updateState()
+        {
+            VRCPlayerApi localPlayer = Networking.LocalPlayer;
+            localPlayer.SetPlayerTag("rank", playerTag);
+            foreach (GameObject toggleObject in toggleObjectsON)
             {
-                localPlayer.SetPlayerTag("rank", "Visitor");
+                toggleObject.SetActive(true);
+            }
+            foreach (GameObject toggleObject in toggleObjectsOFF)
+            {
+                toggleObject.SetActive(false);
             }
         }
     }
