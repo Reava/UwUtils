@@ -7,19 +7,50 @@ public class RelayAction : UdonSharpBehaviour
 {
     [Header("Please only reference gameObjects with a single Udon Behavior")]
     public UdonBehaviour programRelay;
+    public GameObject stateCheck;
+    private bool stateChecked;
     public string eventName;
     public bool delayedAction;
     public float delay;
+    [Header("0 = keep delay, 1 = no delay when object is off, 2 = no delay when object is on")]
+    [Range(0, 2)]
+    public int function = 1;
 
     public override void Interact()
     {
+        stateChecked = stateCheck.activeSelf;
         if (!delayedAction)
         {
             _relayAction();
         }
         else
         {
-            SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
+            if (function == 0)
+            {
+                SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
+            }
+            else if (function == 1)
+            {
+                if (stateChecked)
+                {
+                    SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
+                }
+                else
+                {
+                    _relayAction();
+                }
+            }
+            else if (function == 2)
+            {
+                if (!stateChecked)
+                {
+                    SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
+                }
+                else
+                {
+                    _relayAction();
+                }
+            }
         }
     }
 
