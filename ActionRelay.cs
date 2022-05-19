@@ -18,14 +18,7 @@ public class RelayAction : UdonSharpBehaviour
 
     public override void Interact()
     {
-        if (!stateCheck)
-        {
-            stateChecked = stateCheck.activeSelf;
-        }
-        else
-        {
-            stateChecked = true;
-        }
+        stateChecked = stateCheck.activeSelf;
         if (!delayedAction)
         {
             _relayAction();
