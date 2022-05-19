@@ -5,7 +5,7 @@ using VRC.Udon;
 
 public class RelayAction : UdonSharpBehaviour
 {
-    [Header("Please only reference gameObjects with a single Udon Behavior")]
+    [Header("Send an event call to any behavior with conditions and/or delay")]
     public UdonBehaviour programRelay;
     public GameObject stateCheck;
     private bool stateChecked;
@@ -18,7 +18,14 @@ public class RelayAction : UdonSharpBehaviour
 
     public override void Interact()
     {
-        stateChecked = stateCheck.activeSelf;
+        if (!stateCheck)
+        {
+            stateChecked = stateCheck.activeSelf;
+        }
+        else
+        {
+            stateChecked = true;
+        }
         if (!delayedAction)
         {
             _relayAction();
