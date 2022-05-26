@@ -3,7 +3,6 @@ using VRC.SDKBase;
 
 namespace UdonSharp.Examples.Utilities
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
     public class _ITP : UdonSharpBehaviour
     {
         public Transform targetLocation;
