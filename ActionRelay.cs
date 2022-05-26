@@ -9,7 +9,7 @@ public class ActionRelay : UdonSharpBehaviour
     public UdonBehaviour programRelay;
     public GameObject stateCheck;
     private bool stateChecked;
-    public string eventName;
+    public string eventName = "_interact";
     public bool delayedAction;
     public float delay;
     [Header("0 = keep delay, 1 = no delay when object is off, 2 = no delay when object is on")]
