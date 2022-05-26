@@ -3,7 +3,6 @@ using VRC.SDKBase;
 
 namespace UdonSharp.Examples.Utilities
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
     public class TagArrayTP : UdonSharpBehaviour
     {
         [Header("Tag name array (Tag 1 TPs to Target 1, 2 to 2...")]
