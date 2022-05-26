@@ -4,7 +4,6 @@ using VRC.SDKBase;
 
 namespace UdonSharp.Examples.Utilities
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
     public class TagAssigner : UdonSharpBehaviour
     {
         [Tooltip("Name of the tag")]
