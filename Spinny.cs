@@ -3,7 +3,6 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
-[UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
 public class Spinny : UdonSharpBehaviour
 {
     #region References
