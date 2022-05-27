@@ -13,7 +13,7 @@ public class Spinny : UdonSharpBehaviour
     #endregion
     [Range(0.1f, 60f)]
     public float rotation_Speed = 1.5f;
-    [Range(1f, 20f)]
+    [Range(1f, 2000f)]
     public float update_Interval_Milliseconds = 1f;
 
     [Header("Target object rotation axis:")]
