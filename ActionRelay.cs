@@ -3,6 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class ActionRelay : UdonSharpBehaviour
 {
     [Header("Send an event call to any behavior with conditions and/or delay")]
