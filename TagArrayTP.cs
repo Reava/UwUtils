@@ -1,6 +1,7 @@
 using UnityEngine;
 using VRC.SDKBase;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 namespace UdonSharp.Examples.Utilities
 {
     public class TagArrayTP : UdonSharpBehaviour

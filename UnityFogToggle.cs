@@ -5,6 +5,7 @@ using UdonSharp;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class Fog : UdonSharpBehaviour
 {
     public bool fog_Default = true;

@@ -3,6 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class OnSpawnActions : UdonSharpBehaviour
 {
     [Header("Toggle state of objects X seconds after Start()")]

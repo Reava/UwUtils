@@ -4,6 +4,7 @@ using UdonSharp;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 namespace UdonSharp.Examples.Utilities
 {
     public class TagTP : UdonSharpBehaviour

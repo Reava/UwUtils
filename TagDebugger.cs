@@ -4,6 +4,7 @@ using VRC.SDKBase;
 using TMPro;
 using UnityEngine.UI;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TagDebugger : UdonSharpBehaviour
 {
     private string playerTag;

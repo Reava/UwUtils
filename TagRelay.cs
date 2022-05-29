@@ -2,6 +2,7 @@ using UdonSharp;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TagRelay : UdonSharpBehaviour
 {
     public UdonBehaviour programGranted;

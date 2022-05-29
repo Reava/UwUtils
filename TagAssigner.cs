@@ -2,6 +2,7 @@ using UnityEngine;
 using UdonSharp;
 using VRC.SDKBase;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 namespace UdonSharp.Examples.Utilities
 {
     public class TagAssigner : UdonSharpBehaviour

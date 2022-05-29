@@ -2,6 +2,7 @@ using UnityEngine;
 using UdonSharp;
 using VRC.SDKBase;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TagSetter : UdonSharpBehaviour
 {
     [Tooltip("Name of the tag")]

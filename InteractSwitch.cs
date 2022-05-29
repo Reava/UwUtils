@@ -2,6 +2,7 @@
 using UnityEngine;
 using VRC.SDK3.Components;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 namespace UdonSharp.Examples.Utilities
 {
     public class InteractSwitch : UdonSharpBehaviour
