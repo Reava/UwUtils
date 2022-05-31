@@ -32,3 +32,5 @@ Scripts.meta
 SlickUI.meta
 *.cs.meta
 .github
+Scripts/*.asset.meta
+Scripts/_blank.asset.meta
