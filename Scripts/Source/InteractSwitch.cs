@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UdonSharp;
-using VRC.SDKBase;
 
 public class InteractSwitch : UdonSharpBehaviour
 {

@@ -1,7 +1,6 @@
 using UnityEngine;
 using VRC.SDKBase;
 using UdonSharp;
-using VRC.Udon;
 
 public class TagArrayTP : UdonSharpBehaviour
 {

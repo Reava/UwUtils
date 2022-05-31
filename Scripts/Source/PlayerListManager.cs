@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UdonSharp;
-using VRC.SDK3.Components;
 using VRC.SDKBase;
-using UnityEngine.UI;
 using TMPro;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class PlayerListManager : UdonSharpBehaviour
 {
     private string[] listedPlayers = null;

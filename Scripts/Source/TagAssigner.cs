@@ -1,5 +1,4 @@
 using UnityEngine;
-using UdonSharp;
 using VRC.SDKBase;
 
 namespace UdonSharp.Examples.Utilities

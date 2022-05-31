@@ -1,8 +1,5 @@
 using UnityEngine;
-using VRC.SDK3.Components;
-using UdonSharp;
 using VRC.SDKBase;
-using VRC.Udon;
 
 namespace UdonSharp.Examples.Utilities
 {
