@@ -61,7 +61,7 @@ public class TagAssigner : UdonSharpBehaviour
         }
     }
 
-    public void _initTeleport()
+    public void _initTeleport() //branch test
     {
         Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
     }
