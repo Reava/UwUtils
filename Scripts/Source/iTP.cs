@@ -1,15 +1,14 @@
 using UnityEngine;
 using VRC.SDKBase;
+using UdonSharp;
 
-namespace UdonSharp.Examples.Utilities
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+public class _ITP : UdonSharpBehaviour
 {
-    public class _ITP : UdonSharpBehaviour
-    {
-        public Transform targetLocation;
+    public Transform targetLocation;
 
-        public override void Interact()
-        {
-            Networking.LocalPlayer.TeleportTo(targetLocation.position, targetLocation.rotation);
-        }
+    public override void Interact()
+    {
+        Networking.LocalPlayer.TeleportTo(targetLocation.position, targetLocation.rotation);
     }
 }

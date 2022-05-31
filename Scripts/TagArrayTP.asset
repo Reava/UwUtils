@@ -17,7 +17,7 @@ MonoBehaviour:
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: e25eed4d6c4e9c841a5b4755a025f001, type: 3}
-  behaviourSyncMode: 0
+  behaviourSyncMode: 1
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
   compileErrors: []
   hasInteractEvent: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
       Data: 6|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: Tag name array (Tag 1 TPs to Target 1, 2 to 2...
+      Data: Tag name array (Tag 1 TPs to Target 1, 2 to 2...)
     - Name: 
       Entry: 8
       Data: 
@@ -169,7 +169,7 @@ MonoBehaviour:
       Data: 11|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: TP Targets (Target1 for Tag1, T2 to T2...
+      Data: TP Targets (Target1 for Tag1, T2 to T2...)
     - Name: 
       Entry: 8
       Data: 

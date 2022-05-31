@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UdonSharp;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class InteractSwitch : UdonSharpBehaviour
 {
     [Tooltip("List of objects to toggle ON")]
