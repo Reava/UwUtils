@@ -1,12 +1,13 @@
 using UdonSharp;
+using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TagRelay : UdonSharpBehaviour
 {
-    public UdonBehaviour programGranted;
-    public string tagAuthorized = "Visitor";
+    [SerializeField] private UdonBehaviour programGranted;
+    [SerializeField] private string tagAuthorized = "Visitor";
     public override void Interact()
     {
         if (Networking.LocalPlayer != null && Networking.LocalPlayer.GetPlayerTag("rank") != null)

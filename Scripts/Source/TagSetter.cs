@@ -6,7 +6,7 @@ using VRC.SDKBase;
 public class TagSetter : UdonSharpBehaviour
 {
     [Tooltip("Name of the tag")]
-    public string playerTag;
+    [SerializeField] private string playerTag;
     public override void Interact()
     {
         VRCPlayerApi localPlayer = Networking.LocalPlayer;

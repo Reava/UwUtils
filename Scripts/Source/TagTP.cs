@@ -6,13 +6,13 @@ using UdonSharp;
 public class TagTP : UdonSharpBehaviour
 {
     [Header("Tag name allowed")]
-    public string tagAllowed;
+    [SerializeField] private string tagAllowed;
     [Header("TP Target when allowed")]
-    public Transform targetLocation;
+    [SerializeField] private Transform targetLocation;
     [Header("TP elsewhere when tag doesn't match?")]
-    public bool tpOption;
+    [SerializeField] private bool tpOption;
     [Header("TP Target when disallowed")]
-    public Transform targetLocation2;
+    [SerializeField] private Transform targetLocation2;
 
     public override void Interact()
     {

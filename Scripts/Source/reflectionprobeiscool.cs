@@ -10,8 +10,8 @@ public class reflectionprobeiscool : UdonSharpBehaviour
 
     #endregion
     [Range(0, 30)]
-    public float updateInterval = 1.5f;
-    public ReflectionProbe reflectionProbeSource;
+    [SerializeField] private float updateInterval = 1.5f;
+    [SerializeField] private ReflectionProbe reflectionProbeSource;
 
     public void OnEnable()
     {

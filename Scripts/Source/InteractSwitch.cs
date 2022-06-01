@@ -4,10 +4,10 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class InteractSwitch : UdonSharpBehaviour
 {
-    [Tooltip("List of objects to toggle ON")]
-    public GameObject[] toggleObjectsON;
-    [Tooltip("List of objects to toggle OFF")]
-    public GameObject[] toggleObjectsOFF;
+    [Header("List of objects to toggle ON")]
+    [SerializeField] private GameObject[] toggleObjectsON;
+    [Header("List of objects to toggle OFF")]
+    [SerializeField] private GameObject[] toggleObjectsOFF;
 
     public override void Interact()
     {

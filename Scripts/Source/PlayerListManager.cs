@@ -11,19 +11,19 @@ public class PlayerListManager : UdonSharpBehaviour
     private int selectedUser = 0;
     private string InstanceMaster = "null";
     private string SelectedUserName = "null";
-    public GameObject VisitCountDisplay;
-    public GameObject CurrentPlayerCount;
-    public GameObject InstanceMasterDisplay;
-    public GameObject SelectedUserDisplay;
-    public GameObject ActionsParent;
-    public GameObject PlayerlistContainers;
+    [SerializeField] private GameObject VisitCountDisplay;
+    [SerializeField] private GameObject CurrentPlayerCount;
+    [SerializeField] private GameObject InstanceMasterDisplay;
+    [SerializeField] private GameObject SelectedUserDisplay;
+    [SerializeField] private GameObject ActionsParent;
+    [SerializeField] private GameObject PlayerlistContainers;
     [UdonSynced] private int visitCount = 0;
-    public string default_Tag = "Visitor";
-    public string VIP_Tag = "VIP";
-    public string Admin_Tag = "Admin";
-    public Color Default_color = new Color(1, 1, 1);
-    public Color VIP_color = new Color(1, 1, 0);
-    public Color Admin_color = new Color(1, 0, 0);
+    [SerializeField] private string default_Tag = "Visitor";
+    [SerializeField] private string VIP_Tag = "VIP";
+    [SerializeField] private string Admin_Tag = "Admin";
+    [SerializeField] private Color Default_color = new Color(1, 1, 1);
+    [SerializeField] private Color VIP_color = new Color(1, 1, 0);
+    [SerializeField] private Color Admin_color = new Color(1, 0, 0);
 
     //VRCPlayerApi[] currentPlayers;
     private void InitializeIdsIfNull()

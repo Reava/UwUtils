@@ -4,9 +4,9 @@ using UnityEngine;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class AnimatorDriver : UdonSharpBehaviour
 {
-    public Animator Animator;
-    public string ParameterName;
-    public bool defaultValue;
+    [SerializeField] private Animator Animator;
+    [SerializeField] private string ParameterName;
+    [SerializeField] private bool defaultValue;
 
     public void Start()
     {

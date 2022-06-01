@@ -4,7 +4,8 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class Fog : UdonSharpBehaviour
 {
-    public bool fog_Default = true;
+    [SerializeField] private bool fog_Default = true;
+
     void Start()
     {
         RenderSettings.fog = fog_Default;

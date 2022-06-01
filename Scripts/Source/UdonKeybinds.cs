@@ -5,14 +5,15 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class UdonKeybinds : UdonSharpBehaviour
 {
-    public bool keybindsEnabled = true;
-    public UdonBehaviour Action1;
-    public UdonBehaviour Action2;
-    public UdonBehaviour Action3;
-    public UdonBehaviour Action4;
-    public UdonBehaviour Action5;
-    public UdonBehaviour Action6;
-    public string eventName = "_interact";
+    [SerializeField] private bool keybindsEnabled = true;
+    [SerializeField] private UdonBehaviour Action1;
+    [SerializeField] private UdonBehaviour Action2;
+    [SerializeField] private UdonBehaviour Action3;
+    [SerializeField] private UdonBehaviour Action4;
+    [SerializeField] private UdonBehaviour Action5;
+    [SerializeField] private UdonBehaviour Action6;
+    [SerializeField] private string eventName = "_interact";
+
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad0))

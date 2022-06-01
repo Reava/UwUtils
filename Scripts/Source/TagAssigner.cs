@@ -6,15 +6,15 @@ using UdonSharp;
 public class TagAssigner : UdonSharpBehaviour
 {
     [Tooltip("Name of the tag")]
-    public string playerTag;
+    [SerializeField] private string playerTag;
     [Tooltip("List of users who will inherit the tag")]
-    public string[] userArray;
+    [SerializeField] private string[] userArray;
     [Tooltip("List of objects to toggle ON for VIPs")]
-    public GameObject[] toggleObjectsON;
+    [SerializeField] private GameObject[] toggleObjectsON;
     [Tooltip("List of objects to toggle OFF for VIPs")]
-    public GameObject[] toggleObjectsOFF;
-    public bool tpPlayerOnJoin = true;
-    public Transform tpLocation;
+    [SerializeField] private GameObject[] toggleObjectsOFF;
+    [SerializeField] private bool tpPlayerOnJoin = true;
+    [SerializeField] private Transform tpLocation;
     private float delay = 2f;
     void Start()
     {

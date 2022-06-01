@@ -9,14 +9,14 @@ public class TagDebugger : UdonSharpBehaviour
 {
     private string playerTag;
     [Header("interacting with this behavior will update the display & log.")]
-    public GameObject Text_Display;
+    [SerializeField] private GameObject Text_Display;
     [Header("Output to text?")]
-    public bool textOutput = false;
-    public bool usingTMP = false;
+    [SerializeField] private bool textOutput = false;
+    [SerializeField] private bool usingTMP = false;
     [Header("Is the TMP text GUI or classic ?")]
-    public bool GUI_Text = false;
+    [SerializeField] private bool GUI_Text = false;
     [Header("Output debug logs?")]
-    public bool debugEnabled = true;
+    [SerializeField] private bool debugEnabled = true;
     void Start()
     {
         _updateDebugDisplay();

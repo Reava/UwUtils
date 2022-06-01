@@ -3,9 +3,9 @@ using VRC.SDKBase;
 using UdonSharp;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class _ITP : UdonSharpBehaviour
+public class iTP : UdonSharpBehaviour
 {
-    public Transform targetLocation;
+    [SerializeField] private Transform targetLocation;
 
     public override void Interact()
     {
