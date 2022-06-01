@@ -2,7 +2,7 @@ using UnityEngine;
 using UdonSharp;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class Fog : UdonSharpBehaviour
+public class UnityFogToggle : UdonSharpBehaviour
 {
     [SerializeField] private bool fog_Default = true;
 

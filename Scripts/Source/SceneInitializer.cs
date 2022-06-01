@@ -2,7 +2,7 @@ using UdonSharp;
 using UnityEngine;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class OnSpawnActions : UdonSharpBehaviour
+public class SceneInitializer : UdonSharpBehaviour
 {
     [Header("Toggle state of objects X seconds after Start()")]
     public int updateDelay = 1;

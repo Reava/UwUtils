@@ -6,7 +6,10 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TriggerRelay : UdonSharpBehaviour
 {
-    [SerializeField] private Collider[] Colliders;
+    [Header("Make your colliders Trigger & on the layer IgnoreRaycast")]
+    [Header("Make sure your colliders are on the same gameObject as this script")]
+    //[SerializeField] private Collider[] TriggerColliders;
+    [Header("Event settings")]
     [SerializeField] private bool onEnter = false;
     [SerializeField] private bool onExit = false;
     [SerializeField] private UdonBehaviour eventTarget;
@@ -15,7 +18,7 @@ public class TriggerRelay : UdonSharpBehaviour
 
     void Start()
     {
-        foreach(Collider col in Colliders)
+        /*foreach(Collider col in TriggerColliders)
         {
             if(col != null)
             {
@@ -27,8 +30,8 @@ public class TriggerRelay : UdonSharpBehaviour
                 Debug.Log("[UwUtils/TriggerRelay.cs] Collider array is invalid for object '" + gameObject.name + "'");
                 break;
             }
-        }
-        if(valid = true && eventTarget != null)
+        }*/
+        if(/*valid = true && */eventTarget != null)
         {
             valid = true;
         }
