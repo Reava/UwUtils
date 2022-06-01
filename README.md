@@ -41,13 +41,16 @@ Handy tool to display the local user's tag and output it to the debugLogs or tex
 Have a lot of tags & want each one to TP the user to a different spot ? Well... this does it all for ya! Even has a fallback target when the user doesn't have a tag (can be disabled to disallow TPing when no matching ranks are found)
 
 - **ActionRelay**:
-Wanna use a button to push another button ? Do the same as UI can do ? Yup, just type the event name (like "\_interact"), if you want a delay or not & for how many seconds.... and you're good to go! You can also check the state of another object to ignore the delay if that object is on / off.
+Wanna use a button to push another button ? Do the same as UI can do ? Yup, just type the event name (like "\_interact"), if you want a delay or not & for how many seconds.... and you're good to go! You can also check the state of another object to ignore the delay if that object is on / off. Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
 
 - **UdonKeybinds**:
-Send an event call to 6 different udon behaviors based on keybinds, serves either for RollTheRed's Camera System or as a code template. Press CTRL + 1 to 6 to trigger changes. CTRL + 0 to toggle keybinds ON/OFF, defaults to ON unless changed.
+Send an event call to 6 different udon behaviors based on keybinds, serves either for RollTheRed's Camera System or as a code template. Press CTRL + 1 to 6 to trigger changes. CTRL + 0 to toggle keybinds ON/OFF, defaults to ON unless changed. Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
 
 - **AnimatorDriver**:
 Inverts a boolean on an animator on interact... and that's it
+
+- **TriggerRelay**:
+Assign trigger colliders, and assign an Udon Behavior to send an event to either on Enter or Exit, super simple stuff! Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
 
 ## **Requirements**
 Check updates before reporting issues.
