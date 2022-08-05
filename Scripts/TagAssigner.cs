@@ -72,7 +72,14 @@ public class TagAssigner : UdonSharpBehaviour
     public void _initTeleport()
     {
         if (abort) return;
-        Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
+        if (Networking.IsNetworkSettled)
+        {
+            Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
+        }
+        else
+        {
+            SendCustomEventDelayedSeconds(nameof(_initTeleport), 0.6f);
+        }
     }
 
     public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid values</b></color>, no User / Tag found. (" + gameObject + ")", gameObject);
