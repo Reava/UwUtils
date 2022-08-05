@@ -28,10 +28,11 @@ README.md.meta
 version.txt.meta
 _CommonRessources.meta
 OtherPrefabs.meta
-Scripts.meta
+UwUtils.meta
 SlickUI.meta
 *.cs.meta
 .github
 Scripts/*.asset.meta
 FUNDING.yml.meta
-WTemplate.meta
+WorldTemplate.meta
+JoinNotifier.meta
