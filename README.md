@@ -52,6 +52,9 @@ Inverts a boolean on an animator on interact... and that's it
 - **TriggerRelay**:
 Assign trigger colliders, and assign an Udon Behavior to send an event to either on Enter or Exit, super simple stuff! Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
 
+- **PlayercountToAnimator**:
+Enables driving an Animator's parameter (one parameter per Behavior, multiple Animators at once supported) between two values (Min/Max) depending on the player count in the instance. Can set the player count cap to reach max value.
+
 ## **Requirements**
 Check updates before reporting issues.
 
