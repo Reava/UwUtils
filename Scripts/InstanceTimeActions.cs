@@ -43,7 +43,8 @@ public class InstanceTimeActions : UdonSharpBehaviour
         if (abort) return;
         currentTime = Time.time;
         int stage = 0;
-        /*switch (stage)
+        stage = Mathf.FloorToInt(currentTime/1800);
+        switch (stage)
         {
             case 0:
                 //do smth
@@ -75,7 +76,7 @@ public class InstanceTimeActions : UdonSharpBehaviour
             default:
                 Debug.Log("Unknown instance time");
                 return;
-        }*/
+        }
     }
 
     public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> No Target script found</color>. (" + gameObject + ")", gameObject);
