@@ -15,7 +15,7 @@ public class TagAssigner : UdonSharpBehaviour
     [SerializeField] private GameObject[] toggleObjectsOFF;
     [SerializeField] private bool tpPlayerOnJoin = true;
     [SerializeField] private Transform tpLocation;
-    private float delay = 2f;
+    private float delay = 0.2f;
     void Start()
     {
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
