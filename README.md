@@ -59,7 +59,7 @@ Enables driving an Animator's parameter (one parameter per Behavior, multiple An
 Check updates before reporting issues.
 
 - **[Unity](https://docs.vrchat.com/docs/current-unity-version)** (Tested: v2019.4.31f1)
-- **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v2022.05.27.22.48)
+- **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v2022.07.26.21.44)
 - **[UdonSharp](https://github.com/MerlinVR/UdonSharp/)** (Tested: v0.20.3)
 - **Text Mesh Pro** is required for AxisGuides, and can be required to use some scripts, can be imported anytime.
 
