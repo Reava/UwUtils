@@ -36,3 +36,7 @@ Scripts/*.asset.meta
 FUNDING.yml.meta
 WorldTemplate.meta
 JoinNotifier.meta
+_blank.asset
+_Templates.unity
+_Templates.unity.meta
+Scripts.meta
