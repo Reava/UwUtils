@@ -16,8 +16,15 @@ public class TagAssigner : UdonSharpBehaviour
     [SerializeField] private bool tpPlayerOnJoin = true;
     [SerializeField] private Transform tpLocation;
     private float delay = 0.2f;
+    private bool abort;
     void Start()
     {
+        if (playerTag == null)
+        {
+            abort = true;
+            SendCustomEventDelayedSeconds(nameof(_sendDebugError), 1f);
+            return;
+        }
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
         for (int i = 0; i < userArray.Length; i++)
         {
@@ -49,6 +56,7 @@ public class TagAssigner : UdonSharpBehaviour
     }
     public void _updateState()
     {
+        if (abort) return;
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
         localPlayer.SetPlayerTag("rank", playerTag);
         foreach (GameObject toggleObject in toggleObjectsON)
@@ -63,6 +71,9 @@ public class TagAssigner : UdonSharpBehaviour
 
     public void _initTeleport()
     {
+        if (abort) return;
         Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
     }
+
+    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid values</b></color>, no User / Tag found. (" + gameObject + ")", gameObject);
 }
