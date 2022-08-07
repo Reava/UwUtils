@@ -47,11 +47,11 @@ isQuest = true;
     {
         for (int i = 0; i < RendererGroupOne.Length; i++)
         {
-            RendererGroupOne[i].enabled = !RendererGroupOne[i].enabled;
+            RendererGroupOne[i].enabled = false;
         }
         for (int i = 0; i < RendererGroupTwo.Length; i++)
         {
-            RendererGroupTwo[i].enabled = !RendererGroupTwo[i].enabled;
+            RendererGroupTwo[i].enabled = true;
         }
     }
 
@@ -59,11 +59,11 @@ isQuest = true;
     {
         for (int i = 0; i < RendererGroupOne.Length; i++)
         {
-            RendererGroupOne[i].enabled = !RendererGroupOne[i].enabled;
+            RendererGroupOne[i].enabled = true;
         }
         for (int i = 0; i < RendererGroupTwo.Length; i++)
         {
-            RendererGroupTwo[i].enabled = !RendererGroupTwo[i].enabled;
+            RendererGroupTwo[i].enabled = false;
         }
     }
 
