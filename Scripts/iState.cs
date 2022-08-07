@@ -32,4 +32,12 @@ public class iState : UdonSharpBehaviour
             toggleObject.SetActive(false);
         }
     }
+
+    public void _InvertState()
+    {
+        foreach (GameObject toggleObject in toggleObjects)
+        {
+            toggleObject.SetActive(!toggleObject.activeSelf);
+        }
+    }
 }
