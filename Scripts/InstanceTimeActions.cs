@@ -12,8 +12,8 @@ public class InstanceTimeActions : UdonSharpBehaviour
     [SerializeField] private int perActionDelaySeconds = 30;
     private bool abort = false;
     [UdonSynced]
-    /*[NonSerialized] */public int InstanceTimeSeconds = 0;
-    public float currentTime;
+    [NonSerialized] public int InstanceTimeSeconds = 0;
+    private float currentTime;
 
     private void Start()
     {
@@ -24,11 +24,11 @@ public class InstanceTimeActions : UdonSharpBehaviour
             return;
         }
         currentTime = Time.time;
-        /*VRCPlayerApi localPlayer = Networking.LocalPlayer;
+        VRCPlayerApi localPlayer = Networking.LocalPlayer;
         if (localPlayer.isMaster)
         {
             InstanceTimeSeconds = Mathf.RoundToInt(currentTime);
-        }*/
+        }
         SendCustomEventDelayedSeconds(nameof(_nextState), 1f);
     }
 
