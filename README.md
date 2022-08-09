@@ -9,11 +9,9 @@ Literally just TPs you on interact, that's it.
 - **iState**:
 Switches the state of an array of GameObjects. Can receive events to either invert the state, toggle all on, or toggle all off. (_InvertState,_Disable,_Enable)
 - **iStateSet**:
-On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (use _Revert to... revert.)
-- **PlayerListManager**:
-Not ready for public use yet, this will be part of a prefab once ready.
+On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (Events: _Invert to do the opposite, _Switch to swap all states)
 - **TagAssigner**:
-Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, also behaves like the InteractSwitch if your username matches. has a toggle to TP the whitelisted user on Join (currently not functionning).
+Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, also behaves like the InteractSwitch if your username matches. has a toggle to TP the whitelisted user on Join and can be called by my Keypad.
 - **TagTP**:
 If you got the correct Tag to your name on interact with the behavior, teleports you to the target, if not, teleports you to the second target (or doesn't if empty / disabled)
 - **reflectionprobeiscool**:
@@ -50,6 +48,8 @@ Enables swapping between two Groups of Mesh Renderers at runtime, setting betwee
 # Scripts that require some more work before release:
 - **InstanceTimeActions**: > NOT READY <
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
+- **SimpleKeypad**:
+Literally just a keypad that works in hand with the rest of my prefabs, designed to be as light as possible.
 
 ## **Requirements**
 Check updates before reporting issues.
