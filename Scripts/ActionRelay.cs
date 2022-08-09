@@ -6,7 +6,7 @@ using VRC.Udon;
 public class ActionRelay : UdonSharpBehaviour
 {
     [Header("Send an event call to any behavior with conditions and/or delay")]
-    [SerializeField] private UdonBehaviour programRelay;
+    [SerializeField] private UdonBehaviour[] programRelay;
     [SerializeField] private GameObject stateCheck;
     private bool stateChecked;
     [SerializeField] private string eventName = "_interact";
@@ -19,7 +19,7 @@ public class ActionRelay : UdonSharpBehaviour
 
     public void Start()
     {
-        if (programRelay == null)
+        if (programRelay.Length == null)
         {
             abort = true;
             SendCustomEventDelayedSeconds(nameof(_sendDebugError), 1f);
@@ -68,7 +68,10 @@ public class ActionRelay : UdonSharpBehaviour
     public void _relayAction()
     {
         if (abort) return;
-        programRelay.SendCustomEvent(eventName);
+        foreach(UdonBehaviour program in programRelay)
+        {
+            program.SendCustomEvent(eventName);
+        }
     }
 
     public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> No Target script found</color>. (" + gameObject + ")", gameObject);
