@@ -2,14 +2,14 @@
 Reava makes Udon stuff.
 You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
 
-**WARNING**: Those are currently not tested for U#1.0, I'll make another release for it in the future, when more widly used.
+**WARNING**: Most of those aren't synced!! This is compatible with VCC, some scripts won't work with U# pre 1.x, please download v0.62 for that, or join the discord.
 
 - **iTP**:
 Literally just TPs you on interact, that's it.
 - **iState**:
 Switches the state of an array of GameObjects. Can receive events to either invert the state, toggle all on, or toggle all off. (_InvertState,_Disable,_Enable)
-- **InteractSwitch**:
-On interact, enables an array of gameObjects, and disables a second array. Does NOT revert once pressed again, it SETS the state and is NOT synced.
+- **iStateSet**:
+On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (use _Revert to... revert.)
 - **PlayerListManager**:
 Not ready for public use yet, this will be part of a prefab once ready.
 - **TagAssigner**:
@@ -19,7 +19,7 @@ If you got the correct Tag to your name on interact with the behavior, teleports
 - **reflectionprobeiscool**:
 RelfectionProbes are cool! make them real time, scripted and add this script to change the frequency they refresh at !
 - **Spinny**:
-A script to rotate things on any axis, at any speed, and even at weird update speeds (like 30 degrees but only once a second)
+A script to rotate things on any axis, at any speed, and even at weird update speeds (like 30 degrees but only once a second). You should do that with animators, but this might be useful idk.
 - **UnityFogToggle**:
 Just an interact toggle that toggles ON/OFF Unity's fog... that's it. Call it with a trigger or a UI button, it'll work.
 - **SceneInitializer**:
@@ -40,8 +40,6 @@ Inverts a boolean on an animator on interact... and that's it
 Assign trigger colliders, and assign an Udon Behavior to send an event to either on Enter or Exit, super simple stuff! Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
 - **PlayercountToAnimator**:
 Enables driving an Animator's parameter (one parameter per Behavior, multiple Animators at once supported) between two values (Min/Max) depending on the player count in the instance. Can set the player count cap to reach max value.
-- **InstanceTimeActions**: > NOT READY <
-Enables performing actions based on Instance Time (segmented), synced for late joiners.
 - **JoinBell**:
 Pretty straightforward, just tap in an AudioSource & a clip for Join/Leave and enjoy
 - **ToggleCanvas**:
@@ -49,12 +47,16 @@ Same as iState, but for Canvas components
 - **MeshRendererSwapper**:
 Enables swapping between two Groups of Mesh Renderers at runtime, setting between 1 & 2 as default, and which group by default on Quest. practical for optimization toggles. Supports events (_switchGroup, _enableOne, _enableTwo)
 
+# Scripts that require some more work before release:
+- **InstanceTimeActions**: > NOT READY <
+Enables performing actions based on Instance Time (segmented), synced for late joiners.
+
 ## **Requirements**
 Check updates before reporting issues.
 
 - **[Unity](https://docs.vrchat.com/docs/current-unity-version)** (Tested: v2019.4.31f1)
 - **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v2022.07.26.21.44)
-- **[UdonSharp](https://github.com/MerlinVR/UdonSharp/)** (Tested: v0.20.3)
+- **[UdonSharp](https://github.com/MerlinVR/UdonSharp/)** (Tested: v1.10+)
 - **Text Mesh Pro** is required for AxisGuides, and can be required to use some scripts, can be imported anytime.
 
 ## **Extras**
