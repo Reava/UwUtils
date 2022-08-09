@@ -8,17 +8,18 @@ public class TriggerRelay : UdonSharpBehaviour
 {
     [Header("Make your colliders Trigger & on the layer IgnoreRaycast")]
     [Header("Make sure your colliders are on the same gameObject as this script")]
+    [SerializeField] private string eventNameOnExit = "_interact";
+    [SerializeField] private string eventNameOnEnter = "_interact";
     //[SerializeField] private Collider[] TriggerColliders;
     [Header("Event settings")]
-    [SerializeField] private bool onEnter = false;
+    [SerializeField] private bool onEnter = true;
     [SerializeField] private bool onExit = false;
-    [SerializeField] private UdonBehaviour[] eventTarget;
-    [SerializeField] private string eventName = "_interact";
+    [SerializeField] private UdonBehaviour[] eventTargets;
     private bool valid = false;
 
     void Start()
     {
-        if(eventTarget != null)
+        if(eventTargets != null)
         {
             valid = true;
         }
@@ -33,9 +34,9 @@ public class TriggerRelay : UdonSharpBehaviour
     {
         if (valid && onExit)
         {
-            foreach(UdonBehaviour program in eventTarget)
+            foreach(UdonBehaviour program in eventTargets)
             {
-                program.SendCustomEvent(eventName);
+                program.SendCustomEvent(eventNameOnExit);
             }
         }
     }
@@ -43,9 +44,9 @@ public class TriggerRelay : UdonSharpBehaviour
     {
         if (valid && onEnter)
         {
-            foreach (UdonBehaviour program in eventTarget)
+            foreach (UdonBehaviour program in eventTargets)
             {
-                program.SendCustomEvent(eventName);
+                program.SendCustomEvent(eventNameOnEnter);
             }
         }
     }
