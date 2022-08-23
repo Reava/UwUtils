@@ -35,7 +35,7 @@ Send an event call to 6 different udon behaviors based on keybinds, serves eithe
 - **[AnimatorDriver](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/AnimatorDriver.cs)**:
 Inverts a boolean on an animator on interact... and that's it
 - **[TriggerRelay](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/TriggerRelay.cs)**:
-Assign trigger colliders, and assign an Udon Behavior to send an event to either on Enter or Exit, super simple stuff! Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
+Assign trigger colliders, and assign an Udon Behavior to send an event to either on Enter or Exit, super simple stuff! Supports UdonBehaviorArrays for U# 1.x version of the scripts.
 - **[PlayercountToAnimator](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/PlayercountToAnimator.cs)**:
 Enables driving an Animator's parameter (one parameter per Behavior, multiple Animators at once supported) between two values (Min/Max) depending on the player count in the instance. Can set the player count cap to reach max value.
 - **[JoinBell](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/JoinBell.cs)**:
