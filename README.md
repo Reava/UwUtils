@@ -1,6 +1,7 @@
 # Reava_'s Udon UwUtils
 I makes Udon stuff...
 You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
+By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone.
 
 **WARNING**: Most of those aren't synced! Download the version for VCC if you use UdonSharp 1.0 or higher
 
