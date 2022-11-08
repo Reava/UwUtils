@@ -11,7 +11,7 @@ Switches the state of an array of GameObjects. Can receive events to either inve
 - **[iStateSet](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iStateSet.cs)**:
 On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (Events: _Invert to do the opposite, _Switch to swap all states)
 - **[TagAssigner](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/TagAssigner.cs)**:
-Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, also behaves like the InteractSwitch if your username matches. has a toggle to TP the whitelisted user on Join and can be called by my Keypad.
+Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, allows toggling specific objects if user matches. Has a toggle to empower the user if they just created the instance regardless of whitelist matching.
 - **[TagTP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/TagTP.cs)**:
 If you got the correct Tag to your name on interact with the behavior, teleports you to the target, if not, teleports you to the second target (or doesn't if empty / disabled)
 - **[reflectionprobeiscool](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/reflectionprobeiscool.cs)**:
@@ -44,12 +44,12 @@ Pretty straightforward, just tap in an AudioSource & a clip for Join/Leave and e
 Same as iState, but for Canvas components
 - **[MeshRendererSwapper](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MeshRendererSwapper.cs)**:
 Enables swapping between two Groups of Mesh Renderers at runtime, setting between 1 & 2 as default, and which group by default on Quest. practical for optimization toggles. Supports events (_switchGroup, _enableOne, _enableTwo)
+- **[InstanceCreatorRelay](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/InstanceCreatorRelay.cs)**:
+Sends a custom event of your choice to Udon Behaviors if the local user just created the instance
 
 # Scripts that require some more work before release:
 - **InstanceTimeActions**: > NOT READY <
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
-- **SimpleKeypad**:
-Literally just a keypad that works in hand with the rest of my prefabs, designed to be as light as possible.
 
 ## **Requirements**
 Check updates before reporting issues.
