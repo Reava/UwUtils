@@ -2,7 +2,7 @@
 I makes Udon stuff...
 You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
 
-**WARNING**: Most of those aren't synced!! This is compatible with VCC, some scripts won't work with U# pre 1.x, please download v0.62 for that, or join the discord.
+**WARNING**: Most of those aren't synced! Download the version for VCC if you use UdonSharp 1.0 or higher
 
 - **[iTP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iTP.cs)**:
 Literally just TPs you on interact, that's it.
