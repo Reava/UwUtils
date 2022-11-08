@@ -55,9 +55,9 @@ Enables performing actions based on Instance Time (segmented), synced for late j
 Check updates before reporting issues.
 
 - **[Unity](https://docs.vrchat.com/docs/current-unity-version)** (Tested: v2019.4.31f1)
-- **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v2022.07.26.21.44)
-- **[UdonSharp](https://github.com/vrchat-community/UdonSharp)** (Tested: v1.10+)
-- **Text Mesh Pro** is required for AxisGuides, and can be required to use some scripts, can be imported anytime.
+- **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v2022.1.1)
+- **[UdonSharp](https://github.com/vrchat-community/UdonSharp)** (Tested: v1.15+)
+- **Text Mesh Pro** is very recommended but won't break things, can be imported anytime.
 
 ## **Extras**
 - **UwUtils_AxisGuides**
