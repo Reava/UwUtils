@@ -6,7 +6,7 @@ using VRC.SDK3.Components;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class iState : UdonSharpBehaviour
 {
-    [Header("List of objects")]
+    [Header("List of objects to invert the state of")]
     public GameObject[] toggleObjects;
 
     public override void Interact()
