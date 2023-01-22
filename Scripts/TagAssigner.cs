@@ -37,13 +37,13 @@ public class TagAssigner : UdonSharpBehaviour
         if (Networking.LocalPlayer.isMaster && EmpowerInstanceCreator) //Empowers instance creator if enabled
         {
             localPlayer.SetPlayerTag("rank", playerTag);
-            foreach (GameObject toggleObjectON in toggleObjectsON)
+            foreach (GameObject o in toggleObjectsON)
             {
-                toggleObjectON.SetActive(true);
+                o.SetActive(true);
             }
-            foreach (GameObject toggleObjectOFF in toggleObjectsOFF)
+            foreach (GameObject o in toggleObjectsOFF)
             {
-                toggleObjectOFF.SetActive(false);
+                o.SetActive(false);
             }
             if (programsSuccess[0] != null && !programsSuccess[0].Equals(null))
             {
@@ -63,13 +63,13 @@ public class TagAssigner : UdonSharpBehaviour
                 {
                     SendCustomEventDelayedSeconds(nameof(_initTeleport), delay);
                 }
-                foreach (GameObject toggleObjectON in toggleObjectsON)
+                foreach (GameObject o in toggleObjectsON)
                 {
-                    toggleObjectON.SetActive(true);
+                    o.SetActive(true);
                 }
-                foreach (GameObject toggleObjectOFF in toggleObjectsOFF)
+                foreach (GameObject o in toggleObjectsOFF)
                 {
-                    toggleObjectOFF.SetActive(false);
+                    o.SetActive(false);
                 }
                 if (programsSuccess[0] != null && !programsSuccess[0].Equals(null))
                 {
@@ -99,13 +99,13 @@ public class TagAssigner : UdonSharpBehaviour
         if (abort) return;
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
         localPlayer.SetPlayerTag("rank", playerTag);
-        foreach (GameObject toggleObject in toggleObjectsON)
+        foreach (GameObject o in toggleObjectsON)
         {
-            toggleObject.SetActive(true);
+            o.SetActive(true);
         }
-        foreach (GameObject toggleObject in toggleObjectsOFF)
+        foreach (GameObject o in toggleObjectsOFF)
         {
-            toggleObject.SetActive(false);
+            o.SetActive(false);
         }
     }
 
