@@ -5,6 +5,10 @@ By all means you are very welcome to pick and choose parts of my code to make yo
 
 **WARNING**: Most of those aren't synced! Download the version for VCC if you use UdonSharp 1.0 or higher
 
+- **[FadingTP](https://github.com/Reava/ReavaUwUtils/tree/main/FadingTP)**:
+A small prefab that allows you to setup an infinite amount of teleports with Fade In/Out blackout effects! (Can change the fade speed per door, super lightweight)
+- **[SpawnFade](https://github.com/Reava/ReavaUwUtils/tree/main/SpawnFade)**:
+A small prefab for fading into a world when you join, can toggle to also fade in when respawning! (Toggleable on runtime, can change the fade speed)
 - **[iTP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iTP.cs)**:
 Literally just TPs you on interact, that's it.
 - **[iState](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iState.cs)**:
