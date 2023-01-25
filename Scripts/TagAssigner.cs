@@ -18,7 +18,7 @@ public class TagAssigner : UdonSharpBehaviour
     [SerializeField] private UdonBehaviour[] programsSuccess;
     [Header("Name of the custom event")]
     [SerializeField] private string eventName = "_interact";
-    [SerializeField] private bool tpPlayerOnJoin = true;
+    [SerializeField] private bool tpPlayerOnJoin = false;
     [SerializeField] private Transform tpLocation;
     [Header("Consider instance creator as VIP")]
     [SerializeField] private bool EmpowerInstanceCreator = false;
@@ -34,26 +34,14 @@ public class TagAssigner : UdonSharpBehaviour
             return;
         }
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
+#if !UNITY_EDITOR
         if (Networking.LocalPlayer.isMaster && EmpowerInstanceCreator) //Empowers instance creator if enabled
         {
             localPlayer.SetPlayerTag("rank", playerTag);
-            foreach (GameObject o in toggleObjectsON)
-            {
-                o.SetActive(true);
-            }
-            foreach (GameObject o in toggleObjectsOFF)
-            {
-                o.SetActive(false);
-            }
-            if (programsSuccess[0] != null && !programsSuccess[0].Equals(null))
-            {
-                foreach (UdonBehaviour b in programsSuccess)
-                {
-                    b.SendCustomEvent(eventName);
-                }
-            }
+            _updateState();
             return;
         }
+#endif
         for (int i = 0; i < userArray.Length; i++) //Checks user array for matches with local user to empower
         {
             if (userArray[i] == localPlayer.displayName || empoweredUser)
@@ -63,21 +51,7 @@ public class TagAssigner : UdonSharpBehaviour
                 {
                     SendCustomEventDelayedSeconds(nameof(_initTeleport), delay);
                 }
-                foreach (GameObject o in toggleObjectsON)
-                {
-                    o.SetActive(true);
-                }
-                foreach (GameObject o in toggleObjectsOFF)
-                {
-                    o.SetActive(false);
-                }
-                if (programsSuccess[0] != null && !programsSuccess[0].Equals(null))
-                {
-                    foreach (UdonBehaviour b in programsSuccess)
-                    {
-                        b.SendCustomEvent(eventName);
-                    }
-                }
+                _updateState();
                 break;
             }
             else
@@ -89,6 +63,8 @@ public class TagAssigner : UdonSharpBehaviour
             }
         }
     }
+
+
     public void _addNewUser() //just an alias
     {
         _updateState();
@@ -107,6 +83,13 @@ public class TagAssigner : UdonSharpBehaviour
         {
             o.SetActive(false);
         }
+        if (programsSuccess[0] != null && !programsSuccess[0].Equals(null))
+        {
+            foreach (UdonBehaviour b in programsSuccess)
+            {
+                b.SendCustomEvent(eventName);
+            }
+        }
     }
 
     public void _initTeleport()
@@ -122,5 +105,5 @@ public class TagAssigner : UdonSharpBehaviour
         }
     }
 
-    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid values</b></color>, no User / Tag found. (" + gameObject + ")", gameObject);
+    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid values</b></color> or no User / Tag found. (" + gameObject + ")", gameObject);
 }
