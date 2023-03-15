@@ -3,6 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[AddComponentMenu("UwUtils/TagRelay")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TagRelay : UdonSharpBehaviour
 {

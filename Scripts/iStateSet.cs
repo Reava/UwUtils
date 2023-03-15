@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UdonSharp;
 
+[AddComponentMenu("UwUtils/iStateSet")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class iStateSet : UdonSharpBehaviour
 {

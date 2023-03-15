@@ -3,6 +3,7 @@ using Unity.Collections;
 using UnityEngine;
 using VRC.SDK3.Components;
 
+[AddComponentMenu("UwUtils/ToggleCanvas")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class toggleCanvas : UdonSharpBehaviour
 {

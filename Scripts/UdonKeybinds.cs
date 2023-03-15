@@ -2,6 +2,7 @@
 using UnityEngine;
 using VRC.Udon;
 
+[AddComponentMenu("UwUtils/UdonKeybinds")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class UdonKeybinds : UdonSharpBehaviour
 {

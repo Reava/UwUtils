@@ -1,6 +1,7 @@
 using UnityEngine;
 using UdonSharp;
 
+[AddComponentMenu("UwUtils/UnityFogToggle")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class UnityFogToggle : UdonSharpBehaviour
 {

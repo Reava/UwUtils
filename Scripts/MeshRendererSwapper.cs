@@ -1,6 +1,7 @@
 ﻿using UdonSharp;
 using UnityEngine;
 
+[AddComponentMenu("UwUtils/MeshRendererSwapper")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class MeshRendererSwapper : UdonSharpBehaviour
 {

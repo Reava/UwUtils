@@ -2,6 +2,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using UdonSharp;
 
+[AddComponentMenu("UwUtils/TagArrayTP")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TagArrayTP : UdonSharpBehaviour
 {

@@ -2,6 +2,7 @@ using UdonSharp;
 using UnityEngine;
 using VRC.Udon;
 
+[AddComponentMenu("UwUtils/ActionRelay")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class ActionRelay : UdonSharpBehaviour
 {

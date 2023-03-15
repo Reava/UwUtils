@@ -3,6 +3,7 @@ using VRC.SDKBase;
 using UdonSharp;
 using VRC.Udon;
 
+[AddComponentMenu("UwUtils/TriggerRelay")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TriggerRelay : UdonSharpBehaviour
 {

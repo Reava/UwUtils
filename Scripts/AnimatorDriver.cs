@@ -1,6 +1,7 @@
 ﻿using UdonSharp;
 using UnityEngine;
 
+[AddComponentMenu("UwUtils/AnimatorDriver")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class AnimatorDriver : UdonSharpBehaviour
 {

@@ -2,6 +2,7 @@
 using UnityEngine;
 using VRC.SDKBase;
 
+[AddComponentMenu("UwUtils/JoinBell")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class JoinBell : UdonSharpBehaviour
 {

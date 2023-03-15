@@ -24,7 +24,7 @@ public class TagAssigner : UdonSharpBehaviour
     [Header("Name of the custom event")]
     [SerializeField] private string eventName = "_interact";
     [Space]
-    [SerializeField] private bool tpPlayerOnJoin = false;
+    [SerializeField] private bool teleportVipOnJoin = false;
     [SerializeField] private Transform tpLocation;
     [Space]
     [Header("Consider instance creator as VIP")]
@@ -65,7 +65,7 @@ public class TagAssigner : UdonSharpBehaviour
             if (userArray[i] == localPlayer.displayName || empoweredUser)
             {
                 localPlayer.SetPlayerTag("rank", playerTag);
-                if (tpPlayerOnJoin)
+                if (teleportVipOnJoin)
                 {
                     SendCustomEventDelayedSeconds(nameof(_initTeleport), delay);
                 }
@@ -125,7 +125,7 @@ public class TagAssigner : UdonSharpBehaviour
             if (userArray[i] == localPlayer.displayName || empoweredUser)
             {
                 localPlayer.SetPlayerTag("rank", playerTag);
-                if (tpPlayerOnJoin)
+                if (teleportVipOnJoin)
                 {
                     SendCustomEventDelayedSeconds(nameof(_initTeleport), delay);
                 }

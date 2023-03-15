@@ -3,6 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[AddComponentMenu("UwUtils/InstanceCreatorRelay")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class InstanceCreatorRelay : UdonSharpBehaviour
 {

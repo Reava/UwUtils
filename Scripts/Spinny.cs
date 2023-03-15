@@ -1,6 +1,7 @@
 using UdonSharp;
 using UnityEngine;
 
+[AddComponentMenu("UwUtils/Spinny")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class Spinny : UdonSharpBehaviour
 {

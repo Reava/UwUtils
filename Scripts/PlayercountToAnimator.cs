@@ -2,6 +2,7 @@
 using UnityEngine;
 using VRC.SDKBase;
 
+[AddComponentMenu("UwUtils/PlayercountToAnimator")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class PlayercountToAnimator : UdonSharpBehaviour
 {

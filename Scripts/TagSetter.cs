@@ -2,6 +2,7 @@ using UnityEngine;
 using UdonSharp;
 using VRC.SDKBase;
 
+[AddComponentMenu("UwUtils/TagSetter")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class TagSetter : UdonSharpBehaviour
 {

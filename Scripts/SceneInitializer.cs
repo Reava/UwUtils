@@ -1,6 +1,7 @@
 using UdonSharp;
 using UnityEngine;
 
+[AddComponentMenu("UwUtils/SceneInitializer")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class SceneInitializer : UdonSharpBehaviour
 {

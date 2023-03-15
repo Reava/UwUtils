@@ -3,6 +3,7 @@ using Unity.Collections;
 using UnityEngine;
 using VRC.SDK3.Components;
 
+[AddComponentMenu("UwUtils/iState")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class iState : UdonSharpBehaviour
 {

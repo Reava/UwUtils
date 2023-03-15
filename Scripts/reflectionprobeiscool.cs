@@ -1,6 +1,7 @@
 using UdonSharp;
 using UnityEngine;
 
+[AddComponentMenu("UwUtils/Reflectionprobeiscool")]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class reflectionprobeiscool : UdonSharpBehaviour
 {
