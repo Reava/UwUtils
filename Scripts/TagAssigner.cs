@@ -83,17 +83,9 @@ public class TagAssigner : UdonSharpBehaviour
         }
     }
 
-    public void _LoadUrl()
-    {
-        VRCStringDownloader.LoadUrl(linkToString, (IUdonEventReceiver)this);
-    }
+    public void _LoadUrl() => VRCStringDownloader.LoadUrl(linkToString, (IUdonEventReceiver)this);
 
-
-    public void _addNewUser() //just an alias
-    {
-        _updateState();
-    }
-
+    public void _addNewUser() => _updateState(); // Alias.
     public void _updateState() //adds the local user to VIPs on calling this function
     {
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
@@ -141,10 +133,7 @@ public class TagAssigner : UdonSharpBehaviour
         }
     }
 
-    public override void OnStringLoadError(IVRCStringDownload result)
-    {
-        Debug.LogError("<b>Reava_UwUtils: <color=red> String failed to load</b></color>: " + result.Error + "| Error Code: " + result.ErrorCode + "On: " + gameObject.name, gameObject);
-    }
+    public override void OnStringLoadError(IVRCStringDownload result) => Debug.LogError("<b>Reava_UwUtils: <color=red> String failed to load</b></color>: " + result.Error + "| Error Code: " + result.ErrorCode + "On: " + gameObject.name, gameObject);
 
     public void _initTeleport()
     {
