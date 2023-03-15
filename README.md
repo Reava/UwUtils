@@ -3,12 +3,8 @@ I makes Udon stuff...
 You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
 By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone.
 
-**WARNING**: Most of those aren't synced! Download the version for VCC if you use UdonSharp 1.0 or higher
+**WARNING**: Most of those aren't synced!
 
-- **[FadingTP](https://github.com/Reava/ReavaUwUtils/tree/main/FadingTP)**:
-A small prefab that allows you to setup an infinite amount of teleports with Fade In/Out blackout effects! (Can change the fade speed per door, super lightweight)
-- **[SpawnFade](https://github.com/Reava/ReavaUwUtils/tree/main/SpawnFade)**:
-A small prefab for fading into a world when you join, can toggle to also fade in when respawning! (Toggleable on runtime, can change the fade speed)
 - **[iTP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iTP.cs)**:
 Literally just TPs you on interact, that's it.
 - **[iState](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iState.cs)**:
@@ -16,7 +12,7 @@ Switches the state of an array of GameObjects. Can receive events to either inve
 - **[iStateSet](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iStateSet.cs)**:
 On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (Events: _Invert to do the opposite, _Switch to swap all states)
 - **[TagAssigner](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/TagAssigner.cs)**:
-Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, allows toggling specific objects if user matches. Has a toggle to empower the user if they just created the instance regardless of whitelist matching.
+Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, allows toggling specific objects if user matches. Has a toggle to empower the user if they just created the instance regardless of whitelist matching. Supports adding users on the go and loading a remote string for updating the whitelist without updating the world!
 - **[TagTP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/TagTP.cs)**:
 If you got the correct Tag to your name on interact with the behavior, teleports you to the target, if not, teleports you to the second target (or doesn't if empty / disabled)
 - **[reflectionprobeiscool](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/reflectionprobeiscool.cs)**:
@@ -51,6 +47,12 @@ Same as iState, but for Canvas components
 Enables swapping between two Groups of Mesh Renderers at runtime, setting between 1 & 2 as default, and which group by default on Quest. practical for optimization toggles. Supports events (_switchGroup, _enableOne, _enableTwo)
 - **[InstanceCreatorRelay](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/InstanceCreatorRelay.cs)**:
 Sends a custom event of your choice to Udon Behaviors if the local user just created the instance
+- **[FadingTP](https://github.com/Reava/ReavaUwUtils/tree/main/FadingTP)**:
+A small prefab that allows you to setup an infinite amount of teleports with Fade In/Out blackout effects! (Can change the fade speed per door, super lightweight)
+- **[SpawnFade](https://github.com/Reava/ReavaUwUtils/tree/main/SpawnFade)**:
+A small prefab for fading into a world when you join, can toggle to also fade in when respawning! (Toggleable on runtime, can change the fade speed)
+- **[RemoteStringToText](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/RemoteStringToText.cs)**:
+Allows loading a remote string from a URL and output to an array, or any type of text field (feel free to use as a code base for your own use!)
 
 # Scripts that require some more work before release:
 - **InstanceTimeActions**: > NOT READY <
@@ -60,8 +62,8 @@ Enables performing actions based on Instance Time (segmented), synced for late j
 Check updates before reporting issues.
 
 - **[Unity](https://docs.vrchat.com/docs/current-unity-version)** (Tested: v2019.4.31f1)
-- **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v2022.1.1)
-- **[UdonSharp](https://github.com/vrchat-community/UdonSharp)** (Tested: v1.15+)
+- **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v3.1.11 VCC)
+- **[UdonSharp](https://github.com/vrchat-community/UdonSharp)** (Tested: v1.17+)
 - **Text Mesh Pro** is very recommended but won't break things, can be imported anytime.
 
 ## **Extras**
