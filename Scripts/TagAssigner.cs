@@ -21,7 +21,7 @@ public class TagAssigner : UdonSharpBehaviour
     [Space]
     [Header("Send custom event to these behaviors if local user is VIP")]
     [SerializeField] private UdonBehaviour[] programsSuccess;
-    [Header("Name of the custom event")]
+    [Tooltip("Name of the custom event")]
     [SerializeField] private string eventName = "_interact";
     [Space]
     [SerializeField] private bool teleportVipOnJoin = false;
@@ -34,25 +34,20 @@ public class TagAssigner : UdonSharpBehaviour
     [Space]
     [SerializeField] private bool LoadUsersFromURL = false;
     [Tooltip("Character to use to split the string with")]
-    public char SplitStringWithCharacter = ',';
+    [SerializeField] private char SplitStringWithCharacter = ',';
     [Tooltip("Use Pastebin RAW or Gist RAW links !")]
     [SerializeField] private VRCUrl linkToString;
+    [HideInInspector] public string loadedString;
+    [HideInInspector] public string[] strArr;
     private bool empoweredUser = false;
     private float delay = 0.6f;
-    private bool abort;
-    private string loadedString;
-    private string[] strArr;
     private VRCPlayerApi localPlayer;
+
     void Start()
     {
-        if (playerTag == null) //Checks for valid tag
-        {
-            abort = true;
-            SendCustomEventDelayedSeconds(nameof(_sendDebugError), 1f);
-            return;
-        }
+        if (playerTag == null) _sendDebugError(); //Checks for valid tag
         localPlayer = Networking.LocalPlayer;
-#if !UNITY_EDITOR
+#if !UNITY_EDITOR //Just here to remove the warning in editor
         if (Networking.LocalPlayer.isMaster && EmpowerInstanceCreator) //Empowers instance creator if enabled
         {
             localPlayer.SetPlayerTag("rank", playerTag);
@@ -60,11 +55,17 @@ public class TagAssigner : UdonSharpBehaviour
             return;
         }
 #endif
-        for (int i = 0; i < userArray.Length; i++) //Checks user array for matches with local user to empower
+        if(linkToString != null && LoadUsersFromURL) _LoadUrl();
+        if (userArray != null) _checkUserArray(); else _sendDebugError();
+    }
+
+    public void _checkUserArray() //Checks static user array for matches with local user to empower
+    {
+        for (int i = 0; i < userArray.Length; i++)
         {
             if (userArray[i] == localPlayer.displayName || empoweredUser)
             {
-                localPlayer.SetPlayerTag("rank", playerTag);
+                if (playerTag != null) localPlayer.SetPlayerTag("rank", playerTag);
                 if (teleportVipOnJoin)
                 {
                     SendCustomEventDelayedSeconds(nameof(_initTeleport), delay);
@@ -80,7 +81,6 @@ public class TagAssigner : UdonSharpBehaviour
                 }
             }
         }
-        _LoadUrl();
     }
 
     public void _LoadUrl()
@@ -94,11 +94,10 @@ public class TagAssigner : UdonSharpBehaviour
         _updateState();
     }
 
-    public void _updateState() //adds a user to VIPs on calling this function
+    public void _updateState() //adds the local user to VIPs on calling this function
     {
-        if (abort) return;
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
-        localPlayer.SetPlayerTag("rank", playerTag);
+        if (playerTag != null) localPlayer.SetPlayerTag("rank", playerTag);
         foreach (GameObject o in toggleObjectsON)
         {
             o.SetActive(true);
@@ -116,15 +115,15 @@ public class TagAssigner : UdonSharpBehaviour
         }
     }
 
-    public override void OnStringLoadSuccess(IVRCStringDownload result)
+    public override void OnStringLoadSuccess(IVRCStringDownload result) //This will generally only happen a few seconds after Start() happens because of VRChat limitations.
     {
         loadedString += result.Result;
         strArr = loadedString.Split(SplitStringWithCharacter);
         for (int i = 0; i < strArr.Length; i++)
         {
-            if (userArray[i] == localPlayer.displayName || empoweredUser)
+            if (strArr[i] == localPlayer.displayName || empoweredUser)
             {
-                localPlayer.SetPlayerTag("rank", playerTag);
+                if (playerTag != null) localPlayer.SetPlayerTag("rank", playerTag);
                 if (teleportVipOnJoin)
                 {
                     SendCustomEventDelayedSeconds(nameof(_initTeleport), delay);
@@ -141,17 +140,18 @@ public class TagAssigner : UdonSharpBehaviour
             }
         }
     }
+
     public override void OnStringLoadError(IVRCStringDownload result)
     {
-        Debug.LogError("Reava_UwUtils: <color=red> <b>String failed to load</b></color>: " + result.Error + "| Error Code: " + result.ErrorCode + "On: " + gameObject.name, gameObject);
+        Debug.LogError("<b>Reava_UwUtils: <color=red> String failed to load</b></color>: " + result.Error + "| Error Code: " + result.ErrorCode + "On: " + gameObject.name, gameObject);
     }
 
     public void _initTeleport()
     {
-        if (abort) return;
-        if (Networking.IsNetworkSettled)
+        if (Networking.IsNetworkSettled && teleportVipOnJoin)
         {
             Networking.LocalPlayer.TeleportTo(tpLocation.position, tpLocation.rotation);
+            teleportVipOnJoin = false;
         }
         else
         {
@@ -159,5 +159,5 @@ public class TagAssigner : UdonSharpBehaviour
         }
     }
 
-    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid values</b></color> or no User / Tag found. (" + gameObject + ")", gameObject);
+    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid values found.</b></color> (" + gameObject.name + ")", gameObject);
 }
