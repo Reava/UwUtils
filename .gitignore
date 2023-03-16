@@ -30,9 +30,7 @@ _CommonRessources.meta
 OtherPrefabs.meta
 UwUtils.meta
 SlickUI.meta
-*.cs.meta
 .github
-Scripts/*.asset.meta
 FUNDING.yml.meta
 WorldTemplate.meta
 JoinNotifier.meta
@@ -40,10 +38,7 @@ _blank.asset
 _Templates.unity
 _Templates.unity.meta
 Scripts.meta
-KeyPad.meta
-KeyPad/Scripts/UwUtils_Keypad.asset.meta
-KeyPad/Ressources.meta
-KeyPad/Editor.meta
-Scripts/WIPs.meta
-Scripts/WIPs/*.asset.meta
-*.meta
+FadingTP.meta
+SpawnFade.meta
+SmartWhitelist Template.prefab.meta
+Editor.meta
