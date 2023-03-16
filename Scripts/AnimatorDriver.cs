@@ -1,31 +1,34 @@
 ﻿using UdonSharp;
 using UnityEngine;
 
-[AddComponentMenu("UwUtils/AnimatorDriver")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class AnimatorDriver : UdonSharpBehaviour
+namespace UwUtils
 {
-    [SerializeField] private Animator Animator;
-    [SerializeField] private string ParameterName;
-    [SerializeField] private bool defaultValue;
-    private bool abort;
-
-    public void Start()
+    [AddComponentMenu("UwUtils/AnimatorDriver")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class AnimatorDriver : UdonSharpBehaviour
     {
-        if (Animator == null | ParameterName == null)
+        [SerializeField] private Animator Animator;
+        [SerializeField] private string ParameterName;
+        [SerializeField] private bool defaultValue;
+        private bool abort;
+
+        public void Start()
         {
-            abort = true;
-            SendCustomEventDelayedSeconds(nameof(Animator), 1f);
-            return;
+            if (Animator == null | ParameterName == null)
+            {
+                abort = true;
+                SendCustomEventDelayedSeconds(nameof(Animator), 1f);
+                return;
+            }
+            Animator.SetBool(ParameterName, defaultValue);
         }
-        Animator.SetBool(ParameterName, defaultValue);
-    }
 
-    public override void Interact()
-    {
-        if (abort) return;
-        Animator.SetBool(ParameterName, !defaultValue);
-    }
+        public override void Interact()
+        {
+            if (abort) return;
+            Animator.SetBool(ParameterName, !defaultValue);
+        }
 
-    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid references</b></color>, please review <color=orange>Animator reference</color> / <color=orange>Parameter name</color>. (" + gameObject + ")", gameObject);
+        public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid references</b></color>, please review <color=orange>Animator reference</color> / <color=orange>Parameter name</color>. (" + gameObject + ")", gameObject);
+    }
 }

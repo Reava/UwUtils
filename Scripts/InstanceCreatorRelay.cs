@@ -3,23 +3,26 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
-[AddComponentMenu("UwUtils/InstanceCreatorRelay")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class InstanceCreatorRelay : UdonSharpBehaviour
+namespace UwUtils
 {
-    [Header("Name of the event")]
-    [SerializeField] private string eventName = "_interact";
-    [Header("Programs to send a custom event to")]
-    [SerializeField] private UdonBehaviour[] programsList;
-
-    void Start()
+    [AddComponentMenu("UwUtils/InstanceCreatorRelay")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class InstanceCreatorRelay : UdonSharpBehaviour
     {
-        VRCPlayerApi localPlayer = Networking.LocalPlayer;
-        if (Networking.LocalPlayer.isMaster)
+        [Header("Name of the event")]
+        [SerializeField] private string eventName = "_interact";
+        [Header("Programs to send a custom event to")]
+        [SerializeField] private UdonBehaviour[] programsList;
+
+        void Start()
         {
-            foreach (UdonBehaviour b in programsList)
+            VRCPlayerApi localPlayer = Networking.LocalPlayer;
+            if (Networking.LocalPlayer.isMaster)
             {
-                b.SendCustomEvent(eventName);
+                foreach (UdonBehaviour b in programsList)
+                {
+                    b.SendCustomEvent(eventName);
+                }
             }
         }
     }

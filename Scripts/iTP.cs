@@ -2,14 +2,17 @@ using UnityEngine;
 using VRC.SDKBase;
 using UdonSharp;
 
-[AddComponentMenu("UwUtils/iTP")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class iTP : UdonSharpBehaviour
+namespace UwUtils
 {
-    [SerializeField] private Transform targetLocation;
-
-    public override void Interact()
+    [AddComponentMenu("UwUtils/iTP")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class iTP : UdonSharpBehaviour
     {
-        Networking.LocalPlayer.TeleportTo(targetLocation.position, targetLocation.rotation);
+        [SerializeField] private Transform targetLocation;
+
+        public override void Interact()
+        {
+            Networking.LocalPlayer.TeleportTo(targetLocation.position, targetLocation.rotation);
+        }
     }
 }

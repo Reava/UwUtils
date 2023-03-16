@@ -2,78 +2,81 @@ using UdonSharp;
 using UnityEngine;
 using VRC.Udon;
 
-[AddComponentMenu("UwUtils/ActionRelay")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class ActionRelay : UdonSharpBehaviour
+namespace UwUtils
 {
-    [Header("Send an event call to any behavior with conditions and/or delay")]
-    [SerializeField] private UdonBehaviour[] programRelay;
-    [SerializeField] private GameObject stateCheck;
-    private bool stateChecked;
-    [SerializeField] private string eventName = "_interact";
-    [SerializeField] private bool delayedAction;
-    [SerializeField] private float delay;
-    [Header("0 = Keep delay, 1 = No delay when object is off, 2 = No delay when object is on")]
-    [Range(0, 2)]
-    [SerializeField] private int function = 1;
-    private bool abort = false;
+    [AddComponentMenu("UwUtils/ActionRelay")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class ActionRelay : UdonSharpBehaviour
+    {
+        [Header("Send an event call to any behavior with conditions and/or delay")]
+        [SerializeField] private UdonBehaviour[] programRelay;
+        [SerializeField] private GameObject stateCheck;
+        private bool stateChecked;
+        [SerializeField] private string eventName = "_interact";
+        [SerializeField] private bool delayedAction;
+        [SerializeField] private float delay;
+        [Header("0 = Keep delay, 1 = No delay when object is off, 2 = No delay when object is on")]
+        [Range(0, 2)]
+        [SerializeField] private int function = 1;
+        private bool abort = false;
 
-    public void Start()
-    {
-        if (programRelay.Length == null)
+        public void Start()
         {
-            abort = true;
-            SendCustomEventDelayedSeconds(nameof(_sendDebugError), 1f);
-            return;
-        }
-    }
-    public override void Interact()
-    {
-        if (abort) return;
-        stateChecked = stateCheck.activeSelf;
-        if (!delayedAction)
-        {
-            _relayAction();
-        }
-        else
-        {
-            if (function == 0)
+            if (programRelay.Length == null)
             {
-                SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
+                abort = true;
+                SendCustomEventDelayedSeconds(nameof(_sendDebugError), 1f);
+                return;
             }
-            else if (function == 1)
+        }
+        public override void Interact()
+        {
+            if (abort) return;
+            stateChecked = stateCheck.activeSelf;
+            if (!delayedAction)
             {
-                if (stateChecked)
+                _relayAction();
+            }
+            else
+            {
+                if (function == 0)
                 {
                     SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
                 }
-                else
+                else if (function == 1)
                 {
-                    _relayAction();
+                    if (stateChecked)
+                    {
+                        SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
+                    }
+                    else
+                    {
+                        _relayAction();
+                    }
                 }
-            }
-            else if (function == 2)
-            {
-                if (!stateChecked)
+                else if (function == 2)
                 {
-                    SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
-                }
-                else
-                {
-                    _relayAction();
+                    if (!stateChecked)
+                    {
+                        SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
+                    }
+                    else
+                    {
+                        _relayAction();
+                    }
                 }
             }
         }
-    }
 
-    public void _relayAction()
-    {
-        if (abort) return;
-        foreach(UdonBehaviour program in programRelay)
+        public void _relayAction()
         {
-            program.SendCustomEvent(eventName);
+            if (abort) return;
+            foreach (UdonBehaviour program in programRelay)
+            {
+                program.SendCustomEvent(eventName);
+            }
         }
-    }
 
-    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> No Target script found</color>. (" + gameObject + ")", gameObject);
+        public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> No Target script found</color>. (" + gameObject + ")", gameObject);
+    }
 }

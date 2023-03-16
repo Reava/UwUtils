@@ -21,7 +21,7 @@ MonoBehaviour:
   compiledVersion: 2
   behaviourSyncMode: 1
   hasInteractEvent: 1
-  scriptID: -5440236895737904431
+  scriptID: -3674210333520275938
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -134,7 +134,7 @@ MonoBehaviour:
       Data: 8|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: DynamicCallback, Assembly-CSharp
+      Data: UwUtils.DynamicCallback, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 

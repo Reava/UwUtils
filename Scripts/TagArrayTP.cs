@@ -2,34 +2,37 @@ using UnityEngine;
 using VRC.SDKBase;
 using UdonSharp;
 
-[AddComponentMenu("UwUtils/TagArrayTP")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class TagArrayTP : UdonSharpBehaviour
+namespace UwUtils
 {
-    [Header("Tag name array (Tag 1 TPs to Target 1, 2 to 2...)")]
-    [SerializeField] private string[] tagAllowed;
-    [Header("TP Targets (Target1 for Tag1, T2 to T2...)")]
-    [SerializeField] private Transform[] targetLocation;
-    [Header("TP to fallback location when no matching tag ?")]
-    [SerializeField] private bool tpFallbackEnabled;
-    [Header("Fallback Location")]
-    [SerializeField] private Transform targetFallback;
-
-    public override void Interact()
+    [AddComponentMenu("UwUtils/TagArrayTP")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class TagArrayTP : UdonSharpBehaviour
     {
-        if (Networking.LocalPlayer != null && Networking.LocalPlayer.GetPlayerTag("rank") != null)
+        [Header("Tag name array (Tag 1 TPs to Target 1, 2 to 2...)")]
+        [SerializeField] private string[] tagAllowed;
+        [Header("TP Targets (Target1 for Tag1, T2 to T2...)")]
+        [SerializeField] private Transform[] targetLocation;
+        [Header("TP to fallback location when no matching tag ?")]
+        [SerializeField] private bool tpFallbackEnabled;
+        [Header("Fallback Location")]
+        [SerializeField] private Transform targetFallback;
+
+        public override void Interact()
         {
-            for (var i = 0; i < tagAllowed.Length; i++)
+            if (Networking.LocalPlayer != null && Networking.LocalPlayer.GetPlayerTag("rank") != null)
             {
-                if (tagAllowed[i] != Networking.LocalPlayer.GetPlayerTag("rank")) continue;
-                Networking.LocalPlayer.TeleportTo(targetLocation[i].position, targetLocation[i].rotation);
+                for (var i = 0; i < tagAllowed.Length; i++)
+                {
+                    if (tagAllowed[i] != Networking.LocalPlayer.GetPlayerTag("rank")) continue;
+                    Networking.LocalPlayer.TeleportTo(targetLocation[i].position, targetLocation[i].rotation);
+                }
             }
-        }
-        else
-        {
-            if (tpFallbackEnabled)
+            else
             {
-                Networking.LocalPlayer.TeleportTo(targetFallback.position, targetFallback.rotation);
+                if (tpFallbackEnabled)
+                {
+                    Networking.LocalPlayer.TeleportTo(targetFallback.position, targetFallback.rotation);
+                }
             }
         }
     }

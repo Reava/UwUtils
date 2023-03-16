@@ -3,23 +3,28 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class DynamicCallback : UdonSharpBehaviour
+namespace UwUtils
 {
-    [HideInInspector] public UdonSharpBehaviour tscript;
-
-    public override void Interact()
+    [AddComponentMenu("UwUtils/Dynamic Callback")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class DynamicCallback : UdonSharpBehaviour
     {
-        if (tscript != null) tscript.SendCustomEvent("_teleportPlayer");
-    }
+        [HideInInspector] public UdonSharpBehaviour tscript;
+        [SerializeField] private string eventName = "_teleportPlayer";
 
-    public void _sendCallback()
-    {
-        tscript.SendCustomEvent("_teleportPlayer");
-    }
+        public override void Interact()
+        {
+            if (tscript != null) tscript.SendCustomEvent(eventName);
+        }
 
-    public void _selectedOutput(GameObject targetScript)
-    {
-        tscript = targetScript.GetComponent<UdonSharpBehaviour>();
+        public void _sendCallback()
+        {
+            tscript.SendCustomEvent(eventName);
+        }
+
+        public void _selectedOutput(GameObject targetScript)
+        {
+            tscript = targetScript.GetComponent<UdonSharpBehaviour>();
+        }
     }
 }

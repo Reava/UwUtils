@@ -2,51 +2,36 @@
 using UnityEngine;
 using VRC.Udon;
 
-[AddComponentMenu("UwUtils/UdonKeybinds")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class UdonKeybinds : UdonSharpBehaviour
+namespace UwUtils
 {
-    [SerializeField] private bool keybindsEnabled = true;
-    [SerializeField] private UdonBehaviour Action1;
-    [SerializeField] private UdonBehaviour Action2;
-    [SerializeField] private UdonBehaviour Action3;
-    [SerializeField] private UdonBehaviour Action4;
-    [SerializeField] private UdonBehaviour Action5;
-    [SerializeField] private UdonBehaviour Action6;
-    [SerializeField] private string eventName = "_interact";
-
-    void Update()
+    [AddComponentMenu("UwUtils/UdonKeybinds")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class UdonKeybinds : UdonSharpBehaviour
     {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad0))
+        [Space]
+        [Tooltip("Keybind is CTRL + 0 (keypad) to toggle keybind in-game")]
+        [SerializeField] private bool keybindEnabled = true;
+        [SerializeField] private KeyCode keybind = KeyCode.Keypad1;
+        [Space]
+        [SerializeField] private string eventName = "_interact";
+        [Space]
+        [SerializeField] private UdonBehaviour[] TargetBehaviours;
+
+        void Update()
         {
-            // Toggle keybinds
-            keybindsEnabled = !keybindsEnabled;
-        }
-        if (keybindsEnabled)
-        {
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad1))
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad0))
             {
-                Action1.SendCustomEvent(eventName);
+                keybindEnabled = !keybindEnabled;
             }
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad2))
+            if (keybindEnabled)
             {
-                Action2.SendCustomEvent(eventName);
-            }
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad3))
-            {
-                Action3.SendCustomEvent(eventName);
-            }
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad4))
-            {
-                Action4.SendCustomEvent(eventName);
-            }
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad5))
-            {
-                Action5.SendCustomEvent(eventName);
-            }
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad6))
-            {
-                Action6.SendCustomEvent(eventName);
+                if (Input.GetKeyDown(KeyCode.Keypad1))
+                {
+                    foreach(UdonBehaviour t in TargetBehaviours)
+                    {
+                        t.SendCustomEvent(eventName);
+                    }
+                }
             }
         }
     }

@@ -2,15 +2,18 @@ using UnityEngine;
 using UdonSharp;
 using VRC.SDKBase;
 
-[AddComponentMenu("UwUtils/TagSetter")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class TagSetter : UdonSharpBehaviour
+namespace UwUtils
 {
-    [Tooltip("Name of the tag")]
-    [SerializeField] private string playerTag;
-    public override void Interact()
+    [AddComponentMenu("UwUtils/TagSetter")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class TagSetter : UdonSharpBehaviour
     {
-        VRCPlayerApi localPlayer = Networking.LocalPlayer;
-        localPlayer.SetPlayerTag("rank", playerTag);
+        [Tooltip("Name of the tag")]
+        [SerializeField] private string playerTag;
+        public override void Interact()
+        {
+            VRCPlayerApi localPlayer = Networking.LocalPlayer;
+            localPlayer.SetPlayerTag("rank", playerTag);
+        }
     }
 }

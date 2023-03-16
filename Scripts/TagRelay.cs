@@ -3,19 +3,22 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
-[AddComponentMenu("UwUtils/TagRelay")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class TagRelay : UdonSharpBehaviour
+namespace UwUtils
 {
-    [SerializeField] private UdonBehaviour programGranted;
-    [SerializeField] private string tagAuthorized = "Visitor";
-    public override void Interact()
+    [AddComponentMenu("UwUtils/TagRelay")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class TagRelay : UdonSharpBehaviour
     {
-        if (Networking.LocalPlayer != null && Networking.LocalPlayer.GetPlayerTag("rank") != null)
+        [SerializeField] private UdonBehaviour programGranted;
+        [SerializeField] private string tagAuthorized = "Visitor";
+        public override void Interact()
         {
-            if (Networking.LocalPlayer.GetPlayerTag("rank") == tagAuthorized)
+            if (Networking.LocalPlayer != null && Networking.LocalPlayer.GetPlayerTag("rank") != null)
             {
-                programGranted.SendCustomEvent("_updateState");
+                if (Networking.LocalPlayer.GetPlayerTag("rank") == tagAuthorized)
+                {
+                    programGranted.SendCustomEvent("_updateState");
+                }
             }
         }
     }

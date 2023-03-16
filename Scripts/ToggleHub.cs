@@ -5,59 +5,62 @@ using VRC.Udon;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/ToggleHub")]
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class ToggleHub : UdonSharpBehaviour
+    namespace UwUtils
     {
-        [Space]
-        public bool DefaultToggleValue = true;
-        [Space]
-        [SerializeField] private Toggle[] TargetToggles;
-        [Header("Target behaviors to send an event on value change to")]
-        [Space]
-        [SerializeField] private UdonBehaviour[] TargetBehaviorUpdate;
-        [SerializeField] private string eventName;
-        [Space]
-        [SerializeField] private bool enableLogging = true;
-
-        void Start()
+        [AddComponentMenu("UwUtils/ToggleHub")]
+        [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+        public class ToggleHub : UdonSharpBehaviour
         {
-            if (TargetToggles == null) return;
-            foreach (Toggle s in TargetToggles)
-            {
-                if (!s) continue;
-                s.SetIsOnWithoutNotify(DefaultToggleValue);
-            }
-        }
+            [Space]
+            public bool DefaultToggleValue = true;
+            [Space]
+            [SerializeField] private Toggle[] TargetToggles;
+            [Header("Target behaviors to send an event on value change to")]
+            [Space]
+            [SerializeField] private UdonBehaviour[] TargetBehaviorUpdate;
+            [SerializeField] private string eventName;
+            [Space]
+            [SerializeField] private bool enableLogging = true;
 
-        public override void Interact() => _ToggleChange();
-
-        private void _ToggleChange()
-        {
-            if (TargetToggles == null) return;
-            bool found = false;
-            Toggle tempToggle = null;
-            foreach (Toggle s in TargetToggles)
+            void Start()
             {
-                if (!s) continue;
-                if (found) s.SetIsOnWithoutNotify(DefaultToggleValue);
-                if (s.isOn != DefaultToggleValue)
+                if (TargetToggles == null) return;
+                foreach (Toggle s in TargetToggles)
                 {
-                    DefaultToggleValue = s.isOn;
-                    tempToggle = s;
-                    found = true;
+                    if (!s) continue;
+                    s.SetIsOnWithoutNotify(DefaultToggleValue);
                 }
             }
-            foreach (Toggle s in TargetToggles)
+
+            public override void Interact() => _ToggleChange();
+
+            private void _ToggleChange()
             {
-                if (!s) continue;
-                s.SetIsOnWithoutNotify(DefaultToggleValue);
-                if (s == tempToggle) break;
-            }
-            foreach (UdonBehaviour target in TargetBehaviorUpdate)
-            {
-                if (!target) continue;
-                target.SendCustomEvent(eventName);
+                if (TargetToggles == null) return;
+                bool found = false;
+                Toggle tempToggle = null;
+                foreach (Toggle s in TargetToggles)
+                {
+                    if (!s) continue;
+                    if (found) s.SetIsOnWithoutNotify(DefaultToggleValue);
+                    if (s.isOn != DefaultToggleValue)
+                    {
+                        DefaultToggleValue = s.isOn;
+                        tempToggle = s;
+                        found = true;
+                    }
+                }
+                foreach (Toggle s in TargetToggles)
+                {
+                    if (!s) continue;
+                    s.SetIsOnWithoutNotify(DefaultToggleValue);
+                    if (s == tempToggle) break;
+                }
+                foreach (UdonBehaviour target in TargetBehaviorUpdate)
+                {
+                    if (!target) continue;
+                    target.SendCustomEvent(eventName);
+                }
             }
         }
     }

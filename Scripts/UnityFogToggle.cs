@@ -1,18 +1,21 @@
 using UnityEngine;
 using UdonSharp;
 
-[AddComponentMenu("UwUtils/UnityFogToggle")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class UnityFogToggle : UdonSharpBehaviour
+namespace UwUtils
 {
-    [SerializeField] private bool fog_Default = true;
+    [AddComponentMenu("UwUtils/UnityFogToggle")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class UnityFogToggle : UdonSharpBehaviour
+    {
+        [SerializeField] private bool fog_Default = true;
 
-    void Start()
-    {
-        RenderSettings.fog = fog_Default;
-    }
-    public void Interact()
-    {
-        RenderSettings.fog = !RenderSettings.fog; ;
+        void Start()
+        {
+            RenderSettings.fog = fog_Default;
+        }
+        public void Interact()
+        {
+            RenderSettings.fog = !RenderSettings.fog; ;
+        }
     }
 }

@@ -2,36 +2,39 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[AddComponentMenu("UwUtils/SliderArrayDriver")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class SliderArrayDriver : UdonSharpBehaviour
+namespace UwUtils
 {
-    [Space]
-    [Header("Trigger logic on target components?")]
-    [Space]
-    [SerializeField] private bool NotifyTargetComponent = true;
-    [SerializeField] private Slider SourceSlider;
-    [Space]
-    [SerializeField] private Slider[] TargetSliders;
-    [Space]
-    [SerializeField] private bool enableLogging = true;
-
-    public override void Interact()
+    [AddComponentMenu("UwUtils/SliderArrayDriver")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class SliderArrayDriver : UdonSharpBehaviour
     {
-        if (!SourceSlider || TargetSliders == null) return;
-        if (enableLogging) Debug.Log("<b> | Reava_UwUtils: Interact Event received on: < b > " + gameObject.name + ".</b> (NotifyTargetComponent=" + NotifyTargetComponent + ", Target components found: " + TargetSliders.Length + ")", gameObject);
-        if (NotifyTargetComponent)
+        [Space]
+        [Header("Trigger logic on target components?")]
+        [Space]
+        [SerializeField] private bool NotifyTargetComponent = true;
+        [SerializeField] private Slider SourceSlider;
+        [Space]
+        [SerializeField] private Slider[] TargetSliders;
+        [Space]
+        [SerializeField] private bool enableLogging = true;
+
+        public override void Interact()
         {
-            foreach (Slider target in TargetSliders)
+            if (!SourceSlider || TargetSliders == null) return;
+            if (enableLogging) Debug.Log("<b> | Reava_UwUtils: Interact Event received on: < b > " + gameObject.name + ".</b> (NotifyTargetComponent=" + NotifyTargetComponent + ", Target components found: " + TargetSliders.Length + ")", gameObject);
+            if (NotifyTargetComponent)
             {
-                if (target) target.value = SourceSlider.value;
+                foreach (Slider target in TargetSliders)
+                {
+                    if (target) target.value = SourceSlider.value;
+                }
             }
-        }
-        else
-        {
-            foreach (Slider target in TargetSliders)
+            else
             {
-                if (target) target.SetValueWithoutNotify(SourceSlider.value);
+                foreach (Slider target in TargetSliders)
+                {
+                    if (target) target.SetValueWithoutNotify(SourceSlider.value);
+                }
             }
         }
     }

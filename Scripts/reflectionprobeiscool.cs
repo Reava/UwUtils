@@ -1,37 +1,40 @@
 using UdonSharp;
 using UnityEngine;
 
-[AddComponentMenu("UwUtils/Reflectionprobeiscool")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class reflectionprobeiscool : UdonSharpBehaviour
+namespace UwUtils
 {
-    #region References
-
-    [Header("References")]
-
-    #endregion
-    [Range(0, 30)]
-    [SerializeField] private float updateInterval = 1.5f;
-    [SerializeField] private ReflectionProbe reflectionProbeSource;
-    private bool abort;
-
-    public void Start()
+    [AddComponentMenu("UwUtils/Reflectionprobeiscool")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class reflectionprobeiscool : UdonSharpBehaviour
     {
-        if (reflectionProbeSource == null)
+        #region References
+
+        [Header("References")]
+
+        #endregion
+        [Range(0, 30)]
+        [SerializeField] private float updateInterval = 1.5f;
+        [SerializeField] private ReflectionProbe reflectionProbeSource;
+        private bool abort;
+
+        public void Start()
         {
-            abort = true;
-            SendCustomEventDelayedSeconds(nameof(Animator), 1f);
-            return;
+            if (reflectionProbeSource == null)
+            {
+                abort = true;
+                SendCustomEventDelayedSeconds(nameof(Animator), 1f);
+                return;
+            }
+            UpdateReflections();
         }
-        UpdateReflections();
-    }
 
-    public void UpdateReflections()
-    {
-        if (abort) return;
-        reflectionProbeSource.RenderProbe();
-        SendCustomEventDelayedSeconds(nameof(UpdateReflections), updateInterval);
-    }
+        public void UpdateReflections()
+        {
+            if (abort) return;
+            reflectionProbeSource.RenderProbe();
+            SendCustomEventDelayedSeconds(nameof(UpdateReflections), updateInterval);
+        }
 
-    public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid reference</b></color>, please review on: " + gameObject, gameObject);
+        public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid reference</b></color>, please review on: " + gameObject, gameObject);
+    }
 }

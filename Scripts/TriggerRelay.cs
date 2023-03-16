@@ -3,51 +3,54 @@ using VRC.SDKBase;
 using UdonSharp;
 using VRC.Udon;
 
-[AddComponentMenu("UwUtils/TriggerRelay")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class TriggerRelay : UdonSharpBehaviour
+namespace UwUtils
 {
-    [Header("Make your colliders Trigger & on the layer IgnoreRaycast")]
-    [Header("Make sure your colliders are on the same gameObject as this script")]
-    [SerializeField] private string eventNameOnExit = "_interact";
-    [SerializeField] private string eventNameOnEnter = "_interact";
-    //[SerializeField] private Collider[] TriggerColliders;
-    [Header("Event settings")]
-    [SerializeField] private bool onEnter = true;
-    [SerializeField] private bool onExit = false;
-    [SerializeField] private UdonBehaviour[] eventTargets;
-    private bool valid = false;
-
-    void Start()
+    [AddComponentMenu("UwUtils/TriggerRelay")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class TriggerRelay : UdonSharpBehaviour
     {
-        if(eventTargets != null)
-        {
-            valid = true;
-        }
-        else
-        {
-            valid = false;
-            Debug.LogError("[UwUtils/TriggerRelay.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
-        }
-    }
+        [Header("Make your colliders Trigger & on the layer IgnoreRaycast")]
+        [Header("Make sure your colliders are on the same gameObject as this script")]
+        [SerializeField] private string eventNameOnExit = "_interact";
+        [SerializeField] private string eventNameOnEnter = "_interact";
+        //[SerializeField] private Collider[] TriggerColliders;
+        [Header("Event settings")]
+        [SerializeField] private bool onEnter = true;
+        [SerializeField] private bool onExit = false;
+        [SerializeField] private UdonBehaviour[] eventTargets;
+        private bool valid = false;
 
-    public override void OnPlayerTriggerExit(VRCPlayerApi player)
-    {
-        if (valid && onExit)
+        void Start()
         {
-            foreach(UdonBehaviour program in eventTargets)
+            if (eventTargets != null)
             {
-                program.SendCustomEvent(eventNameOnExit);
+                valid = true;
+            }
+            else
+            {
+                valid = false;
+                Debug.LogError("[UwUtils/TriggerRelay.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
             }
         }
-    }
-    public override void OnPlayerTriggerEnter(VRCPlayerApi player)
-    {
-        if (valid && onEnter)
+
+        public override void OnPlayerTriggerExit(VRCPlayerApi player)
         {
-            foreach (UdonBehaviour program in eventTargets)
+            if (valid && onExit)
             {
-                program.SendCustomEvent(eventNameOnEnter);
+                foreach (UdonBehaviour program in eventTargets)
+                {
+                    program.SendCustomEvent(eventNameOnExit);
+                }
+            }
+        }
+        public override void OnPlayerTriggerEnter(VRCPlayerApi player)
+        {
+            if (valid && onEnter)
+            {
+                foreach (UdonBehaviour program in eventTargets)
+                {
+                    program.SendCustomEvent(eventNameOnEnter);
+                }
             }
         }
     }
