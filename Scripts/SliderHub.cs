@@ -27,6 +27,7 @@ namespace UwUtils
             if (TargetSliders == null) return;
             foreach (Slider s in TargetSliders)
             {
+                if (!s) continue;
                 s.SetValueWithoutNotify(DefaultSliderValue);
             }
         }
@@ -40,6 +41,7 @@ namespace UwUtils
             Slider tempSlider = null;
             foreach (Slider s in TargetSliders)
             {
+                if (!s) continue;
                 if (found) s.SetValueWithoutNotify(DefaultSliderValue);
                 if (s.value != DefaultSliderValue)
                 {
@@ -50,6 +52,7 @@ namespace UwUtils
             }
             foreach (Slider s in TargetSliders)
             {
+                if (!s) continue;
                 s.SetValueWithoutNotify(DefaultSliderValue);
                 if (s == tempSlider) break;
             }
