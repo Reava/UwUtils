@@ -1,44 +1,44 @@
 ﻿using UdonSharp;
-using Unity.Collections;
 using UnityEngine;
-using VRC.SDK3.Components;
 
-[AddComponentMenu("UwUtils/iState")]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class iState : UdonSharpBehaviour
+namespace UwUtils
 {
-    [Header("List of objects to invert the state of")]
-    public GameObject[] toggleObjects;
-
-    public override void Interact()
+    [AddComponentMenu("UwUtils/iState")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public class iState : UdonSharpBehaviour
     {
-        foreach (GameObject toggleObject in toggleObjects)
+        [Header("List of objects to invert the state of")]
+        public GameObject[] toggleObjects;
+
+        public override void Interact() => _InvertState();
+
+        public void _Enable()
         {
-            toggleObject.SetActive(!toggleObject.activeSelf);
+            foreach (GameObject toggleObject in toggleObjects)
+            {
+                toggleObject.SetActive(true);
+            }
         }
-    }
 
-    public void _Enable()
-    {
-        foreach (GameObject toggleObject in toggleObjects)
+        public void _Disable()
         {
-            toggleObject.SetActive(true);
+            foreach (GameObject toggleObject in toggleObjects)
+            {
+                toggleObject.SetActive(false);
+            }
         }
-    }
 
-    public void _Disable()
-    {
-        foreach (GameObject toggleObject in toggleObjects)
+        public void _InvertState()
         {
-            toggleObject.SetActive(false);
+            foreach (GameObject toggleObject in toggleObjects)
+            {
+                toggleObject.SetActive(!toggleObject.activeSelf);
+            }
         }
-    }
 
-    public void _InvertState()
-    {
-        foreach (GameObject toggleObject in toggleObjects)
+        public void _controlledChange()
         {
-            toggleObject.SetActive(!toggleObject.activeSelf);
+            _InvertState();
         }
     }
 }
