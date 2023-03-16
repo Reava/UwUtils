@@ -10,18 +10,23 @@ using VRC.Udon.Common.Interfaces;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class RemoteStringToText : UdonSharpBehaviour
 {
+    [Space]
     [SerializeField] public VRCUrl linkToString;
-    [SerializeField] private GameObject Text_Display;
+    [Space]
     [Header("Output to text?")]
     [SerializeField] private bool textOutput = false;
     [SerializeField] private bool usingTMP = false;
     [Header("Is the TMP text GUI or classic ?")]
     [SerializeField] private bool GUI_Text = false;
-    [Header("Output debug logs?")]
+    [SerializeField] private GameObject Text_Display;
+    [Space]
+    [SerializeField] private bool SplitIntoArray = false;
+    [Tooltip("Character to use to split the string with")]
+    [SerializeField] private char SplitStringWithCharacter = ',';
+    [HideInInspector] public string[] strArr;
+    [Space]
+    [Header("Output to logs?")]
     [SerializeField] private bool debugEnabled = true;
-    public bool SplitIntoArray = false;
-    public char t = ',';
-    public string[] strArr;
     private string loadedString;
     private void Start()
     {
@@ -43,7 +48,7 @@ public class RemoteStringToText : UdonSharpBehaviour
         loadedString += result.Result;
         if (SplitIntoArray)
         {
-            strArr = loadedString.Split(t);
+            strArr = loadedString.Split(SplitStringWithCharacter);
         }
         if (textOutput) _printToText();
         if (debugEnabled) Debug.Log("Reava_UwUtils: String successfully loaded: "+ loadedString + "On: " + gameObject.name, gameObject);
