@@ -79,7 +79,7 @@ Controls the post processing weight based on a slider or [Slider Hub](https://gi
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
 
 ## **Tools**
-- **[BakeryEditorAddons**:
+- **[BakeryEditorAddons]**: Originally made by [Karl Kroenen](https://twitter.com/KarlKroenenFFCR), expanded to other fields by myself and included in here.
 Allows scaling any property of any bakery light in group by selecting multiple or their parents then right click > Bakery > scale x. Accepts any basic mathematical operation (ex: *2 or /5 or +5 etc)
 
 ## **Requirements**
