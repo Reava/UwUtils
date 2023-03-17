@@ -4,9 +4,9 @@ using VRC.Udon;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/ActionRelay")]
+    [AddComponentMenu("UwUtils/Event Relay")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class ActionRelay : UdonSharpBehaviour
+    public class EventRelay : UdonSharpBehaviour
     {
         [Header("Send an event call to any behavior with conditions and/or delay")]
         [SerializeField] private UdonBehaviour[] programRelay;
@@ -77,6 +77,6 @@ namespace UwUtils
             }
         }
 
-        public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> No Target script found</color>. (" + gameObject + ")", gameObject);
+        public void _sendDebugError() => Debug.LogError("[Reava_/UwUtils/EventRelay.cs]::<color=red> No Target script found</color>. (" + gameObject + ")", gameObject);
     }
 }

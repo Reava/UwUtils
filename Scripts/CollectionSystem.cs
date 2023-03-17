@@ -23,7 +23,7 @@ namespace UwUtils
 
         void Start()
         {
-            if (outputToText && textFields == null) { outputToText = false; Debug.LogError("<b> | Reava_UwUtils: Ouput to text enabled but no text fields found, disabling feature on " + gameObject.name, gameObject); }
+            if (outputToText && textFields == null) { outputToText = false; Debug.LogError("[Reava_/UwUtils/CollectionSystem.cs]: Ouput to text enabled but no text fields found, disabling feature on " + gameObject.name, gameObject); }
             debugTotalValue = 0;
             if (enableLogging) SendCustomEventDelayedSeconds(nameof(_maxValueDebug), 5f);
         }
@@ -46,9 +46,9 @@ namespace UwUtils
                     if (field.GetComponent<Text>() != null) { field.GetComponent<Text>().text = textPrefix + balance; continue; }
                 }
             }
-            if (enableLogging) Debug.Log("Reava_UwUtils: " + gameObject.name + " received new collectible worth " + CollectibleValue + "! New balance is: " + balance, gameObject);
+            if (enableLogging) Debug.Log("[Reava_/UwUtils/CollectionSystem.cs]: " + gameObject.name + " received new collectible worth " + CollectibleValue + "! New balance is: " + balance, gameObject);
         }
 
-        private void _maxValueDebug() => Debug.Log("Reava_UwUtils: " + gameObject.name + " received total points available: " + debugTotalValue, gameObject);
+        private void _maxValueDebug() => Debug.Log("[Reava_/UwUtils/CollectionSystem.cs]: " + gameObject.name + " received total points available: " + debugTotalValue, gameObject);
     }
 }

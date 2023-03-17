@@ -36,6 +36,6 @@ namespace UwUtils
             AnimatorTarget.SetBool(ParameterName, false);
         }
 
-        private void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> <b>Invalid references</b></color>, please review <color=orange>references</color> on: " + gameObject + ".", gameObject);
+        private void _sendDebugError() => Debug.LogError("[Reava_/UwUtils/FadingTP.cs]:<color=red> <b>Invalid references</b></color>, please review <color=orange>references</color> on: " + gameObject + ".", gameObject);
     }
 }

@@ -99,10 +99,10 @@ namespace UwUtils
             }
         }
 
-        private void _sendDebugError(string errorReported) => Debug.LogError("<color=white><b> | Reava_UwUtils:<color=red> " + errorReported + "</b></color>, please review <color=orange>References <color=white>/</color> Settings</color> on: " + gameObject.name + ".</color>", gameObject);
+        private void _sendDebugError(string errorReported) => Debug.LogError(" <color=white> <b>[Reava_/UwUtils/AdvancedUIToggle.cs]:<color=red> " + errorReported + "</b></color>, please review <color=orange>References <color=white>/</color> Settings</color> on: " + gameObject.name + ".</color>", gameObject);
         private void _disableSelf() 
         {
-            Debug.LogError("<color=white><b> | Reava_UwUtils:<color=red> Disabling behaviour</color> on: " + gameObject.name + ". Check references/Setup.</color>", gameObject);
+            Debug.LogError(" <color=white> <b>[Reava_/UwUtils/AdvancedUIToggle.cs]:<color=red> Disabling behaviour</color> on: " + gameObject.name + ". Check references/Setup.</color>", gameObject);
             UdonBehaviour self = this.gameObject.GetComponent<UdonBehaviour>();
             self.enabled = false;
         }

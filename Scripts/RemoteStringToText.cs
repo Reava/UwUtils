@@ -53,11 +53,11 @@ namespace UwUtils
                 strArr = loadedString.Split(SplitStringWithCharacter);
             }
             if (textOutput) _printToText();
-            if (debugEnabled) Debug.Log("Reava_UwUtils: String successfully loaded: " + loadedString + "On: " + gameObject.name, gameObject);
+            if (debugEnabled) Debug.Log("[Reava_/UwUtils/RemoteStringToText.cs]: String successfully loaded: " + loadedString + "On: " + gameObject.name, gameObject);
         }
         public override void OnStringLoadError(IVRCStringDownload result)
         {
-            Debug.LogError("Reava_UwUtils: String loading failed: " + result.Error + "| Error Code: " + result.ErrorCode + "On: " + gameObject.name, gameObject);
+            Debug.LogError("[Reava_/UwUtils/RemoteStringToText.cs]: String loading failed: " + result.Error + "| Error Code: " + result.ErrorCode + "On: " + gameObject.name, gameObject);
         }
 
         public void _printToText()

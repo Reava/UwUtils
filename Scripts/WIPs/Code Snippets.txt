@@ -14,4 +14,4 @@ userArray = newArray;
 
 ///////////////////////////////
 
-if(enableLogging) Debug.Log("Reava_UwUtils: " + gameObject.name, gameObject);
+if(enableLogging) Debug.Log("[Reava_/UwUtils/.cs]: " + gameObject.name + "", gameObject);

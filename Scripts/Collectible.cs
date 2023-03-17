@@ -17,13 +17,13 @@ namespace UwUtils
         void Start()
         {
             CollectionSystemRef._totalValueDebug(Value);
-            if(enableLogging) Debug.Log("Reava_UwUtils: Collectible initialized for " + Value + " points, ref to " + CollectionSystemRef + ". Collectible is :" + gameObject.name, gameObject);
+            if(enableLogging) Debug.Log("[Reava_/UwUtils/Collectible.cs]: Collectible initialized for " + Value + " points, ref to " + CollectionSystemRef + ". Collectible is :" + gameObject.name, gameObject);
         }
 
         public void Interact()
         {
             CollectionSystemRef._collectValue(Value);
-            if (enableLogging) Debug.Log("Reava_UwUtils: Collectible claimed for "+ Value + " points sent to "+ CollectionSystemRef+" from:" + gameObject.name, gameObject);
+            if (enableLogging) Debug.Log("[Reava_/UwUtils/Collectible.cs]: Collectible claimed for " + Value + " points sent to "+ CollectionSystemRef+" from:" + gameObject.name, gameObject);
         }
     }
 }
