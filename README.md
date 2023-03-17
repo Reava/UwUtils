@@ -10,7 +10,7 @@
 - A lot of my scripts work best when used with other UwUtils scripts, you can do a LOT by combining their efforts!
 - A lot of variables have tooltips you can hover over to get more insight
 - My scripts output proper errors and logs, you can search for "*Reava_/UwUtils/*" in your logs/console to see any issues or find more insight about their behaviour.
-- If you find any issues, need support or think of a script you'd like to see, you can join my **[Discord](https://discord.gg/TxYwUFKbUS)** at the bottom of this page or open an issue on Github!
+- If you find any issues, need support or think of a script you'd like to see, you can join my **[Discord](https://discord.gg/TxYwUFKbUS)** or open an issue on Github!
 
 ## **Script list**
 - **[i TP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iTP.cs)**:
