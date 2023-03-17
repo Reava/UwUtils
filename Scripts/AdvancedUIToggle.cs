@@ -21,7 +21,10 @@ namespace UwUtils
         [SerializeField] bool SwapSpritesColor = false;
         [SerializeField] Sprite spriteOn;
         [SerializeField] Sprite spriteOff;
+        [Tooltip("Sprite target to swap the sprite of if enabled")]
         [SerializeField] Image spriteTarget;
+        [Tooltip("Sprite target to swap the color of if enabled.")]
+        [SerializeField] Image spriteTargetColor;
         [Space]
         [SerializeField] bool SetText = false;
         [SerializeField] bool SetTextColor = false;
