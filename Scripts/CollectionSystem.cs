@@ -23,7 +23,7 @@ namespace UwUtils
 
         void Start()
         {
-            if (outputToText && textFields == null) outputToText = false; Debug.LogError("<b> | Reava_UwUtils: Ouput to text enabled but no text fields found, disabling feature on " + gameObject.name, gameObject);
+            if (outputToText && textFields == null) { outputToText = false; Debug.LogError("<b> | Reava_UwUtils: Ouput to text enabled but no text fields found, disabling feature on " + gameObject.name, gameObject); }
             debugTotalValue = 0;
             if (enableLogging) SendCustomEventDelayedSeconds(nameof(_maxValueDebug), 5f);
         }
@@ -38,12 +38,12 @@ namespace UwUtils
             balance += CollectibleValue;
             if (outputToText)
             {
-                foreach(GameObject field in textFields)
+                foreach (GameObject field in textFields)
                 {
                     if (!field) continue;
-                    if (field.GetComponents(typeof(Text)) != null) field.GetComponent<Text>().text = textPrefix+balance;
-                    if (field.GetComponents(typeof(TextMeshPro)) != null) field.GetComponent<TextMeshPro>().text = textPrefix + balance;
-                    if (field.GetComponents(typeof(TextMeshProUGUI)) != null) field.GetComponent<TextMeshProUGUI>().text = textPrefix + balance;
+                    if (field.GetComponent<TextMeshProUGUI>() != null) { field.GetComponent<TextMeshProUGUI>().text = textPrefix + balance; continue; }
+                    if (field.GetComponent<TextMeshPro>() != null) { field.GetComponent<TextMeshPro>().text = textPrefix + balance; continue; }
+                    if (field.GetComponent<Text>() != null) { field.GetComponent<Text>().text = textPrefix + balance; continue; }
                 }
             }
             if (enableLogging) Debug.Log("Reava_UwUtils: " + gameObject.name + " received new collectible worth " + CollectibleValue + "! New balance is: " + balance, gameObject);
