@@ -1,10 +1,18 @@
-# Reava_'s Udon UwUtils
-I makes Udon stuff...
+# Reava_'s Udon UwUtils Toolkit
+
 You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.
-By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone.
+By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone either for using directly in projects or to grow into new scripts of their own.
 
-**WARNING**: Most of those aren't synced!
+**Info**: There are currently 31 Udon Scripts and 1 Tool in UwUtils! This will continue to expand as I find more ideas.
 
+**Tips**: 
+- You can easily add any of my scripts by simply typing it in the component window instead of adding a Udon behaviour first!
+- A lot of my scripts work best when used with other UwUtils scripts, you can do a LOT by combining their efforts!
+- A lot of variables have tooltips you can hover over to get more insight
+- My scripts output proper errors and logs, you can search for "Reava_/UwUtils/" in your logs/console to see any issues or find more insight about their behaviour.
+- If you find any issues, need support or think of a script you'd like to see, you can join my discord at the bottom of this page or open an issue on Github!
+
+## **Script list**
 - **[i TP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iTP.cs)**:
 Literally just TPs you on interact, that's it.
 - **[i State](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iState.cs)**:
