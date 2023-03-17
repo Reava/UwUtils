@@ -1,3 +1,7 @@
+Code snippets to reuse often/later
+
+///////////////////////////////
+
 string[] newArray = new string[userArray.Length + strArr.Length];
 System.Array.Copy(userArray, newArray, userArray.Length);
 for (int newArrIndex = userArray.Length, strArrIndex = 0
@@ -7,3 +11,7 @@ for (int newArrIndex = userArray.Length, strArrIndex = 0
     newArray[newArrIndex] = strArr[strArrIndex];
 }
 userArray = newArray;
+
+///////////////////////////////
+
+if(enableLogging) Debug.Log("Reava_UwUtils: " + gameObject.name, gameObject);
