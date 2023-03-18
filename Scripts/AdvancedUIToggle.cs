@@ -47,7 +47,8 @@ namespace UwUtils
 
         void Start()
         {
-            if (SwapSprites || SwapSpritesColor && !spriteTarget) { _sendDebugError("No Sprite target found"); SwapSprites = SwapSpritesColor = false; }
+            if (SwapSprites && !spriteTarget) { _sendDebugError("No Sprite target found"); SwapSprites = false; }
+            if (SwapSpritesColor && !spriteTargetColor) { _sendDebugError("No Sprite color target found"); SwapSpritesColor = false; }
             if (SetText || SetTextColor && !textTarget) { _sendDebugError("No text target found"); SetText = SetTextColor = false; }
             if (UseSoundFeedback && !audioFeedbackSource) { _sendDebugError("No Audio Source found"); UseSoundFeedback = false; }
             if (!SwapSprites && !SwapSpritesColor && !SetText && !SetTextColor && !UseSoundFeedback && !toggleSource) { enableLogging = false; _disableSelf(); }
@@ -99,10 +100,10 @@ namespace UwUtils
             }
         }
 
-        private void _sendDebugError(string errorReported) => Debug.LogError(" <color=white> <b>[Reava_/UwUtils/AdvancedUIToggle.cs]:<color=red> " + errorReported + "</b></color>, please review <color=orange>References <color=white>/</color> Settings</color> on: " + gameObject.name + ".</color>", gameObject);
+        private void _sendDebugError(string errorReported) => Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: " + errorReported + ", please review References / Settings on: " + gameObject.name + ".", gameObject);
         private void _disableSelf() 
         {
-            Debug.LogError(" <color=white> <b>[Reava_/UwUtils/AdvancedUIToggle.cs]:<color=red> Disabling behaviour</color> on: " + gameObject.name + ". Check references/Setup.</color>", gameObject);
+            Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: Disabling behaviour on: " + gameObject.name + ". Check references/Setup.", gameObject);
             UdonBehaviour self = this.gameObject.GetComponent<UdonBehaviour>();
             self.enabled = false;
         }
