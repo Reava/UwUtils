@@ -18,7 +18,7 @@ namespace UwUtils
         [Header("Target behaviors to send an event on value change to")]
         [Space]
         [SerializeField] private UdonBehaviour[] TargetBehaviorUpdate;
-        [SerializeField] private string eventName;
+        [SerializeField] private string eventName = "_interact";
         [Space]
         [SerializeField] private bool enableLogging = true;
 

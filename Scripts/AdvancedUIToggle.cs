@@ -12,6 +12,7 @@ namespace UwUtils
     {
         [Header("Advanced UI Toggle")]
         [SerializeField] Toggle toggleSource;
+        [SerializeField] private GameObject[] toggleObjects;
         [Space]
         [Header("Colors to use for Sprite / Text")]
         [SerializeField] Color colorOn = Color.green;
@@ -49,7 +50,8 @@ namespace UwUtils
         {
             if (SwapSprites && !spriteTarget) { _sendDebugError("No Sprite target found"); SwapSprites = false; }
             if (SwapSpritesColor && !spriteTargetColor) { _sendDebugError("No Sprite color target found"); SwapSpritesColor = false; }
-            if (SetText || SetTextColor && !textTarget) { _sendDebugError("No text target found"); SetText = SetTextColor = false; }
+            if (SetText && textTarget == null) { _sendDebugError("No text target found, setting SetText off"); SetText = SetText = false; }
+            if (SetTextColor && textTarget == null) { _sendDebugError("No text target found, setting SetTextColor off"); SetText = SetTextColor = false; }
             if (UseSoundFeedback && !audioFeedbackSource) { _sendDebugError("No Audio Source found"); UseSoundFeedback = false; }
             if (!SwapSprites && !SwapSpritesColor && !SetText && !SetTextColor && !UseSoundFeedback && !toggleSource) { enableLogging = false; _disableSelf(); }
             if (!toggleSource) { _sendDebugError("No Toggle source found, using Udon Events only now"); }
@@ -63,6 +65,11 @@ namespace UwUtils
 
         public override void Interact()
         {
+            foreach(GameObject o in toggleObjects)
+            {
+                if (o == null) continue;
+                o.SetActive(!o);
+            }
             if (toggleSource) { state = toggleSource.isOn; } else { state = !state; }
             if (SwapSprites)
             {
@@ -70,7 +77,7 @@ namespace UwUtils
             }
             if (SwapSpritesColor)
             {
-                if (state) { spriteTarget.color = colorOn; } else { spriteTarget.color = colorOff; }
+                if (state) { spriteTargetColor.color = colorOn; } else { spriteTargetColor.color = colorOff; }
             }
             if (SetText)
             {
