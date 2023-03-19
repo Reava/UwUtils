@@ -68,7 +68,7 @@ namespace UwUtils
             foreach(GameObject o in toggleObjects)
             {
                 if (o == null) continue;
-                o.SetActive(!o);
+                o.SetActive(!o.activeSelf);
             }
             if (toggleSource) { state = toggleSource.isOn; } else { state = !state; }
             if (SwapSprites)

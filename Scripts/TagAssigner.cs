@@ -100,7 +100,7 @@ namespace UwUtils
             {
                 o.SetActive(false);
             }
-            if (programsSuccess[0] != null && !programsSuccess[0].Equals(null))
+            if (programsSuccess != null)
             {
                 foreach (UdonBehaviour b in programsSuccess)
                 {
