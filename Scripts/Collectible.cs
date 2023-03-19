@@ -9,6 +9,7 @@ namespace UwUtils
     public class Collectible : UdonSharpBehaviour
     {
         [Space]
+        [SerializeField] private bool disableSelfOnCollect = true;
         [SerializeField] private CollectionSystem CollectionSystemRef;
         [SerializeField] private int Value = 10;
         [Space]
@@ -24,6 +25,7 @@ namespace UwUtils
         {
             CollectionSystemRef._collectValue(Value);
             if (enableLogging) Debug.Log("[Reava_/UwUtils/Collectible.cs]: Collectible claimed for " + Value + " points sent to "+ CollectionSystemRef+" from:" + gameObject.name, gameObject);
+            if (disableSelfOnCollect) this.gameObject.SetActive(false);
         }
     }
 }
