@@ -101,7 +101,7 @@ MonoBehaviour:
       Data: 6|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: Make your colliders Trigger & on the layer IgnoreRaycast
+      Data: Make your colliders Trigger & on the layer MirrorReflection
     - Name: 
       Entry: 8
       Data: 

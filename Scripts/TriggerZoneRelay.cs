@@ -5,12 +5,12 @@ using VRC.Udon;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/TriggerZone Relay")]
+    [AddComponentMenu("UwUtils/Trigger Zone Relay")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class TriggerZoneRelay : UdonSharpBehaviour
     {
         [Space]
-        [Header("Make your colliders Trigger & on the layer IgnoreRaycast")]
+        [Header("Make your colliders Trigger & on the layer MirrorReflection")]
         [SerializeField] private bool LocalPlayerOnly = true;
         [Space]
         [Header("Make sure your colliders are on the same gameObject as this script")]
