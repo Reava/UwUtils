@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/iState")]
+    [AddComponentMenu("UwUtils/Toggle Array")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class iState : UdonSharpBehaviour
+    public class ToggleArray : UdonSharpBehaviour
     {
         [Header("List of objects to invert the state of")]
         public GameObject[] toggleObjects;
