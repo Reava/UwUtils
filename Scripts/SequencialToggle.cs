@@ -11,11 +11,14 @@ namespace UwUtils
     {
         [Space]
         [Header("Sequencial Toggle, Interact for next, _Toggle to toggle entirely")]
+        [Tooltip("Default object to have on, first in array is 0, -1 to disable all on start")]
+        [SerializeField] private int defaultSelection = 0;
         [SerializeField] GameObject[] Targets;
+        [Tooltip("After cycling through the array, has a time with all objects off")]
+        [SerializeField] private bool OffAfterEachCycle = true;
         [Space]
         [SerializeField] bool enableLogging = true;
 
-        private int arrayLength = 0;
         private int currentToggle = 0;
         private bool systemState = true;
 
@@ -31,18 +34,46 @@ namespace UwUtils
                 if (t == null) continue;
                 t.SetActive(false);
             }
-            Targets[0].SetActive(true);
-            arrayLength = Targets.Length + 1;
+            if(defaultSelection > -1)
+            {
+                Targets[defaultSelection].SetActive(true);
+                currentToggle = 1;
+            }
+            else
+            {
+                currentToggle = 0;
+            }
         }
 
         public override void Interact()
         {
-            currentToggle += 1;
-            for (int i = 0; i < Targets.Length; i++)
+            if (!systemState) return;
+            if (currentToggle >= Targets.Length && OffAfterEachCycle)
             {
-                if (i == currentToggle) Targets[i].SetActive(true);
-                Targets[i].SetActive(false);
+                foreach (GameObject t in Targets)
+                {
+                    if (t == null) continue;
+                    t.SetActive(false);
+                }
+                currentToggle = 0;
+                return;
             }
+            if(currentToggle >= Targets.Length) {
+                currentToggle = 0;
+            }
+            foreach(GameObject t in Targets)
+            {
+                if (t == null) continue;
+                if (systemState && t == Targets[currentToggle])
+                {
+                    t.SetActive(true);
+                }
+                else
+                {
+                    t.SetActive(false);
+                }
+            }
+            currentToggle += 1;
         }
 
         public void _Toggle()
@@ -51,7 +82,30 @@ namespace UwUtils
             foreach (GameObject t in Targets)
             {
                 if (t == null) continue;
-                t.SetActive(systemState);
+                if (systemState && t == Targets[currentToggle-1])
+                {
+                    t.SetActive(true);
+                }
+                else
+                {
+                    t.SetActive(false);
+                }
+            }
+        }
+
+        public void _setCurrentTarget(int Target)
+        {
+            foreach (GameObject t in Targets)
+            {
+                if (t == null) continue;
+                if (systemState && t == Targets[Target])
+                {
+                    t.SetActive(true);
+                }
+                else
+                {
+                    t.SetActive(false);
+                }
             }
         }
     }
