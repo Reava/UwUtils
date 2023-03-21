@@ -36,6 +36,7 @@ namespace UwUtils
 
         private void _SliderChange()
         {
+            if (enableLogging) Debug.Log("[Reava_/UwUtils/SliderHub.cs]: Change detected, updating values from: " + gameObject.name + "", gameObject);
             if (TargetSliders == null) return;
             bool found = false;
             Slider tempSlider = null;

@@ -36,6 +36,7 @@ namespace UwUtils
 
             private void _ToggleChange()
             {
+                if (enableLogging) Debug.Log("[Reava_/UwUtils/ToggleHub.cs]: Change detected, updating values from: " + gameObject.name + "", gameObject);
                 if (TargetToggles == null) return;
                 bool found = false;
                 Toggle tempToggle = null;
