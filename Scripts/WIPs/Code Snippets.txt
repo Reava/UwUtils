@@ -15,3 +15,6 @@ userArray = newArray;
 ///////////////////////////////
 
 if(enableLogging) Debug.Log("[Reava_/UwUtils/.cs]: " + gameObject.name + "", gameObject);
+
+// Crash.
+// ((string)null).ToString();
