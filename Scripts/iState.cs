@@ -8,11 +8,11 @@ namespace UwUtils
     public class iState : UdonSharpBehaviour
     {
         [Header("List of objects to toggle")]
-        [SerializeField] private GameObject[] toggleObjectsON;
+        [SerializeField] private GameObject[] toggleObjects;
         private bool valid = true;
         void Start()
         {
-            if (toggleObjectsON.Length == 0)
+            if (toggleObjects.Length == 0)
             {
                 valid = false;
                 Debug.LogError("[UwUtils/iState.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
@@ -25,7 +25,7 @@ namespace UwUtils
 
         public override void Interact()
         {
-            foreach (GameObject toggleObject in toggleObjectsON)
+            foreach (GameObject toggleObject in toggleObjects)
             {
                 toggleObject.SetActive(!toggleObject.activeSelf);
             }
@@ -33,14 +33,14 @@ namespace UwUtils
 
         public void _EnableAll()
         {
-            foreach (GameObject toggleObject in toggleObjectsON)
+            foreach (GameObject toggleObject in toggleObjects)
             {
                 toggleObject.SetActive(true);
             }
         }
         public void _DisableAll()
         {
-            foreach (GameObject toggleObject in toggleObjectsON)
+            foreach (GameObject toggleObject in toggleObjects)
             {
                 toggleObject.SetActive(false);
             }
@@ -48,7 +48,7 @@ namespace UwUtils
 
         public void _InvertState()
         {
-            foreach (GameObject toggleObject in toggleObjectsON)
+            foreach (GameObject toggleObject in toggleObjects)
             {
                 toggleObject.SetActive(!toggleObject.activeSelf);
             }

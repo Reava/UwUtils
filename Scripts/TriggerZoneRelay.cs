@@ -23,7 +23,7 @@ namespace UwUtils
         [SerializeField] private bool onEnter = true;
         [SerializeField] private bool onExit = false;
         [Space]
-        [SerializeField] private UdonBehaviour[] eventTargets;
+        [SerializeField] private UdonSharpBehaviour[] eventTargets;
         [Space]
         [SerializeField] private bool enableLogging = true;
         private bool valid = false;
@@ -47,7 +47,7 @@ namespace UwUtils
             if (enableLogging) Debug.Log("[Reava_/UwUtils/TriggerZoneRelay.cs]: Player exit " + gameObject.name, gameObject);
             if (valid && onExit)
             {
-                foreach (UdonBehaviour program in eventTargets)
+                foreach (UdonSharpBehaviour program in eventTargets)
                 {
                     program.SendCustomEvent(eventNameOnExit);
                 }
@@ -59,7 +59,7 @@ namespace UwUtils
             if (enableLogging) Debug.Log("[Reava_/UwUtils/TriggerZoneRelay.cs]: Player entered " + gameObject.name, gameObject);
             if (valid && onEnter)
             {
-                foreach (UdonBehaviour program in eventTargets)
+                foreach (UdonSharpBehaviour program in eventTargets)
                 {
                     program.SendCustomEvent(eventNameOnEnter);
                 }
