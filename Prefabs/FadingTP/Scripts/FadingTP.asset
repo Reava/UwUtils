@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: FadingTP
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 253aaddd5fb9fb74f9e7f99dea876f70,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 89ce313df6f359744af788aec0b0ae18,
     type: 2}
   udonAssembly: 
   assemblyError: 

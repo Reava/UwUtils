@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: OnSpawnFade
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: a2b9c67fd871ee341adab3863f1c476d,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 342cec1cb370503459456c6d67a587e4,
     type: 2}
   udonAssembly: 
   assemblyError: 
