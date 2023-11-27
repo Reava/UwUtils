@@ -7,9 +7,9 @@ namespace UwUtils
 {
     namespace UwUtils
     {
-        [AddComponentMenu("UwUtils/ToggleHub")]
+        [AddComponentMenu("UwUtils/Multi UI Toggle Manager")]
         [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-        public class ToggleHub : UdonSharpBehaviour
+        public class MultiUIToggleManager : UdonSharpBehaviour
         {
             [Space]
             public bool DefaultToggleValue = true;
