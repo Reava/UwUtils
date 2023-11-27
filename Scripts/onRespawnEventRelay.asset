@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: onRespawnEventRelay
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: beca94150f9913c4d8e1529ee05d26b3,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: d3dcf2343fc91c44facad12ff8c8223a,
     type: 2}
   udonAssembly: 
   assemblyError: 

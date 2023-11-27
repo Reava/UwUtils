@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: RemoteStringToText
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 4bb43f0541df7694fa320b3cae42c874,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: b3b7f12d7a5384a4ebe953fef7dcfbdd,
     type: 2}
   udonAssembly: 
   assemblyError: 

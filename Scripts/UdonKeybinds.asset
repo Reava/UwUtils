@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: UdonKeybinds
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: cc347800e97b18240a421a2382984590,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 7f4c20db40ffb4f458a1cad3dfaf8cad,
     type: 2}
   udonAssembly: 
   assemblyError: 
