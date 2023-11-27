@@ -13,18 +13,18 @@
 - If you find any issues, need support or think of a script you'd like to see, you can join my **[Discord](https://discord.gg/TxYwUFKbUS)** or open an issue on Github!
 
 ## **Script list**
-- **[i TP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iTP.cs)**:
+- **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/PlayerTeleporter.cs)**:
 Literally just TPs you on interact, that's it.
-- **[i State](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iState.cs)**:
+- **[Objects Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/ObjectsToggle.cs)**:
 Switches the state of an array of GameObjects. Can receive events to either invert the state, toggle all on, or toggle all off. (_InvertState,_Disable,_Enable)
-- **[i State Set](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/iStateSet.cs)**:
+- **[Object State Setter](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/ObjectStateSetter.cs)**:
 On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (Events: _Invert to do the opposite, _Switch to swap all states)
 - **[Tag Assigner](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/TagAssigner.cs)**:
 Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, allows toggling specific objects if user matches. Has a toggle to empower the user if they just created the instance regardless of whitelist matching. Supports adding users on the go and loading a remote string for updating the whitelist without updating the world!
 - **[Tag TP](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/TagTP.cs)**:
 If you got the correct Tag to your name on interact with the behavior, teleports you to the target, if not, teleports you to the second target (or doesn't if empty / disabled)
-- **[reflectionprobeiscool](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/reflectionprobeiscool.cs)**:
-RelfectionProbes are cool! make them real time, scripted and add this script to change the frequency they refresh at !
+- **[ReflectionProbeController](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/ReflectionProbeController.cs)**:
+RelfectionProbes are cool! make them real time, scripted and add this script to change the frequency they refresh at ! Use ToggleLoop() to toggle if it refreshes in a loop or stops until enabled again
 - **[Spinny](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/Spinny.cs)**:
 A script to rotate things on any axis, at any speed, and even at weird update speeds (like 30 degrees but only once a second). You should do that with animators, but this might be useful idk.
 - **[Unity Fog Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/UnityFogToggle.cs)**:
@@ -59,22 +59,22 @@ Sends a custom event of your choice to Udon Behaviors if the local user just cre
 A small prefab that allows you to setup an infinite amount of teleports with Fade In/Out blackout effects! (Can change the fade speed per door, super lightweight)
 - **[Spawn Fade](https://github.com/Reava/ReavaUwUtils/tree/main/SpawnFade)**:
 A small prefab for fading into a world when you join, can toggle to also fade in when respawning! (Toggleable on runtime, can change the fade speed)
-- **[RemoteStringToText](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/RemoteStringToText.cs)**:
+- **[Remote String To Text](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/RemoteStringToText.cs)**:
 Allows loading a remote string from a URL and output to an array, or any type of text field (feel free to use as a code base for your own use!)
 - **[Sequencial Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/.cs)**:
 Toggles a set of objects in sequential order, can send a different event to toggle it completely and keep progress, interact to go through it.
 - **[Advanced UI Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/AdvancedUIToggle.cs)**:
 All the things done around a toggle packed in a single behavior, can be used with a UI button, physical event button or actual UI button to change anything Ui related + sound feedback, all toggleable.
-- **[Collectible](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[Collectible].cs)**:
-WHen interacted with, can send a value to the [Collection System](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[CollectionSystem].cs) to add to the balance of it
-- **[Collection System](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[CollectionSystem].cs)**:
-The brain that receives events from [Collectibles](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[Collectible].cs) and adds up all the values received, can output to mulitple text displays
-- **[Toggle Hub](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[ToggleHub].cs)**:
+- **[Collectible](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/Collectible.cs)**:
+WHen interacted with, can send a value to the [Collection System](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/CollectionSystem.cs) to add to the balance of it
+- **[Collection System](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/CollectionSystem.cs)**:
+The brain that receives events from [Collectibles](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/Collectible.cs) and adds up all the values received, can output to mulitple text displays
+- **[Multi UI Toggle Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MultiUIToggleManager.cs)**:
 Links any number of toggles together and allows any of them to control the rest of them, and update a script when a new value is received
-- **[Slider Hub](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[SliderHub].cs)**:
+- **[Multi UI Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MultiUISliderManager.cs)**:
 Links any number of sliders together and allows any of them to control the rest of them, and update a script when a new value is received
-- **[PostProcessing Controller](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[PostProcessingController].cs)**:
-Controls the post processing weight based on a slider or [Slider Hub](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/[SliderHub].cs)
+- **[PostProcessing Controller](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/PostProcessingController.cs)**:
+Controls the post processing weight based on a slider or [Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MultiUISliderManager.cs) for multiple sliders controlling the same value.
 - **[Instance Time Actions] > NOT READY <**
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
 
