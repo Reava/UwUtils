@@ -7,9 +7,9 @@ using UwUtils;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/SliderHub")]
+    [AddComponentMenu("UwUtils/Multi UI Slider Manager")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class SliderHub : UdonSharpBehaviour
+    public class MultiUISliderManager : UdonSharpBehaviour
     {
         [Space]
         public float DefaultSliderValue = 0.6f;

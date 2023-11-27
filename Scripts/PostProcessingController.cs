@@ -15,7 +15,7 @@ namespace UwUtils
         [SerializeField] private PostProcessVolume[] ControlledVolumes;
         [Space]
         [SerializeField] private bool useSliderHub = true;
-        [SerializeField] private SliderHub SliderHubRef;
+        [SerializeField] private MultiUISliderManager SliderHubRef;
         private float targetFloat;
         [Space]
         [SerializeField] private bool enableLogging = true;

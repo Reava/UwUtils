@@ -269,7 +269,7 @@ MonoBehaviour:
       Data: 18|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: UwUtils.SliderHub, Assembly-CSharp
+      Data: UwUtils.MultiUISliderManager, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
