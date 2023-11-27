@@ -70,9 +70,9 @@ WHen interacted with, can send a value to the [Collection System](https://github
 - **[Collection System](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/CollectionSystem.cs)**:
 The brain that receives events from [Collectibles](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/Collectible.cs) and adds up all the values received, can output to mulitple text displays
 - **[Multi UI Toggle Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MultiUIToggleManager.cs)**:
-Links any number of toggles together and allows any of them to control the rest of them, and update a script when a new value is received
+Links any number of toggles together and allows any of them to control the rest of them, and update a script when a new value is received, allowing to control a single script with multiple toggles for example.
 - **[Multi UI Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MultiUISliderManager.cs)**:
-Links any number of sliders together and allows any of them to control the rest of them, and update a script when a new value is received
+Links any number of sliders together and allows any of them to control the rest of them, and update a script when a new value is received, allowing to control a single thing with multiple sliders.
 - **[PostProcessing Controller](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/PostProcessingController.cs)**:
 Controls the post processing weight based on a slider or [Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MultiUISliderManager.cs) for multiple sliders controlling the same value.
 - **[Instance Time Actions] > NOT READY <**
