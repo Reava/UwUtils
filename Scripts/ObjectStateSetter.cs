@@ -3,9 +3,9 @@ using UdonSharp;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/iStateSet")]
+    [AddComponentMenu("UwUtils/Object State Setter")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class iStateSet : UdonSharpBehaviour
+    public class ObjectStateSetter : UdonSharpBehaviour
     {
         [Header("List of objects to toggle ON")]
         [SerializeField] private GameObject[] toggleObjectsON;
