@@ -4,9 +4,9 @@ using UdonSharp;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/iTP")]
+    [AddComponentMenu("UwUtils/Player Teleporter")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class iTP : UdonSharpBehaviour
+    public class PlayerTeleporter : UdonSharpBehaviour
     {
         [SerializeField] private Transform targetLocation;
 
