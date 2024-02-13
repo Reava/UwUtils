@@ -48,7 +48,7 @@ Assign trigger colliders, and assign an Udon Behavior to send an event to either
 - **[Playercount To Animator](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/PlayercountToAnimator.cs)**:
 Enables driving an Animator's parameter (one parameter per Behavior, multiple Animators at once supported) between two values (Min/Max) depending on the player count in the instance. Can set the player count cap to reach max value.
 - **[Join Bell](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/JoinBell.cs)**:
-Pretty straightforward, just tap in an AudioSource & a clip for Join/Leave and enjoy
+Pretty straightforward, just tap in an AudioSource & a clip for Join/Leave and enjoy (bell sound can be toggled by UI or eventRelay using "_JoinToggle" event)
 - **[Toggle Canvas](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/ToggleCanvas.cs)**:
 Same as iState, but for Canvas components
 - **[MeshRenderer Swapper](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/MeshRendererSwapper.cs)**:
