@@ -48,13 +48,13 @@ namespace UwUtils
 
         void Start()
         {
-            if (SwapSprites && !spriteTarget) { _sendDebugError("No Sprite target found"); SwapSprites = false; }
-            if (SwapSpritesColor && !spriteTargetColor) { _sendDebugError("No Sprite color target found"); SwapSpritesColor = false; }
-            if (SetText && textTarget == null) { _sendDebugError("No text target found, setting SetText off"); SetText = SetText = false; }
-            if (SetTextColor && textTarget == null) { _sendDebugError("No text target found, setting SetTextColor off"); SetText = SetTextColor = false; }
-            if (UseSoundFeedback && !audioFeedbackSource) { _sendDebugError("No Audio Source found"); UseSoundFeedback = false; }
-            if (!SwapSprites && !SwapSpritesColor && !SetText && !SetTextColor && !UseSoundFeedback && !toggleSource) { enableLogging = false; _disableSelf(); }
-            if (!toggleSource) { _sendDebugError("No Toggle source found, using Udon Events only now"); }
+            if (SwapSprites && !spriteTarget) { _sendDebugWarning("No Sprite target found"); SwapSprites = false; }
+            if (SwapSpritesColor && !spriteTargetColor) { _sendDebugWarning("No Sprite color target found"); SwapSpritesColor = false; }
+            if (SetText && textTarget == null) { _sendDebugWarning("No text target found, setting SetText off"); SetText = SetText = false; }
+            if (SetTextColor && textTarget == null) { _sendDebugWarning("No text target found, setting SetTextColor off"); SetText = SetTextColor = false; }
+            if (UseSoundFeedback && !audioFeedbackSource) { _sendDebugError("No Audio Source found but Feedback enabled"); UseSoundFeedback = false; }
+            if (!SwapSprites && !SwapSpritesColor && !SetText && !SetTextColor && !UseSoundFeedback && !toggleSource) { _sendDebugError("No options selected");  enableLogging = false; _disableSelf(); }
+            if (!toggleSource) { _sendDebugError("No Toggle component source found, using Udon Events only now"); }
             if (textTarget)
             {
                 if (textTarget.GetComponent<Text>()) textCompUnity = textTarget.GetComponent<Text>();
@@ -108,6 +108,7 @@ namespace UwUtils
         }
 
         private void _sendDebugError(string errorReported) => Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: " + errorReported + ", please review References / Settings on: " + gameObject.name + ".", gameObject);
+        private void _sendDebugWarning(string errorReported) => Debug.LogWarning("[Reava_/UwUtils/AdvancedUIToggle.cs]: " + errorReported + ", on: " + gameObject.name + ".", gameObject);
         private void _disableSelf() 
         {
             Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: Disabling behaviour on: " + gameObject.name + ". Check references/Setup.", gameObject);
