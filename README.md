@@ -91,7 +91,7 @@ Check updates before reporting issues.
 - **Text Mesh Pro** is very recommended but won't break things, can be imported anytime.
 
 ## **Extras**
-- **UwUtils_AxisGuides**
+- **[UwUtils_AxisGuides](https://github.com/Reava/UwUtils/releases/download/OtherPrefabs/Reava_UwUtils_AxisGuides.unitypackage)**
 A package containing a Blender & Unity Axis model for debugging or display, <1kb texture & 1 Meter scale (bounds)
 
 ## **Links**
