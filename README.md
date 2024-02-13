@@ -12,9 +12,10 @@
 - My scripts output proper errors and logs, you can search for "*Reava_/UwUtils/*" in your logs/console to see any issues or find more insight about their behaviour.
 - If you find any issues, need support or think of a script you'd like to see, you can join my **[Discord](https://discord.gg/TxYwUFKbUS)** or open an issue on Github!
 
+## **Script list**
 <details>
 
-<summary>## **Script list**</summary><br>
+<summary>Expand me!</summary><br>
 
 - **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/PlayerTeleporter.cs)**:
 Literally just TPs you on interact, that's it.
