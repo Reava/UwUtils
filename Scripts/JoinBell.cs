@@ -14,25 +14,21 @@ namespace UwUtils
         [SerializeField] private AudioClip LeaveSound;
         [Header("Defaults")]
         [SerializeField] private bool JoinEnable = true;
-        private int playerCount;
-        private int JoinsCount;
         private bool abort = false;
 
         private void Start()
         {
-            if (JoinSound == null | AudioSource == null | LeaveSound == null)
+            if (AudioSource == null)
             {
+                _sendDebugError("No audio source found, disabling script");
                 abort = true;
-                SendCustomEventDelayedSeconds(nameof(_sendDebugError), 1f);
                 return;
             }
-            playerCount = VRCPlayerApi.GetPlayerCount();
         }
         public override void OnPlayerJoined(VRCPlayerApi player)
         {
             if (abort) return;
-            JoinsCount = JoinsCount + 1;
-            if (JoinSound != null && JoinEnable && JoinsCount > playerCount)
+            if (JoinSound != null && JoinEnable)
             {
                 AudioSource.clip = JoinSound;
                 AudioSource.Play();
@@ -53,6 +49,9 @@ namespace UwUtils
             JoinEnable = !JoinEnable;
         }
 
-        public void _sendDebugError() => Debug.LogError("Reava_UwUtils:<color=red> No Target script found</color>. (" + gameObject + ")", gameObject);
+        public void _sendDebugError(string e)
+        {
+            Debug.LogError("Reava_UwUtils:<color=red> "+e+"</color>. (" + gameObject + ")", gameObject);
+        }
     }
 }
