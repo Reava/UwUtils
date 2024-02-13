@@ -13,6 +13,7 @@
 - If you find any issues, need support or think of a script you'd like to see, you can join my **[Discord](https://discord.gg/TxYwUFKbUS)** or open an issue on Github!
 
 <details>
+
 <summary>## **Script list**</summary><br>
 
 - **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Scripts/PlayerTeleporter.cs)**:
