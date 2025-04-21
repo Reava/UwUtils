@@ -26,6 +26,9 @@ ExportedObj/
 LICENSE.meta
 README.md.meta
 version.txt.meta
+Website.meta
+source.json.meta
+Website/**/*.meta
 Runtime/OtherPrefabs.meta
 SlickUI.meta
 FUNDING.yml.meta
