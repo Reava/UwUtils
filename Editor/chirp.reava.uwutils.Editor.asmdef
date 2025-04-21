@@ -1,0 +1,14 @@
+{
+  "name": "chirp.reava.uwutils.Editor",
+  "references": [
+    "chirp.reava.uwutils"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "autoReferenced": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "defineConstraints": [],
+  "optionalUnityReferences": []
+}
