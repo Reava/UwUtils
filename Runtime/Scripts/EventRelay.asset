@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: EventRelay
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: cafb0742b8a35bc47b08d2718c7c0762,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 8c4c4742dd218884cb748f5983fb60de, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 6dbee25de94331948a81bc25d505ed6b, type: 3}

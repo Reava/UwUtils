@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: Collectible
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: a53d205a437fe3a44a00b773697a8188,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 85de731e3c18cea49b96f5007bb3549d, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 2858f72f1693cf049b9b447fcbf6b1c2, type: 3}
@@ -131,7 +130,7 @@ MonoBehaviour:
       Data: 8|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: UwUtils.CollectionSystem, Assembly-CSharp
+      Data: UwUtils.CollectionSystem, chirp.reava.uwutils
     - Name: 
       Entry: 8
       Data: 

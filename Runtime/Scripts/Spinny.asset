@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: Spinny
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 96512583579ad304491ea5e573f839cb,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 8ec84d1784aed5e49a237e78a1247f4b, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 62df29088eeb23b459b08ffd54c97e90, type: 3}

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: TagRelay
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: d05c28d8121bddf40b8f75014985d6c4,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 89997f96bb06dee4694e87cc2a67850c, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: f141992dca8751d4c811ada6fd0ace45, type: 3}

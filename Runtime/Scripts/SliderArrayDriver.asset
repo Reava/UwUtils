@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: SliderArrayDriver
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 64fad2d5c467cf44c9f189d1c063a442,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: f38d9fc4793ff2240b6168d5f49e89a6, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: f0486e0d22e034344a4fb3aa9c8ec5f9, type: 3}

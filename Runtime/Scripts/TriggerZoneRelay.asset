@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: TriggerZoneRelay
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 019985df37d4b3e4faf4fa5af24d0648,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: ece9b8778a826f343a2b6b7cd51c355e, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 1ae5b8370b5273248adb809aa8c4d279, type: 3}

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: PostProcessingController
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: e033ef5b241c28e4c8b9bfb57dc20ec5,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: be8f2966e0df93e4eacd539df39ca0b3, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 28f1c61dff41e0846a61db2fa6ee60ee, type: 3}
@@ -269,7 +268,7 @@ MonoBehaviour:
       Data: 18|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: UwUtils.MultiUISliderManager, Assembly-CSharp
+      Data: UwUtils.MultiUISliderManager, chirp.reava.uwutils
     - Name: 
       Entry: 8
       Data: 

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: MultiUIToggleManager
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 5780848f5495bd244904504155d64ccb,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 7938fcc2e24c93542a8ac7b66c79c423, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 9f0c9c5663c5574479d00faef04ae06f, type: 3}

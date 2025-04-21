@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: UnityFogToggle
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 63b80129376fe8748bb38c8e91060f27,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 97926c9129944c345b78fd203a397d18, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 876e36216c751cf4c95725a5e4206716, type: 3}

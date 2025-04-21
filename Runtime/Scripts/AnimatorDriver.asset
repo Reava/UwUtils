@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: AnimatorDriver
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 13673973319a18c4ea711d916e769008,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 370597b639083ac45bcd53dff0151253, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: cb3bea81d65955e46b14d6cd04697bcc, type: 3}

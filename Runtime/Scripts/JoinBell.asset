@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: JoinBell
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: c6c2d01131d7c144aa1e4106c1d27a52,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 05ba95bfcd90555479823f7584fc60f2, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 317e0f4f392cdc64faa33ae9d3a215d4, type: 3}

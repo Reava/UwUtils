@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: SequencialToggle
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: f131923769c48e9459d90e1caf04824e,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: da216b0a7c3a5f443bebfdfcdf5050ea, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 1e6b67fc76e809547aa4bd2abc230624, type: 3}

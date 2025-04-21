@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: SceneInitializer
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 44406ce8964da6444b0c2aa55fa3304a,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 78a5b11215c7b9e45a18dc5011e9da3e, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: dbf711e3b9ca4b945ada4e4783a4a988, type: 3}

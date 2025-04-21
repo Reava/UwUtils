@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: ReflectionProbeController
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 350cd12367c07f749bf1cc81d4a1c0f8,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: c5cb8b86c6d3f544cb1c36fd9a405626, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: dbb5378c564228b458973008b63a1f68, type: 3}

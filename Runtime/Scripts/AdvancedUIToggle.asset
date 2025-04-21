@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: AdvancedUIToggle
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 20bd9a67fddf9db4eb0f964a22b40d1f,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 1d90a0cf465336a4db82157e8825edc4, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 43bb09bc9656fd64e9362d12200b5f70, type: 3}

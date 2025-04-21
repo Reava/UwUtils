@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: toggleCanvas
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: e81662ed1d6692349ac549d89ec1dc29,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 31a2a7c01ebfc714fad5da5d3fe3fc0a, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 2cb1f2809e526434ea33c99e0f3d8c23, type: 3}

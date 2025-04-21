@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: PlayercountToAnimator
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 95e129f7aee6d3c40975d1ea93103e67,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 6cefe509e8866684a848f9b2fa74814b, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 478671cb327f7de40aaa2549f0e89dcd, type: 3}
