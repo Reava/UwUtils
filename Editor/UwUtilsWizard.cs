@@ -8,7 +8,7 @@ namespace UwUtils
 	{
 		[Space]
 		[Header("Infos")]
-		public string Github = "https://github.com/Reava/ReavaUwUtils";
+		public string Github = "https://github.com/Reava/UwUtils";
 		public string Twitter = "https://twitter.com/Reava_VR";
 		public string Patreon = "https://www.patreon.com/Reava";
 		public string Discord = "https://discord.gg/TxYwUFKbUS";
