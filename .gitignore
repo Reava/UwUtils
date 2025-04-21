@@ -26,9 +26,7 @@ ExportedObj/
 LICENSE.meta
 README.md.meta
 version.txt.meta
-_CommonRessources.meta
-OtherPrefabs.meta
-UwUtils.meta
+Runtime/OtherPrefabs.meta
 SlickUI.meta
 .github
 FUNDING.yml.meta
@@ -47,3 +45,5 @@ Examples/UI.meta
 Prefabs.meta
 Ressources.meta
 package.json.meta
+Runtime.meta
+Runtime/Prefabs/UI.meta
