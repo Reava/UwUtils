@@ -1,0 +1,21 @@
+{
+  "name": "chirp.reava.uwutils",
+  "displayName": "UwUtils",
+  "version": "1.0.1",
+  "unity" : "2022.3",
+  "description": "A collection of -almost- niche UdonSharp scripts as an (almost) all in one Toolkit for world creators",
+  "dependencies": {},
+  "gitDependencies": {},
+  "vpmDependencies": {
+    "com.vrchat.worlds": ">=3.7.4"
+  },
+  "author": {
+    "name": "Reava_",
+    "email": "reava.vr@gmail.com",
+    "url": "https://github.com/Reava"
+  },
+  "legacyFolders": {
+    "Assets\\Reava_\\UwUtils": ""
+  },
+  "legacyFiles": {}
+}
