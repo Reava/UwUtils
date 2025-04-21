@@ -1,14 +1,18 @@
 {
-  "name": "chirp.reava.uwutils.Editor",
-  "references": [
-    "chirp.reava.uwutils"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "autoReferenced": true,
-  "overrideReferences": false,
-  "precompiledReferences": [],
-  "defineConstraints": [],
-  "optionalUnityReferences": []
+    "name": "chirp.reava.uwutils.Editor",
+    "rootNamespace": "",
+    "references": [
+        "chirp.reava.uwutils",
+        "BakeryEditorAssembly",
+        "BakeryRuntimeAssembly"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
