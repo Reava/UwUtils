@@ -20,8 +20,9 @@
 
 ## 📥 Add it to VCC as a package ! [![AddToVCC](https://github.com/user-attachments/assets/4767cf84-e44b-4595-b818-faa6735d9180)](https://reava.github.io/UwUtils/)
 
+## **Script list**
 <details>
-<Summary> ## **Script list**</summary>
+<Summary>Expand me!</summary>
 - **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
 Literally just TPs you on interact, that's it.
 - **[Objects Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/ObjectsToggle.cs)**:
