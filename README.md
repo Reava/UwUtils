@@ -4,7 +4,6 @@
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
 </div>
-
 # Reava_'s Udon UwUtils Toolkit
 
 *You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.*
@@ -21,7 +20,8 @@
 
 ## 📥 Add it to VCC as a package ! [![AddToVCC](https://github.com/user-attachments/assets/4767cf84-e44b-4595-b818-faa6735d9180)](https://reava.github.io/UwUtils/)
 
-## **Script list**
+<details>
+<Summary> ## **Script list**</summary>
 - **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
 Literally just TPs you on interact, that's it.
 - **[Objects Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/ObjectsToggle.cs)**:
@@ -86,6 +86,7 @@ Links any number of sliders together and allows any of them to control the rest 
 Controls the post processing weight based on a slider or [Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/MultiUISliderManager.cs) for multiple sliders controlling the same value.
 - **[Instance Time Actions] > NOT READY <**
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
+</details>
 
 ## **Requirements**
 Check updates before reporting issues.
