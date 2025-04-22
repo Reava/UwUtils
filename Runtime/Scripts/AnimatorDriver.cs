@@ -59,6 +59,6 @@ namespace UwUtils
             }
         }
 
-        public void _sendDebugError() => Debug.LogError("[UwUtils/AnimatorDriver.cs] Invalid references, please review Animator reference / Parameter name on: '" + gameObject + "'", gameObject);
+        public void _sendDebugError() => Debug.LogError("[Reava/UwUtils/AnimatorDriver.cs] Invalid references, please review Animator reference / Parameter name on: '" + gameObject + "'", gameObject);
     }
 }
