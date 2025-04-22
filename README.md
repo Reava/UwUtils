@@ -5,14 +5,15 @@
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
 </div>
 
-# Reava_'s Udon UwUtils Toolkit
+# 🧰 Reava_'s Udon UwUtils Toolkit
 
 *You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.*
+*This Toolkit is made to use simple scripts in unison to create more in specific behaviors rather than highly specific or overengineered scripts!*
 *By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone either for using directly in projects or to grow into new scripts of their own.*
 
-**Info**: There are currently 31 Udon Scripts and 1 Tool in UwUtils! This will continue to expand as I find more ideas.
+**Info**: There are currently 31 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
 
-## **Tips**: 
+## ℹ️ **Tips**: 
 - You can easily add any of my scripts by simply typing it in the component window instead of adding a Udon behaviour first!
 - A lot of my scripts work best when used with other UwUtils scripts, you can do a LOT by combining their efforts!
 - A lot of variables have tooltips you can hover over to get more insight
@@ -21,7 +22,7 @@
 
 ## 📥 Add it to VCC as a package ! [![AddToVCC](https://github.com/user-attachments/assets/4767cf84-e44b-4595-b818-faa6735d9180)](https://reava.github.io/UwUtils/)
 
-## **Script list**
+## 📋 **Script list**
 <details>
 <Summary>Expand me!</summary>
 - **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
@@ -90,14 +91,14 @@ Controls the post processing weight based on a slider or [Slider Manager](https:
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
 </details>
 
-## **Requirements**
+## ⚠️ **Requirements**
 Check updates before reporting issues.
 
 - **[Unity](https://docs.vrchat.com/docs/current-unity-version)** (Tested: v2022.3.22f1)
 - **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v3.8.0)
 - **Text Mesh Pro** is used by some scripts and generally used widely, import it.
 
-## **Links**
+## 🔗 **Links**
 Get support & support me here:
 - https://discord.gg/TxYwUFKbUS
 - https://patreon.com/Reava
