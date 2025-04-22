@@ -40,7 +40,6 @@ namespace UwUtils
             if (!typeIsInteger)
             {
                 SendCustomEventDelayedSeconds(nameof(_UpdateFloat), 1.5f);
-
             }
             else
             {
@@ -78,7 +77,7 @@ namespace UwUtils
 
         public override void OnPlayerJoined(VRCPlayerApi player)
         {
-            if (abort | cooldown) return;
+            if (abort || cooldown) return;
             cooldown = true;
             SendCustomEventDelayedSeconds(nameof(_CooldownRemover), 1);
             if (!typeIsInteger)
@@ -94,7 +93,7 @@ namespace UwUtils
 
         public override void OnPlayerLeft(VRCPlayerApi player)
         {
-            if (abort | cooldown) return;
+            if (abort || cooldown) return;
             cooldown = true;
             SendCustomEventDelayedSeconds(nameof(_CooldownRemover), 1);
             if (!typeIsInteger)
