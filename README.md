@@ -4,6 +4,7 @@
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
 </div>
+
 # Reava_'s Udon UwUtils Toolkit
 
 *You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.*
@@ -11,7 +12,7 @@
 
 **Info**: There are currently 31 Udon Scripts and 1 Tool in UwUtils! This will continue to expand as I find more ideas.
 
-**Tips**: 
+## **Tips**: 
 - You can easily add any of my scripts by simply typing it in the component window instead of adding a Udon behaviour first!
 - A lot of my scripts work best when used with other UwUtils scripts, you can do a LOT by combining their efforts!
 - A lot of variables have tooltips you can hover over to get more insight
