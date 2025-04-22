@@ -1,3 +1,10 @@
+
+<div align=left>
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/reava/UwUtils/release.yml?style=for-the-badge">
+  <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
+  <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
+</div>
+
 # Reava_'s Udon UwUtils Toolkit
 
 *You'll find all sorts of niche scripts made in U# by myself for different projects, revisited & cleaned for everyone's use.*
@@ -11,6 +18,8 @@
 - A lot of variables have tooltips you can hover over to get more insight
 - My scripts output proper errors and logs, you can search for "*Reava_/UwUtils/*" in your logs/console to see any issues or find more insight about their behaviour.
 - If you find any issues, need support or think of a script you'd like to see, you can join my **[Discord](https://discord.gg/TxYwUFKbUS)** or open an issue on Github!
+
+## 📥 Add it to VCC as a package ! [![AddToVCC](https://github.com/user-attachments/assets/4767cf84-e44b-4595-b818-faa6735d9180)](https://reava.github.io/UwUtils/)
 
 ## **Script list**
 - **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
@@ -78,20 +87,12 @@ Controls the post processing weight based on a slider or [Slider Manager](https:
 - **[Instance Time Actions] > NOT READY <**
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
 
-## **Tools**
-- **[BakeryEditorAddons]**: Originally made by [Karl Kroenen](https://twitter.com/KarlKroenenFFCR), expanded to other fields by myself and included in here.
-Allows scaling any property of any bakery light in group by selecting multiple or their parents then right click > Bakery > scale x. Accepts any basic mathematical operation (ex: *2 or /5 or +5 etc)
-
 ## **Requirements**
 Check updates before reporting issues.
 
 - **[Unity](https://docs.vrchat.com/docs/current-unity-version)** (Tested: v2022.3.22f1)
 - **[VRChat Worlds SDK3](https://vrchat.com/home/download)** (Tested: v3.8.0)
-- **Text Mesh Pro** is very recommended but won't break things, can be imported anytime.
-
-## **Extras**
-- **UwUtils_AxisGuides**
-A package containing a Blender & Unity Axis model for debugging or display, <1kb texture & 1 Meter scale (bounds)
+- **Text Mesh Pro** is used by some scripts and generally used widely, import it.
 
 ## **Links**
 Get support & support me here:
