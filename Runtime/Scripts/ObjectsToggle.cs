@@ -24,7 +24,7 @@ namespace UwUtils
             if (toggleObjects.Length == 0 || toggleObjects == null)
             {
                 valid = false;
-                Debug.LogError("[UwUtils/iState.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
+                Debug.LogError("[Reava/UwUtils/iState.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
             }
             else
             {
@@ -34,28 +34,24 @@ namespace UwUtils
 
         public override void Interact()
         {
-            if (valid)
+            if (!valid) return;
+            foreach (GameObject toggleObject in toggleObjects)
             {
-                foreach (GameObject toggleObject in toggleObjects)
-                {
-                    if (toggleObject) toggleObject.SetActive(!toggleObject.activeSelf);
-                }
-                isDefault = !isDefault;
-                if (saveState) PlayerData.SetBool(persistenceParameter, isDefault);
+                if (toggleObject) toggleObject.SetActive(!toggleObject.activeSelf);
             }
+            isDefault = !isDefault;
+            if (saveState) PlayerData.SetBool(persistenceParameter, isDefault);
         }
 
         public void _Toggle()
         {
-            if (valid)
+            if (!valid) return;
+            foreach (GameObject toggleObject in toggleObjects)
             {
-                foreach (GameObject toggleObject in toggleObjects)
-                {
-                    if (toggleObject) toggleObject.SetActive(!toggleObject.activeSelf);
-                }
-                isDefault = !isDefault;
-                if (saveState) PlayerData.SetBool(persistenceParameter, isDefault);
+                if (toggleObject) toggleObject.SetActive(!toggleObject.activeSelf);
             }
+            isDefault = !isDefault;
+            if (saveState) PlayerData.SetBool(persistenceParameter, isDefault);
         }
 
         public override void OnPlayerRestored(VRCPlayerApi player)
