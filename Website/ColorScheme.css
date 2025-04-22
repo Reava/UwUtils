@@ -1,0 +1,163 @@
+/* REMOVE THE COMMENTS ON ANY THEME SECTION TO CUSTOMIZE THE COLORS OF THE "ADD TO VCC" BUTTONS, THEN DELETE THE OTHERS */
+
+/* PURPLE THEME */
+
+#vccAddRepoButton{
+  --accent-fill-rest: #a369f7;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #ba83ff;
+  --accent-fill-active: #ce9eff;
+  --accent-fill-focus: #ce9eff;
+  --accent-stroke-control-rest: #a369f7;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #ba83ff;
+  --accent-stroke-control-focus: #ba83ff;
+}
+
+.rowAddToVccButton{
+  --accent-fill-rest: #a369f7;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #ba83ff;
+  --accent-fill-active: #ce9eff;
+  --accent-fill-focus: #ce9eff;
+  --accent-stroke-control-rest: #a369f7;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #ba83ff;
+  --accent-stroke-control-focus: #ba83ff;
+}
+
+
+/* GREEN THEME */
+/*
+#vccAddRepoButton{
+  --accent-fill-rest: #4CAF50;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #66bb6a;
+  --accent-fill-active: #81c784;
+  --accent-fill-focus: #81c784;
+  --accent-stroke-control-rest: #4CAF50;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #66bb6a;
+  --accent-stroke-control-focus: #66bb6a;
+}
+
+.rowAddToVccButton{
+  --accent-fill-rest: #4CAF50;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #66bb6a;
+  --accent-fill-active: #81c784;
+  --accent-fill-focus: #81c784;
+  --accent-stroke-control-rest: #4CAF50;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #66bb6a;
+  --accent-stroke-control-focus: #66bb6a;
+}
+*/
+
+/* BLUE THEME */
+/*
+#vccAddRepoButton{
+  --accent-fill-rest: #4285f4;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #5c9df8;
+  --accent-fill-active: #82b2fb;
+  --accent-fill-focus: #82b2fb;
+  --accent-stroke-control-rest: #4285f4;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #5c9df8;
+  --accent-stroke-control-focus: #5c9df8;
+}
+
+.rowAddToVccButton{
+  --accent-fill-rest: #4285f4;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #5c9df8;
+  --accent-fill-active: #82b2fb;
+  --accent-fill-focus: #82b2fb;
+  --accent-stroke-control-rest: #4285f4;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #5c9df8;
+  --accent-stroke-control-focus: #5c9df8;
+}
+*/
+
+/* PINK THEME */
+/*
+#vccAddRepoButton {
+  --accent-fill-rest: #ec4899;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #f472b6;
+  --accent-fill-active: #f9a8d4;
+  --accent-fill-focus: #f9a8d4;
+  --accent-stroke-control-rest: #ec4899;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #f472b6;
+  --accent-stroke-control-focus: #f472b6;
+}
+
+.rowAddToVccButton {
+  --accent-fill-rest: #ec4899;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #f472b6;
+  --accent-fill-active: #f9a8d4;
+  --accent-fill-focus: #f9a8d4;
+  --accent-stroke-control-rest: #ec4899;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #f472b6;
+  --accent-stroke-control-focus: #f472b6;
+}
+*/
+
+/* ORANGE THEME */
+/*
+#vccAddRepoButton {
+  --accent-fill-rest: #fb923c;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #fdba74;
+  --accent-fill-active: #fed7aa;
+  --accent-fill-focus: #fed7aa;
+  --accent-stroke-control-rest: #fb923c;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #fdba74;
+  --accent-stroke-control-focus: #fdba74;
+}
+
+.rowAddToVccButton {
+  --accent-fill-rest: #fb923c;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #fdba74;
+  --accent-fill-active: #fed7aa;
+  --accent-fill-focus: #fed7aa;
+  --accent-stroke-control-rest: #fb923c;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #fdba74;
+  --accent-stroke-control-focus: #fdba74;
+}
+*/
+
+/* RED THEME */
+/*
+#vccAddRepoButton {
+  --accent-fill-rest: #ef4444;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #f87171;
+  --accent-fill-active: #fca5a5;
+  --accent-fill-focus: #fca5a5;
+  --accent-stroke-control-rest: #ef4444;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #f87171;
+  --accent-stroke-control-focus: #f87171;
+}
+
+.rowAddToVccButton {
+  --accent-fill-rest: #ef4444;
+  --accent-border: #ffffff;
+  --accent-fill-hover: #f87171;
+  --accent-fill-active: #fca5a5;
+  --accent-fill-focus: #fca5a5;
+  --accent-stroke-control-rest: #ef4444;
+  --accent-stroke-control-hover: #ffffff;
+  --accent-stroke-control-active: #f87171;
+  --accent-stroke-control-focus: #f87171;
+}
+*/
