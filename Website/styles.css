@@ -6,6 +6,30 @@
   box-sizing: border-box;
 }
 
+#vccAddRepoButton{
+	--accent-fill-rest: #a369f7 !important;
+    --accent-border: #ffffff !important;
+    --accent-fill-hover: #ba83ff !important;
+    --accent-fill-active: #ce9eff !important;
+    --accent-fill-focus: #ce9eff !important;
+    --accent-stroke-control-rest: #a369f7 !important;
+    --accent-stroke-control-hover: #ffffff !important;
+    --accent-stroke-control-active: #ba83ff !important;
+    --accent-stroke-control-focus: #ba83ff !important;
+}
+
+.rowAddToVccButton{
+	--accent-fill-rest: #a369f7 !important;
+    --accent-border: #ffffff !important;
+    --accent-fill-hover: #ba83ff !important;
+    --accent-fill-active: #ce9eff !important;
+    --accent-fill-focus: #ce9eff !important;
+    --accent-stroke-control-rest: #a369f7 !important;
+    --accent-stroke-control-hover: #ffffff !important;
+    --accent-stroke-control-active: #ba83ff !important;
+    --accent-stroke-control-focus: #ba83ff !important;
+}
+
 body {
   padding: 0;
   margin: 0;
