@@ -1,7 +1,7 @@
 
 <div align=left>
   <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/reava/UwUtils/release.yml?style=for-the-badge">
-  <img alt="GitHub" src="https://img.shields.io/github/license/eava/UwUtils?color=blue&style=for-the-badge">
+  <img alt="GitHub" src="https://img.shields.io/github/license/Reava/UwUtils?color=blue&style=for-the-badge">
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
 </div>
