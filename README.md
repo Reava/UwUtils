@@ -1,10 +1,10 @@
 
 <div align=left>
+  <a href="https://reava.github.io/UwUtils/"><img alt="Add to VCC" src="https://github.com/user-attachments/assets/33d583a7-4f7f-426a-901a-1581bd98001e"></a>
   <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/reava/UwUtils/release.yml?style=for-the-badge">
   <img alt="GitHub" src="https://img.shields.io/github/license/Reava/UwUtils?color=blue&style=for-the-badge">
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
-  <a href="https://reava.github.io/UwUtils/"><img alt="Add to VCC" src="https://github.com/user-attachments/assets/33d583a7-4f7f-426a-901a-1581bd98001e"></a>
 </div>
 
 # 🧰 Reava_'s Udon UwUtils Toolkit
@@ -22,7 +22,7 @@
 - My scripts output proper errors and logs, you can search for "*Reava_/UwUtils/*" in your logs/console to see any issues or find more insight about their behaviour.
 - If you find any issues, need support or think of a script you'd like to see, you can join my **[Discord](https://discord.gg/TxYwUFKbUS)** or open an issue on Github!
 
-## 📥 Add it to VCC as a package ! [![AddToVCC](https://github.com/user-attachments/assets/33d583a7-4f7f-426a-901a-1581bd98001e)](https://reava.github.io/UwUtils/)
+## 📥 <a href="https://reava.github.io/UwUtils/">Add it to VCC as a package !</a>
 
 ## 📋 **Script list**
 <details>
