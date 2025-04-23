@@ -4,6 +4,7 @@
   <img alt="GitHub" src="https://img.shields.io/github/license/Reava/UwUtils?color=blue&style=for-the-badge">
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
   <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
+  <a href="https://reava.github.io/UwUtils/"><img alt="Add to VCC" src="https://github.com/user-attachments/assets/4767cf84-e44b-4595-b818-faa6735d9180"></a>
 </div>
 
 # 🧰 Reava_'s Udon UwUtils Toolkit
