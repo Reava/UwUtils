@@ -24,7 +24,7 @@ namespace UwUtils
             if (toggleObjects.Length == 0 || toggleObjects == null)
             {
                 valid = false;
-                Debug.LogError("[Reava/UwUtils/iState.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
+                Debug.LogError("[Reava/UwUtils/ObjectsToggle.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
             }
             else
             {

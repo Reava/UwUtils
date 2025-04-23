@@ -160,8 +160,8 @@ MonoBehaviour:
       Data: 10|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: Save state with persistence? Warning, this will NOT save exact states,
-        read more by hovering.
+      Data: Use Persistence? Warning, this will NOT save exact states, read more
+        by hovering.
     - Name: 
       Entry: 8
       Data: 
@@ -172,8 +172,8 @@ MonoBehaviour:
       Entry: 1
       Data: If you have another toggle than this one setting the state of one of
         the objects differently, this will NOT know it and won't restore it properly
-        when rejoining. For accuracy, only use one toggle per object, and separate
-        anything that needs to be saved differently from the rest of the group.
+        when rejoining. For accuracy, only use one toggle per object/group, and separate
+        anything that needs to be saved independantly from the rest of the group.
     - Name: 
       Entry: 8
       Data: 
