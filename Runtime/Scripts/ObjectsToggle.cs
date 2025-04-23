@@ -34,21 +34,15 @@ namespace UwUtils
 
         public override void Interact()
         {
-            if (!valid) return;
-            foreach (GameObject toggleObject in toggleObjects)
-            {
-                if (toggleObject) toggleObject.SetActive(!toggleObject.activeSelf);
-            }
-            isDefault = !isDefault;
-            if (saveState) PlayerData.SetBool(persistenceParameter, isDefault);
+            _Toggle();
         }
 
         public void _Toggle()
         {
             if (!valid) return;
-            foreach (GameObject toggleObject in toggleObjects)
+            foreach (GameObject o in toggleObjects)
             {
-                if (toggleObject) toggleObject.SetActive(!toggleObject.activeSelf);
+                if (o) o.SetActive(!o.activeSelf);
             }
             isDefault = !isDefault;
             if (saveState) PlayerData.SetBool(persistenceParameter, isDefault);
@@ -63,6 +57,7 @@ namespace UwUtils
                 if (PlayerData.GetType(player, persistenceParameter) != typeof(bool)) return;
 
                 bool recoveredState = PlayerData.GetBool(player, persistenceParameter);
+                // Since we don't know the exact state of GameObjects in the array, we just toggle if it's stored differently from the default the world starts in, that's it.
                 if (!recoveredState) _Toggle();
             }
         }
