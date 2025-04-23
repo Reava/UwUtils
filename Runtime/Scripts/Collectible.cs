@@ -33,7 +33,7 @@ namespace UwUtils
         [Header("Per collectible debug settings"),Tooltip("If logging is disable, no support will be given.")]
         [SerializeField] private bool enableLogging = true;
         [SerializeField] private bool StartupLogging = false;
-        private bool collected = false;
+        [HideInInspector] public bool collected = false;
 
         void Start()
         {
@@ -94,7 +94,7 @@ namespace UwUtils
 
         public void _debugLog(string reason)
         {
-            if (enableLogging) Debug.Log("[Reava_/UwUtils/Collectible.cs]: Collectible " + reason + ", Value: " + Value + ", Peristent: " + persistent + " | Sent to " + CollectionSystemRef + " from:" + gameObject.name, gameObject);
+            if (enableLogging) Debug.Log("[Reava_/UwUtils/Collectible.cs]: Collectible " + reason + ", Value: " + Value /*+ ", Peristent: " + persistent*/ + " | Sent to " + CollectionSystemRef + " from:" + gameObject.name, gameObject);
         }
     }
 }
