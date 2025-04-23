@@ -15,7 +15,7 @@ namespace UwUtils
         [Header("Save state with persistence?")]
         [SerializeField] private bool saveState = false;
         [Header("Use a unique Parameter per toggle!")]
-        [SerializeField] private string persistenceParameter = "toggle_example";
+        [SerializeField] private string persistenceParameter = "animator_toggle_example";
         private bool abort;
 
         public void Start()
@@ -32,10 +32,7 @@ namespace UwUtils
 
         public override void Interact()
         {
-            if (abort) return;
-            defaultValue = !defaultValue;
-            Animator.SetBool(ParameterName, defaultValue);
-            if (saveState) PlayerData.SetBool(persistenceParameter, defaultValue);
+            _Toggle();
         }
 
         public void _Toggle()
@@ -55,7 +52,8 @@ namespace UwUtils
                 if (PlayerData.GetType(player, persistenceParameter) != typeof(bool)) return;
 
                 bool recoveredState = PlayerData.GetBool(player, persistenceParameter);
-                if (!recoveredState) _Toggle();
+                Animator.SetBool(ParameterName, recoveredState);
+                defaultValue = recoveredState;
             }
         }
 
