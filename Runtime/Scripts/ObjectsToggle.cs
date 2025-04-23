@@ -12,8 +12,8 @@ namespace UwUtils
     {
         [Header("List of objects to toggle")]
         [SerializeField] private GameObject[] toggleObjects;
-        [Header("Save state with persistence? Warning, this will NOT save exact states, read more by hovering.")]
-        [Tooltip("If you have another toggle than this one setting the state of one of the objects differently, this will NOT know it and won't restore it properly when rejoining. For accuracy, only use one toggle per object, and separate anything that needs to be saved differently from the rest of the group.")]
+        [Header("Use Persistence? Warning, this will NOT save exact states, read more by hovering.")]
+        [Tooltip("If you have another toggle than this one setting the state of one of the objects differently, this will NOT know it and won't restore it properly when rejoining. For accuracy, only use one toggle per object/group, and separate anything that needs to be saved independantly from the rest of the group.")]
         [SerializeField] private bool saveState = false;
         [Header("Use a unique Parameter per toggle!")]
         [SerializeField] private string persistenceParameter = "toggle_example";
