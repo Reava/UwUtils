@@ -24,9 +24,10 @@
 
 ## 📥 <a href="https://reava.github.io/UwUtils/">Add it to VCC as a package !</a>
 
-## 📋 **Script list**
+## 📋 **Script list & Descriptions**
 <details>
 <Summary>Expand me!</summary>
+
 - **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
 Literally just TPs you on interact, that's it.
 - **[Objects Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/ObjectsToggle.cs)**:
@@ -91,6 +92,7 @@ Links any number of sliders together and allows any of them to control the rest 
 Controls the post processing weight based on a slider or [Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/MultiUISliderManager.cs) for multiple sliders controlling the same value.
 - **[Instance Time Actions] > NOT READY <**
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
+
 </details>
 
 ## ⚠️ **Requirements**
