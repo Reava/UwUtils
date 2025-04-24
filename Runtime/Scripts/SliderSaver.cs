@@ -13,10 +13,22 @@ namespace UwUtils
         [SerializeField] private Slider _Slider;
         [Header("Persistence key must be unique per world.")]
         [SerializeField] private string persistenceKey = "slider_example";
+        private float defaultValue = 0f;
+
+        void Start()
+        {
+            if (_Slider) defaultValue = _Slider.value;
+        }
 
         public override void Interact()
         {
             PlayerData.SetFloat(persistenceKey, _Slider.value);
+        }
+
+        public void _resetValue()
+        {
+            PlayerData.SetFloat(persistenceKey, defaultValue);
+            _Slider.value = defaultValue;
         }
 
         public override void OnPlayerDataUpdated(VRCPlayerApi player, PlayerData.Info[] infos)
