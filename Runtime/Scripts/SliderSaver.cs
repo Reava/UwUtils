@@ -5,23 +5,27 @@ using UnityEngine.UI;
 using VRC.SDK3.Persistence;
 using VRC.SDKBase;
 
-public class SliderSaver : UdonSharpBehaviour
+namespace UwUtils
 {
-    [SerializeField] private Slider _Slider;
-    [Header("Persistence key must be unique per world.")]
-    [SerializeField] private string persistenceKey = "slider_example";
-
-    public override void Interact()
+    [AddComponentMenu("UwUtils/Slider Saver")]
+    public class SliderSaver : UdonSharpBehaviour
     {
-        PlayerData.SetFloat(persistenceKey, _Slider.value);
-    }
+        [SerializeField] private Slider _Slider;
+        [Header("Persistence key must be unique per world.")]
+        [SerializeField] private string persistenceKey = "slider_example";
 
-    public override void OnPlayerDataUpdated(VRCPlayerApi player, PlayerData.Info[] infos)
-    {
-        if (player != Networking.LocalPlayer) return;
-        if (!PlayerData.HasKey(player, persistenceKey)) return;
-        if (PlayerData.GetType(player, persistenceKey) != typeof(float)) return;
+        public override void Interact()
+        {
+            PlayerData.SetFloat(persistenceKey, _Slider.value);
+        }
 
-        _Slider.value = PlayerData.GetFloat(player, persistenceKey); // update with notify
+        public override void OnPlayerDataUpdated(VRCPlayerApi player, PlayerData.Info[] infos)
+        {
+            if (player != Networking.LocalPlayer) return;
+            if (!PlayerData.HasKey(player, persistenceKey)) return;
+            if (PlayerData.GetType(player, persistenceKey) != typeof(float)) return;
+
+            _Slider.value = PlayerData.GetFloat(player, persistenceKey); // update with notify
+        }
     }
 }
