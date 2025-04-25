@@ -9,7 +9,8 @@
         "VRC.Udon",
         "Unity.Postprocessing.Runtime",
         "VRC.Udon.Serialization.OdinSerializer",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "AudioLink"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
