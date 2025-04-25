@@ -13,7 +13,7 @@
 * This Toolkit is made to use simple scripts in unison to create more in specific behaviors rather than highly specific or overengineered scripts!
 * By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone either for using directly in projects or to grow into new scripts of their own.
 
-**Info**: There are currently 31 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
+**Info**: There are currently 33 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
 
 ## ℹ️ **Tips**: 
 - You can easily add any of my scripts by simply typing it in the component window instead of adding a Udon behaviour first!
@@ -81,7 +81,7 @@ Toggles a set of objects in sequential order, can send a different event to togg
 - **[Advanced UI Toggle](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/AdvancedUIToggle.cs)**:
 All the things done around a toggle packed in a single behavior, can be used with a UI button, physical event button or actual UI button to change anything Ui related + sound feedback, all toggleable.
 - **[Collectible](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/Collectible.cs)**:
-WHen interacted with, can send a value to the [Collection System](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/CollectionSystem.cs) to add to the balance of it
+When interacted with, can send a value to the [Collection System](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/CollectionSystem.cs) to add to the balance of it
 - **[Collection System](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/CollectionSystem.cs)**:
 The brain that receives events from [Collectibles](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/Collectible.cs) and adds up all the values received, can output to mulitple text displays
 - **[Multi UI Toggle Manager](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/MultiUIToggleManager.cs)**:
