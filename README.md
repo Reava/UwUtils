@@ -28,68 +28,72 @@
 <details>
 <Summary>Expand me!</summary>
 
-- **[Player Teleporter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
+- **[Player Teleporter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
 Literally just TPs you on interact, that's it.
-- **[Objects Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/ObjectsToggle.cs)**:
+- **[Objects Toggle](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/ObjectsToggle.cs)**:
 Toggles the state of an array of GameObjects & is persistence ready!
-- **[Object State Setter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/ObjectStateSetter.cs)**:
-On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (Events: _Invert to do the opposite, _Switch to swap all states)
-- **[Tag Assigner](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/TagAssigner.cs)**:
+- **[Object State Setter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/ObjectStateSetter.cs)**:
+On interact, sets the state of an array of gameObjects. Does NOT revert once triggered again, it SETS the state and is NOT synced. (Events: \_Invert to do the opposite, \_Switch to swap all states)
+- **[Tag Assigner](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/TagAssigner.cs)**:
 Functions as a whitelist with functions, assigns a Tag to anyone who matches their username to the user Array of the behavior on world join. Local, allows toggling specific objects if user matches. Has a toggle to empower the user if they just created the instance regardless of whitelist matching. Supports adding users on the go and loading a remote string for updating the whitelist without updating the world!
-- **[Tag TP](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/TagTP.cs)**:
+- **[Tag TP](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/TagTP.cs)**:
 If you got the correct Tag to your name on interact with the behavior, teleports you to the target, if not, teleports you to the second target (or doesn't if empty / disabled)
-- **[ReflectionProbeController](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/ReflectionProbeController.cs)**:
+- **[ReflectionProbeController](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/ReflectionProbeController.cs)**:
 RelfectionProbes are cool! make them real time, scripted and add this script to change the frequency they refresh at ! Use ToggleLoop() to toggle if it refreshes in a loop or stops until enabled again
-- **[Spinny](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/Spinny.cs)**:
+- **[Spinny](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/Spinny.cs)**:
 A script to rotate things on any axis, at any speed, and even at weird update speeds (like 30 degrees but only once a second). You should do that with animators, but this might be useful idk.
-- **[Unity Fog Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/UnityFogToggle.cs)**:
+- **[Unity Fog Toggle](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/UnityFogToggle.cs)**:
 Just an interact toggle that toggles ON/OFF Unity's fog... that's it. Call it with a trigger or a UI button, it'll work.
-- **[Scene Initializer](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/SceneInitializer.cs)**:
+- **[Scene Initializer](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/SceneInitializer.cs)**:
 Want to have things enabled for the first few seconds an user enters your world then disable ? the opposite ? both ? Just use that, ezpz
-- **[tag Setter](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/tagSetter.cs)**:
+- **[tag Setter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/tagSetter.cs)**:
 Set a pre determined tag to the local user on interact. that's it.
-- **[Tag Debugger](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/TagDebugger.cs)**:
+- **[Tag Debugger](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/TagDebugger.cs)**:
 Handy tool to display the local user's tag and output it to the debugLogs or text (Compatible with UnityUI, TMP & TMP GUI), updates on Interact & on Start.
-- **[Tag Array TP](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/TagArrayTP.cs)**:
+- **[Tag Array TP](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/TagArrayTP.cs)**:
 Have a lot of tags & want each one to TP the user to a different spot ? Well... this does it all for ya! Even has a fallback target when the user doesn't have a tag (can be disabled to disallow TPing when no matching ranks are found)
-- **[Event Relay](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/EventRelay.cs)**:
+- **[Event Relay](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/EventRelay.cs)**:
 Wanna use a button to push another button ? Do the same as UI can do ? Yup, just type the event name (like "\_interact"), if you want a delay or not & for how many seconds.... and you're good to go! You can also check the state of another object to ignore the delay if that object is on / off. Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
-- **[Udon Keybinds](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/UdonKeybinds.cs)**:
+- **[Udon Keybinds](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/UdonKeybinds.cs)**:
 Send an event call to 6 different udon behaviors based on keybinds, serves either for RollTheRed's Camera System or as a code template. Press CTRL + 1 to 6 to trigger changes. CTRL + 0 to toggle keybinds ON/OFF, defaults to ON unless changed. Will support UdonBehavior Arrays on for the UdonSharp1.0 update soon
-- **[Animator Driver](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/AnimatorDriver.cs)**:
+- **[Animator Driver](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/AnimatorDriver.cs)**:
 Inverts a boolean on an animator on interact... and that's it (Persistence ready!)
-- **[Trigger Zone Relay](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/TriggerZoneRelay.cs)**:
+- **[Trigger Zone Relay](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/TriggerZoneRelay.cs)**:
 Assign trigger colliders, and assign an Udon Behavior to send an event to either on Enter or Exit, super simple stuff! Supports UdonBehaviorArrays for U# 1.x version of the scripts.
-- **[Playercount To Animator](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PlayercountToAnimator.cs)**:
+- **[Playercount To Animator](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/PlayercountToAnimator.cs)**:
 Enables driving an Animator's parameter (one parameter per Behavior, multiple Animators at once supported) between two values (Min/Max) depending on the player count in the instance. Can set the player count cap to reach max value.
-- **[Join Bell](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/JoinBell.cs)**:
-Pretty straightforward, just tap in an AudioSource & a clip for Join/Leave and enjoy (bell sound can be toggled by UI or eventRelay using "_JoinToggle" event)
-- **[Toggle Canvas](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/ToggleCanvas.cs)**:
+- **[Join Bell](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/JoinBell.cs)**:
+Pretty straightforward, just tap in an AudioSource & a clip for Join/Leave and enjoy (bell sound can be toggled by UI or eventRelay using "\_JoinToggle" event)
+- **[Toggle Canvas](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/ToggleCanvas.cs)**:
 Same as iState, but for Canvas components
-- **[MeshRenderer Swapper](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/MeshRendererSwapper.cs)**:
-Enables swapping between two Groups of Mesh Renderers at runtime, setting between 1 & 2 as default, and which group by default on Quest. practical for optimization toggles. Supports events (_switchGroup, _enableOne, _enableTwo)
-- **[Instance Creator Relay](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/InstanceCreatorRelay.cs)**:
+- **[MeshRenderer Swapper](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/MeshRendererSwapper.cs)**:
+Enables swapping between two Groups of Mesh Renderers at runtime, setting between 1 & 2 as default, and which group by default on Quest. practical for optimization toggles. Supports events (\_switchGroup, \_enableOne, \_enableTwo)
+- **[Instance Creator Relay](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/InstanceCreatorRelay.cs)**:
 Sends a custom event of your choice to Udon Behaviors if the local user just created the instance
-- **[Fading TP](https://github.com/Reava/ReavaUwUtils/tree/main/FadingTP)**:
+- **[Fading TP](https://github.com/Reava/Reava/UwUtils/tree/main/FadingTP)**:
 A small prefab that allows you to setup an infinite amount of teleports with Fade In/Out blackout effects! (Can change the fade speed per door, super lightweight)
-- **[Spawn Fade](https://github.com/Reava/ReavaUwUtils/tree/main/SpawnFade)**:
+- **[Spawn Fade](https://github.com/Reava/Reava/UwUtils/tree/main/SpawnFade)**:
 A small prefab for fading into a world when you join, can toggle to also fade in when respawning! (Toggleable on runtime, can change the fade speed)
-- **[Remote String To Text](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/RemoteStringToText.cs)**:
+- **[Remote String To Text](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/RemoteStringToText.cs)**:
 Allows loading a remote string from a URL and output to an array, or any type of text field (feel free to use as a code base for your own use!)
-- **[Sequencial Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/.cs)**:
+- **[Sequencial Toggle](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/.cs)**:
 Toggles a set of objects in sequential order, can send a different event to toggle it completely and keep progress, interact to go through it.
-- **[Advanced UI Toggle](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/AdvancedUIToggle.cs)**:
+- **[Advanced UI Toggle](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/AdvancedUIToggle.cs)**:
 All the things done around a toggle packed in a single behavior, can be used with a UI button, physical event button or actual UI button to change anything Ui related + sound feedback, all toggleable.
-- **[Collectible](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/Collectible.cs)**:
-WHen interacted with, can send a value to the [Collection System](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/CollectionSystem.cs) to add to the balance of it
-- **[Collection System](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/CollectionSystem.cs)**:
-The brain that receives events from [Collectibles](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/Collectible.cs) and adds up all the values received, can output to mulitple text displays
-- **[Multi UI Toggle Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/MultiUIToggleManager.cs)**:
+- **[Collectible](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/Collectible.cs)**:
+WHen interacted with, can send a value to the [Collection System](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/CollectionSystem.cs) to add to the balance of it
+- **[Collection System](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/CollectionSystem.cs)**:
+The brain that receives events from [Collectibles](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/Collectible.cs) and adds up all the values received, can output to mulitple text displays
+- **[Multi UI Toggle Manager](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/MultiUIToggleManager.cs)**:
 Links any number of toggles together and allows any of them to control the rest of them, and update a script when a new value is received, allowing to control a single script with multiple toggles for example.
-- **[Multi UI Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/MultiUISliderManager.cs)**:
+- **[Multi UI Slider Manager](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/MultiUISliderManager.cs)**:
 Links any number of sliders together and allows any of them to control the rest of them, and update a script when a new value is received, allowing to control a single thing with multiple sliders.
-- **[PostProcessing Controller](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/PostProcessingController.cs)**:
-Controls the post processing weight based on a slider or [Slider Manager](https://github.com/Reava/ReavaUwUtils/blob/main/Runtime/Scripts/MultiUISliderManager.cs) for multiple sliders controlling the same value.
+- **[PostProcessing Controller](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/PostProcessingController.cs)**:
+Controls the post processing weight based on a slider or [Slider Manager](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/MultiUISliderManager.cs) for multiple sliders controlling the same value.
+- **[Slider Saver](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/SliderSaver.cs)**
+Saves the slider and restores its last known value on rejoin with persistence. Supports function "\_resetValue" to reset the slider value and save without wiping player data.
+- **[Audiolinked Animator](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/AudiolinkedAnimator.cs)**
+Allows driving an animator float with an Audiolink band with history and poll rate. This requires readback to be enabled on Audiolink!
 - **[Instance Time Actions] > NOT READY <**
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
 
