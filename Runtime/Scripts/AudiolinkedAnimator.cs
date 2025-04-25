@@ -29,7 +29,7 @@ namespace UwUtils
         {
             if (!audioLink || !controlledAnimator)
             {
-                Debug.LogError("[Reava_/UwUtils/AudiolinkedAnimator.cs] Setup is invalid, check your references for object '" + gameObject.name + "'");
+                Debug.LogError("[Reava_/UwUtils/AudiolinkedAnimator.cs] Setup is invalid, check your references for object '" + gameObject.name + "'", gameObject);
                 valid = false;
                 return;
             }
@@ -48,7 +48,7 @@ namespace UwUtils
             }
             else
             {
-                Debug.LogError("[Reava_/UwUtils/AudiolinkedAnimator.cs] Audiodata not found, aborting. '" + gameObject.name + "'");
+                Debug.LogError("[Reava_/UwUtils/AudiolinkedAnimator.cs] Audiodata not found, aborting. '" + gameObject.name + "'", gameObject);
             }
         }
     }
