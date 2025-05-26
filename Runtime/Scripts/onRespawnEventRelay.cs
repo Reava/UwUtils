@@ -12,7 +12,7 @@ namespace UwUtils
         [Space]
         [SerializeField] private string eventName = "_interact";
         [SerializeField] private UdonBehaviour[] TargetBehaviours;
-        [Space]
+        [Space, Tooltip("If this is disabled, no support will be given.")]
         [SerializeField] private bool enableLogging = true;
 
         public override void OnPlayerRespawn(VRCPlayerApi player)
