@@ -10,48 +10,41 @@ namespace UwUtils
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class ObjectTeleporter : UdonSharpBehaviour
     {
-        [SerializeField] private GameObject ObjectToTeleport;
-        [SerializeField] private Transform TeleportTarget;
+        [SerializeField] private GameObject[] ObjectsToTeleport;
+        [Header("Teleport destinations"), Tooltip("If arrays Length does not match, objects without a target will not get teleported.")]
+        [SerializeField] private Transform[] TeleportTargets;
         private Transform OriginalTransform = null;
-        private bool teleported = false;
+
         void Start() //Check if setup contains at least one valid Object and Target each, otherwise disables self
         {
-            if(!ObjectToTeleport || !TeleportTarget)
+            if(ObjectsToTeleport.Length == 0 || TeleportTargets.Length == 0)
             {
-                Debug.LogError("[UwUtils/ObjectTeleporter.cs] No objects found to teleport or teleport target, disabling script '" + gameObject.name + "'");
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                OriginalTransform = ObjectToTeleport.transform;
+                Debug.LogError("[UwUtils/ObjectTeleporter.cs] No objects found to teleport or teleport targets on '" + gameObject.name + "'");
                 return;
             }
+            if(ObjectsToTeleport.Length == 1) OriginalTransform = ObjectsToTeleport[0].transform;
         }
 
         public override void Interact()
         {
-            if (!teleported)
+            _TeleportToTargets();
+        }
+
+        public void _TeleportToTargets()
+        {
+            for(int i = 0; i < ObjectsToTeleport.Length; i++)
             {
-                ObjectToTeleport.transform.position = TeleportTarget.position;
-                ObjectToTeleport.transform.rotation = TeleportTarget.rotation;
-            }
-            else
-            {
-                ObjectToTeleport.transform.position = OriginalTransform.position;
-                ObjectToTeleport.transform.rotation = OriginalTransform.rotation;
+                if (!TeleportTargets[i]) return;
+                ObjectsToTeleport[i].transform.position = TeleportTargets[i].position;
+                ObjectsToTeleport[i].transform.rotation = TeleportTargets[i].rotation;
             }
         }
 
-        public void TeleportToTarget()
+        public void _TeleportBack()
         {
-            ObjectToTeleport.transform.position = TeleportTarget.position;
-            ObjectToTeleport.transform.rotation = TeleportTarget.rotation;
-        }
-
-        public void TeleportBack()
-        {
-            ObjectToTeleport.transform.position = OriginalTransform.position;
-            ObjectToTeleport.transform.rotation = OriginalTransform.rotation;
+            if(ObjectsToTeleport.Length > 1) return;
+            ObjectsToTeleport[0].transform.position = OriginalTransform.position;
+            ObjectsToTeleport[0].transform.rotation = OriginalTransform.rotation;
         }
     }
 }
