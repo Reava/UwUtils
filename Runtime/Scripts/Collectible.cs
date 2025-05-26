@@ -21,14 +21,14 @@ namespace UwUtils
         [SerializeField] string EventName = "_interact";
         [SerializeField] private UdonBehaviour[] EventRelays;
         [SerializeField] private int Value = 10;
-        /*
-        [Header("Keep collectible state after rejoin ?"), Tooltip("Warning, if you don't enable it on the System manager it will NOT save the points collected.")]
+        
+        [Header("Keep collectible state after rejoin ?"), Tooltip("Warning, if you enable it here but not on the System manager it will NOT save the points collected. If disabled here but enabled on the system, this will allow the user to collect them again on rejoin for an accumulation of points.")]
         [SerializeField] private bool persistent = false;
         [Tooltip("Relay events to listed Udon Behaviors when the recovered state from persistence is collected, this helps avoid particle systems and other similar 'on collect' events from happening on join.")]
         [SerializeField] private bool relayOnRecovered = true;
         [Header("Unique persistence ID"),Tooltip("Make sure you use a unique parameter.")]
-        [SerializeField] private string persistenceParameter = "Collectible_UNIQUEID";
-        */
+        [SerializeField] private string persistenceParameter = "UwUtils_Collectible_UNIQUEID";
+        
         [Space]
         [Header("Per collectible debug settings"),Tooltip("If logging is disable, no support will be given.")]
         [SerializeField] private bool enableLogging = true;
@@ -37,11 +37,12 @@ namespace UwUtils
 
         void Start()
         {
-            /*if(persistenceParameter == "Collectible_UNIQUEID")
+            if(persistenceParameter == "UwUtils_Collectible_UNIQUEID" && persistent)
             {
+                Debug.LogError("[Reava_/UwUtils/Collectible.cs]: Collectible does NOT use a custom Persistence parameter, this will break saving! Please update collectible named: "+this.name,this.gameObject);
                 // do something about the user not following instructions to avoid persistence conflicts
                 // >> EDITOR SCRIPT https://docs.unity3d.com/ScriptReference/GlobalObjectId.html 
-            }*/
+            }
             CollectionSystemRef._totalValueDebug(Value);
             if (enableLogging && StartupLogging) _debugLog("initialized");
         }
@@ -56,7 +57,7 @@ namespace UwUtils
             CollectionSystemRef._collectValue(Value);
             if (enableLogging) _debugLog("claimed");
             collected = true;
-            //if(persistent) PlayerData.SetBool(persistenceParameter, true);
+            if(persistent) PlayerData.SetBool(persistenceParameter, true);
             _PostCollection(false);
         }
 
@@ -71,14 +72,14 @@ namespace UwUtils
             {
                 if (o) o.SetActive(false);
             }
-            //if (!relayOnRecovered && recovered) return;
+            if (!relayOnRecovered && recovered) return;
             foreach (UdonBehaviour o in EventRelays)
             {
                 if (o) o.SendCustomEvent(EventName);
             }
         }
 
-/*        public override void OnPlayerRestored(VRCPlayerApi player)
+        public override void OnPlayerRestored(VRCPlayerApi player)
         {
             if (persistent)
             {
@@ -90,11 +91,11 @@ namespace UwUtils
                 if (enableLogging) _debugLog("recovered persistence state of : " + recoveredState + "");
                 if (recoveredState) _PostCollection(true);
             }
-        }*/
+        }
 
         public void _debugLog(string reason)
         {
-            if (enableLogging) Debug.Log("[Reava_/UwUtils/Collectible.cs]: Collectible " + reason + ", Value: " + Value /*+ ", Peristent: " + persistent*/ + " | Sent to " + CollectionSystemRef + " from:" + gameObject.name, gameObject);
+            if (enableLogging) Debug.Log("[Reava_/UwUtils/Collectible.cs]: Collectible " + reason + ", Value: " + Value /*+ ", Peristent: " + persistent*/ + " | Sent to " + CollectionSystemRef + " from:" + gameObject.name, this.gameObject);
         }
     }
 }
