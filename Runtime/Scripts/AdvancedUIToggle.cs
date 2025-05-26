@@ -1,6 +1,5 @@
 ﻿using UdonSharp;
 using UnityEngine;
-using UnityEngine.UI;
 using VRC.Udon;
 using TMPro;
 
@@ -11,24 +10,32 @@ namespace UwUtils
     public class AdvancedUIToggle : UdonSharpBehaviour
     {
         [Header("Advanced UI Toggle")]
-        [SerializeField] Toggle toggleSource;
+        [SerializeField] UnityEngine.UI.Toggle toggleSource;
         [SerializeField] private GameObject[] toggleObjects;
         [Space]
-        [Header("Colors to use for Sprite / Text")]
+        [Header("Colors to use for Sprite / Text if Lerp is off")]
         [SerializeField] Color colorOn = Color.green;
         [SerializeField] Color colorOff = Color.red;
         [Space]
         [SerializeField] bool SwapSprites = false;
         [SerializeField] bool SwapSpritesColor = false;
+        [SerializeField] bool lerpSpriteColorChange = false; //TODO
+        [SerializeField] float lerpSpriteColorDuration = 0.5f;
+        [SerializeField] Color spriteLerpColorON = Color.green;
+        [SerializeField] Color spriteLerpColorOFF = Color.red;
         [SerializeField] Sprite spriteOn;
         [SerializeField] Sprite spriteOff;
         [Tooltip("Sprite target to swap the sprite of if enabled")]
-        [SerializeField] Image spriteTarget;
+        [SerializeField] UnityEngine.UI.Image spriteTarget;
         [Tooltip("Sprite target to swap the color of if enabled.")]
-        [SerializeField] Image spriteTargetColor;
+        [SerializeField] UnityEngine.UI.Image spriteTargetColor;
         [Space]
         [SerializeField] bool SetText = false;
         [SerializeField] bool SetTextColor = false;
+        [SerializeField] bool lerpTextColorChange = false; //TODO
+        [SerializeField] float lerpTextColorDuration = 0.5f;
+        [SerializeField] Color textLerpColorON = Color.green;
+        [SerializeField] Color textLerpColorOFF = Color.red;
         [SerializeField] string textOn = "On";
         [SerializeField] string textOff = "Off";
         [Tooltip("Compatible with Unity Text, TMP text and GUI TMP text components.")]
@@ -40,11 +47,19 @@ namespace UwUtils
         [SerializeField] AudioClip audioFeedbackClipOff;
         [Space]
         [SerializeField] bool enableLogging = true;
+
         private bool state;
         private bool fallbackBoolean = true;
-        private Text textCompUnity = null;
+
+        private UnityEngine.UI.Text textCompUnity = null;
         private TextMeshPro textCompTMP = null;
         private TextMeshProUGUI textCompTMPUI = null;
+        private int textType = 0;
+
+        private float lerpProgressSprite = 0f;
+        private float lerpProgressText = 0f;
+
+        // Maybe I should deal with the triple text component shenanigans soon... otherwise I'm not lerping that text color lol
 
         void Start()
         {
@@ -57,10 +72,39 @@ namespace UwUtils
             if (!toggleSource) { _sendDebugError("No Toggle source found, using Udon Events only now"); }
             if (textTarget)
             {
-                if (textTarget.GetComponent<Text>()) textCompUnity = textTarget.GetComponent<Text>();
-                if (textTarget.GetComponent<TextMeshProUGUI>()) textCompTMPUI = textTarget.GetComponent<TextMeshProUGUI>();
-                if (textTarget.GetComponent<TextMeshPro>()) textCompTMP = textTarget.GetComponent<TextMeshPro>();
+                if (textTarget.GetComponent<UnityEngine.UI.Text>()) textCompUnity = textTarget.GetComponent<UnityEngine.UI.Text>(); textType = 0;
+                if (textTarget.GetComponent<TextMeshProUGUI>()) textCompTMPUI = textTarget.GetComponent<TextMeshProUGUI>(); textType = 1;
+                if (textTarget.GetComponent<TextMeshPro>()) textCompTMP = textTarget.GetComponent<TextMeshPro>(); textType = 2;
             }
+        }
+
+        public void _lerpTextColor()
+        {
+            lerpProgressText += Time.deltaTime;
+
+            if (lerpProgressText > lerpTextColorDuration) return;
+            switch (textType)
+            {
+                case 0:
+                    textCompUnity.color = Color.Lerp(textLerpColorON, textLerpColorOFF, lerpProgressText);
+                    break;
+                case 1:
+                    textCompTMPUI.color = Color.Lerp(textLerpColorON, textLerpColorOFF, lerpProgressText);
+                    break;
+                case 2:
+                    textCompTMP.color = Color.Lerp(textLerpColorON, textLerpColorOFF, lerpProgressText);
+                    break;
+            }
+            SendCustomEventDelayedFrames(nameof(_lerpTextColor), 1);
+        }
+
+        public void _lerpSpriteColor()
+        {
+            lerpProgressSprite += Time.deltaTime;
+
+            if (lerpProgressSprite > lerpSpriteColorDuration) return;
+            spriteTargetColor.transform.GetComponent<UnityEngine.UI.Image>().color = Color.Lerp(textLerpColorON, textLerpColorOFF, lerpSpriteColorDuration);
+            SendCustomEventDelayedFrames(nameof(_lerpSpriteColor), 1);
         }
 
         public override void Interact()
@@ -73,33 +117,57 @@ namespace UwUtils
             if (toggleSource) { state = toggleSource.isOn; } else { state = !state; }
             if (SwapSprites)
             {
-                if (state) { spriteTarget.sprite = spriteOn; } else { spriteTarget.sprite = spriteOff; }
+                spriteTarget.sprite = state ? spriteOn : spriteOff;
             }
             if (SwapSpritesColor)
             {
-                if (state) { spriteTargetColor.color = colorOn; } else { spriteTargetColor.color = colorOff; }
+                if (lerpSpriteColorChange)
+                {
+                    _lerpSpriteColor();
+                }
+                else
+                {
+                    if (state) { spriteTargetColor.color = colorOn; } else { spriteTargetColor.color = colorOff; }
+                }
             }
             if (SetText)
             {
-                if (state && textCompUnity) { textCompUnity.text = textOn; } // Unity Text
-                if (!state && textCompUnity) { textCompUnity.text = textOff; }
-
-                if (state && textCompTMPUI) { textCompTMPUI.text = textOn; } // TMP GUI
-                if (!state && textCompTMPUI) { textCompTMPUI.text = textOff; }
-
-                if (state && textCompTMP) { textCompTMP.text = textOn; } // TMP Text
-                if (!state && textCompTMP) { textCompTMP.text = textOff; }
+                switch (textType)
+                {
+                    case 0:
+                        textCompUnity.text = state ? textOn : textOff;
+                        break;
+                    case 1:
+                        textCompTMPUI.text = state ? textOn : textOff;
+                        break;
+                    case 2:
+                        textCompTMP.text = state ? textOn : textOff;
+                        break;
+                }
             }
             if (SetTextColor)
             {
-                if (state && textCompUnity) { textCompUnity.color = colorOn; } // Unity Text
-                if (!state && textCompUnity) { textCompUnity.color = colorOff; }
-
-                if (state && textCompTMPUI) { textCompTMPUI.color = colorOn; } // TMP GUI
-                if (!state && textCompTMPUI) { textCompTMPUI.color = colorOff; }
-
-                if (state && textCompTMP) { textCompTMP.color = colorOn; } // TMP Text
-                if (!state && textCompTMP) { textCompTMP.color = colorOff; }
+                if (lerpTextColorChange)
+                {
+                    _lerpTextColor();
+                }
+                else
+                {
+                    if (state && textCompUnity) { textCompUnity.color = colorOn; }
+                    if (!state && textCompUnity) { textCompUnity.color = colorOff; }
+                    switch (textType)
+                    {
+                        case 0:
+                            textCompUnity.color = state ? colorOn : colorOff;
+                            break;
+                        case 1:
+                            textCompTMPUI.color = state ? colorOn : colorOff; ;
+                            break;
+                        case 2:
+                            textCompTMP.color = state ? colorOn : colorOff; ;
+                            break;
+                    }
+                }
             }
             if (UseSoundFeedback && audioFeedbackClipOn && audioFeedbackClipOff)
             {
