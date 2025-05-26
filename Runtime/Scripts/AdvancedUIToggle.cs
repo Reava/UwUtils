@@ -2,6 +2,9 @@
 using UnityEngine;
 using VRC.Udon;
 using TMPro;
+using Codice.Client.BaseCommands.Changelist;
+using VRC.SDK3.Persistence;
+using VRC.SDKBase;
 
 namespace UwUtils
 {
@@ -46,8 +49,11 @@ namespace UwUtils
         [SerializeField] AudioClip audioFeedbackClipOn;
         [SerializeField] AudioClip audioFeedbackClipOff;
         [Space]
+        [SerializeField] bool persistent;
+        [SerializeField] string persistenceKey = "UwUtils_AdvUI_Toggle_";
+        [Space]
         [SerializeField] bool enableLogging = true;
-
+        
         private bool state;
         private bool fallbackBoolean = true;
 
@@ -107,9 +113,9 @@ namespace UwUtils
             SendCustomEventDelayedFrames(nameof(_lerpSpriteColor), 1);
         }
 
-        public override void Interact()
+        public void _toggleState()
         {
-            foreach(GameObject o in toggleObjects)
+            foreach (GameObject o in toggleObjects)
             {
                 if (o == null) continue;
                 o.SetActive(!o.activeSelf);
@@ -171,14 +177,33 @@ namespace UwUtils
             }
             if (UseSoundFeedback && audioFeedbackClipOn && audioFeedbackClipOff)
             {
-                if(state) { audioFeedbackSource.PlayOneShot(audioFeedbackClipOn); } else { audioFeedbackSource.PlayOneShot(audioFeedbackClipOff); }
+                if (state) { audioFeedbackSource.PlayOneShot(audioFeedbackClipOn); } else { audioFeedbackSource.PlayOneShot(audioFeedbackClipOff); }
             }
         }
 
-        private void _sendDebugError(string errorReported) => Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: " + errorReported + ", please review References / Settings on: " + gameObject.name + ".", gameObject);
+        public override void Interact()
+        {
+            _toggleState();
+        }
+
+        public override void OnPlayerRestored(VRCPlayerApi player)
+        {
+            if (persistent)
+            {
+                if (Networking.LocalPlayer != player) return;
+                if (!PlayerData.HasKey(player, persistenceKey)) return;
+                if (PlayerData.GetType(player, persistenceKey) != typeof(bool)) return;
+                bool recoveredState = PlayerData.GetBool(player, persistenceKey);
+                if (enableLogging) Debug.Log("[Reava_/UwUtils/AdvancedUIToggle.cs] Recovered state of : " + recoveredState + "", this.gameObject);
+
+                // TODO
+            }
+        }
+
+        private void _sendDebugError(string errorReported) => Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: " + errorReported + ", please review References / Settings on: " + gameObject.name + ".", this.gameObject);
         private void _disableSelf() 
         {
-            Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: Disabling behaviour on: " + gameObject.name + ". Check references/Setup.", gameObject);
+            Debug.LogError("[Reava_/UwUtils/AdvancedUIToggle.cs]: Disabling behaviour on: " + gameObject.name + ". Check references/Setup.", this.gameObject);
             UdonBehaviour self = this.gameObject.GetComponent<UdonBehaviour>();
             self.enabled = false;
         }
