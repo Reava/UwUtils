@@ -4,12 +4,6 @@ using TMPro;
 using UnityEngine.UI;
 using VRC.SDK3.Persistence;
 using VRC.SDKBase;
-using YamlDotNet.Core.Tokens;
-using VRC.Udon.UAssembly.Common;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Net.Configuration;
-using System;
-using UwUtils;
 using VRC.Udon;
 
 namespace UwUtils
