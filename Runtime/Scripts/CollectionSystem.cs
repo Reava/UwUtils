@@ -56,7 +56,7 @@ namespace UwUtils
             if(tierValues.Length > 0)
             {
                 // Array.Sort(tierValues); // I would love to use it if VRChat allowed us to so users don't use random order :))
-                Array.Reverse(tierValues);
+                // Array.Reverse(tierValues);
             }
             if (enableLogging) SendCustomEventDelayedSeconds(nameof(_maxValueDebug), 5f);
         }

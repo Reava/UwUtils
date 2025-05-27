@@ -159,8 +159,6 @@ namespace UwUtils
                 }
                 else
                 {
-                    if (state && textCompUnity) { textCompUnity.color = colorOn; }
-                    if (!state && textCompUnity) { textCompUnity.color = colorOff; }
                     switch (textType)
                     {
                         case 0:
