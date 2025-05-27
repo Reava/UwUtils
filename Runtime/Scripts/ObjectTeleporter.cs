@@ -37,6 +37,7 @@ namespace UwUtils
             {
                 OriginalTransforms = new Transform[1] {ObjectsToTeleport[0].transform };
                 behaviorMode = 0;
+                if (enableLogging) Debug.Log("[Reava_/UwUtils/ObjectTeleporter.cs]: One object with single targets found, teleport back is: " + teleportBackOnSecondInteract, gameObject);
                 return;
             }
 
@@ -46,6 +47,7 @@ namespace UwUtils
                 OriginalTransforms[0] = ObjectsToTeleport[0].transform;
                 behaviorMode = 1;
                 loopCurrentIndex = 0;
+                if (enableLogging) Debug.Log("[Reava_/UwUtils/ObjectTeleporter.cs]: One object with multiple targets found, object tranform will be cycled between transforms in a loop!", gameObject);
                 return;
             }
 
@@ -89,7 +91,11 @@ namespace UwUtils
 
         public void _resetLocations()
         {
-            // do the thing
+            for(int i = 0;i < OriginalTransforms.Length; i++) // this accounts for any behavior mode since we only initialize this array with valid entries.
+            {
+                ObjectsToTeleport[i].transform.position = OriginalTransforms[i].position;
+                ObjectsToTeleport[i].transform.rotation = OriginalTransforms[i].rotation;
+            }
         }
 
         public override void Interact()
