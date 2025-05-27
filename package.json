@@ -1,7 +1,7 @@
 {
   "name": "chirp.reava.uwutils",
   "displayName": "UwUtils",
-  "version": "1.0.0-pre.8",
+  "version": "1.0.0-pre.9",
   "unity": "2022.3",
   "description": "A collection of -almost- niche UdonSharp scripts as an (almost) all in one Toolkit for World Creators with more than 30 scripts, supports persistence and more.",
   "author": {

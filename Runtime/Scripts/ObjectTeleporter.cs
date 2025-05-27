@@ -7,6 +7,8 @@ namespace UwUtils
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class ObjectTeleporter : UdonSharpBehaviour
     {
+        //[Tooltip("Using local trasnform will save and apply transforms related to its parent. Only use if you know what you're doing.")]
+        //[SerializeField] private bool useLocalSpace = false;
         [Header("Settings"), Tooltip("If disabled, this will only teleport one way.")]
         [SerializeField] private bool teleportBackOnSecondInteract = true;
         [Tooltip("If one object but multiple targets, will cycle between them, if one object and one target, will allow teleporting back and forth, if arrays match, will teleport each object to the corresponding target.")]
@@ -16,12 +18,13 @@ namespace UwUtils
         [Space]
         [SerializeField] private bool enableLogging = true;
 
-        private Transform[] OriginalTransforms;
+        private Vector3[] savedPositions;
+        private Quaternion[] savedRotations;
         private int loopCurrentIndex = 0;
-        private int behaviorMode = 0;
+        private int behaviorMode = 0; // enum ??
         private bool wasTeleported = false;
 
-        void Start() //Check if setup contains at least one valid Object and Target each, otherwise disables self
+        void Start()
         {
             if(ObjectsToTeleport.Length == 0 || TeleportTargets.Length == 0)
             {
@@ -35,7 +38,8 @@ namespace UwUtils
             // If only one object and target is found, cycle positions between the target and original location.
             if (objectCount == 1 && targetsCount == 1)
             {
-                OriginalTransforms = new Transform[1] {ObjectsToTeleport[0].transform };
+                savedPositions = new Vector3[1] { ObjectsToTeleport[0].transform.position };
+                savedRotations = new Quaternion[1] { ObjectsToTeleport[0].transform.rotation };
                 behaviorMode = 0;
                 if (enableLogging) Debug.Log("[Reava_/UwUtils/ObjectTeleporter.cs]: One object with single targets found, teleport back is: " + teleportBackOnSecondInteract, gameObject);
                 return;
@@ -44,20 +48,23 @@ namespace UwUtils
             // If only one object but multiple targets are found, cycle positions on every new function call.
             if (objectCount == 1 && targetsCount > 1)
             {
-                OriginalTransforms[0] = ObjectsToTeleport[0].transform;
+                savedPositions = new Vector3[1] { ObjectsToTeleport[0].transform.position };
+                savedRotations = new Quaternion[1] { ObjectsToTeleport[0].transform.rotation };
                 behaviorMode = 1;
                 loopCurrentIndex = 0;
                 if (enableLogging) Debug.Log("[Reava_/UwUtils/ObjectTeleporter.cs]: One object with multiple targets found, object tranform will be cycled between transforms in a loop!", gameObject);
                 return;
             }
 
-            // If arrays lengths match, teleport bakc and force between matching ones.
+            // If arrays lengths match, teleport back and force between matching ones.
             if (objectCount == targetsCount)
             {
-                OriginalTransforms = new Transform[ObjectsToTeleport.Length];
+                savedPositions = new Vector3[objectCount];
+                savedRotations = new Quaternion[objectCount];
                 for (int i = 0; i < ObjectsToTeleport.Length; i++)
                 {
-                    OriginalTransforms[i] = ObjectsToTeleport[i].transform;
+                    savedPositions[i] = ObjectsToTeleport[i].transform.position;
+                    savedRotations[i] = ObjectsToTeleport[i].transform.rotation;
                 }
                 behaviorMode = 2;
                 if (enableLogging) Debug.Log("[Reava_/UwUtils/ObjectTeleporter.cs]: Arrays length match, objects will get teleported to corresponding targets!", gameObject);
@@ -67,23 +74,27 @@ namespace UwUtils
             // If array lengths do not match but more than one object, teleport objects with a target and restore their old location, but ignore any targets that do not have an object and vice versa.
             if (objectCount != targetsCount)
             {
-                if (objectCount > targetsCount)
+                if (objectCount < targetsCount)
                 {
-                    OriginalTransforms = new Transform[objectCount];
+                    savedPositions = new Vector3[objectCount];
+                    savedRotations = new Quaternion[objectCount];
                     for (int i = 0; i < ObjectsToTeleport.Length; i++)
                     {
-                        OriginalTransforms[i] = ObjectsToTeleport[i].transform;
+                        savedPositions[i] = ObjectsToTeleport[i].transform.position;
+                        savedRotations[i] = ObjectsToTeleport[i].transform.rotation;
                     }
                 }
                 else
                 {
-                    OriginalTransforms = new Transform[targetsCount];
-                    for (int i = 0; i < ObjectsToTeleport.Length; i++)
+                    savedPositions = new Vector3[targetsCount];
+                    savedRotations = new Quaternion[targetsCount];
+                    for (int i = 0; i < TeleportTargets.Length; i++)
                     {
-                        OriginalTransforms[i] = ObjectsToTeleport[i].transform;
+                        savedPositions[i] = ObjectsToTeleport[i].transform.position;
+                        savedRotations[i] = ObjectsToTeleport[i].transform.rotation;
                     }
                 }
-                    behaviorMode = 2;
+                behaviorMode = 2;
                 if (enableLogging) Debug.LogWarning("[Reava_/UwUtils/ObjectTeleporter.cs]: Arrays length do not match, only objects with a target will get teleported! Check: '" + gameObject.name + "' (Did you mean this?)", gameObject);
                 return;
             }
@@ -91,10 +102,9 @@ namespace UwUtils
 
         public void _resetLocations()
         {
-            for(int i = 0;i < OriginalTransforms.Length; i++) // this accounts for any behavior mode since we only initialize this array with valid entries.
+            for(int i = 0;i < savedPositions.Length; i++) // this accounts for any behavior mode since we only initialize this array with valid entries.
             {
-                ObjectsToTeleport[i].transform.position = OriginalTransforms[i].position;
-                ObjectsToTeleport[i].transform.rotation = OriginalTransforms[i].rotation;
+                ObjectsToTeleport[i].transform.SetPositionAndRotation(savedPositions[i], savedRotations[i]);
             }
         }
 
@@ -105,47 +115,44 @@ namespace UwUtils
                 case 0:
                     if (!wasTeleported) 
                     {
-                        ObjectsToTeleport[0].transform.position = TeleportTargets[0].position;
-                        ObjectsToTeleport[0].transform.rotation = TeleportTargets[0].rotation;
+                        ObjectsToTeleport[0].transform.SetPositionAndRotation(TeleportTargets[0].position, TeleportTargets[0].rotation);
+                        wasTeleported = true;
                     }
                     else
                     {
                         if (!teleportBackOnSecondInteract) return;
-                        ObjectsToTeleport[0].transform.position = OriginalTransforms[0].position;
-                        ObjectsToTeleport[0].transform.rotation = OriginalTransforms[0].rotation;
+                        ObjectsToTeleport[0].transform.SetPositionAndRotation(savedPositions[0], savedRotations[0]);
+                        wasTeleported = false;
                     }
                     break;
                 case 1:
-                    ObjectsToTeleport[0].transform.position = TeleportTargets[loopCurrentIndex].position;
-                    ObjectsToTeleport[0].transform.rotation = TeleportTargets[loopCurrentIndex].rotation;
-                    // Check that we dont exit Target array
-                    if (loopCurrentIndex == TeleportTargets.Length)
+                    if (loopCurrentIndex + 1 == TeleportTargets.Length + 1)
                     {
+                        ObjectsToTeleport[0].transform.SetPositionAndRotation(savedPositions[0], savedRotations[0]);
                         loopCurrentIndex = 0;
-                        return;
+                        break;
                     }
                     else
                     {
-                        loopCurrentIndex += 1;
+                        ObjectsToTeleport[0].transform.SetPositionAndRotation(TeleportTargets[loopCurrentIndex].transform.position, TeleportTargets[loopCurrentIndex].transform.rotation);
                     }
+                    loopCurrentIndex += 1;
                     break;
                 case 2:
                     if (!wasTeleported)
                     {
-                        for (int i = 0; i < ObjectsToTeleport.Length; i++)
+                        for (int i = 0; i < savedPositions.Length; i++)
                         {
-                            ObjectsToTeleport[i].transform.position = TeleportTargets[i].position;
-                            ObjectsToTeleport[i].transform.rotation = TeleportTargets[i].rotation;
+                            ObjectsToTeleport[i].transform.SetPositionAndRotation(TeleportTargets[i].position, TeleportTargets[i].rotation);
                         }
                         wasTeleported = true;
                     }
                     else
                     {
                         if (!teleportBackOnSecondInteract) return;
-                        for (int i = 0; i < ObjectsToTeleport.Length; i++)
+                        for (int i = 0; i < savedPositions.Length; i++)
                         {
-                            ObjectsToTeleport[i].transform.position = OriginalTransforms[i].position;
-                            ObjectsToTeleport[i].transform.rotation = OriginalTransforms[i].rotation;
+                            ObjectsToTeleport[i].transform.SetPositionAndRotation(savedPositions[i], savedRotations[i]);
                         }
                         wasTeleported = false;
                     }
