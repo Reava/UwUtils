@@ -47,7 +47,7 @@ A script to rotate things on any axis, at any speed, and even at weird update sp
 Just an interact toggle that toggles ON/OFF Unity's fog... that's it. Call it with a trigger or a UI button, it'll work.
 - **[Scene Initializer](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/SceneInitializer.cs)**:
 Want to have things enabled for the first few seconds an user enters your world then disable ? the opposite ? both ? Just use that, ezpz
-- **[tag Setter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/tagSetter.cs)**:
+- **[Tag Setter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/tagSetter.cs)**:
 Set a pre determined tag to the local user on interact. that's it.
 - **[Tag Debugger](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/TagDebugger.cs)**:
 Handy tool to display the local user's tag and output it to the debugLogs or text (Compatible with UnityUI, TMP & TMP GUI), updates on Interact & on Start.
