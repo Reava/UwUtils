@@ -15,6 +15,8 @@
 
 **Info**: There are currently 33 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
 
+V1.0 release is planned for 2026 (Planned features: Synchronization, Persistence, new scripts, UI examples, code cleanup)
+
 ## ℹ️ **Tips**: 
 - You can easily add any of my scripts by simply typing it in the component window instead of adding a Udon behaviour first!
 - A lot of my scripts work best when used with other UwUtils scripts, you can do a LOT by combining their efforts!
