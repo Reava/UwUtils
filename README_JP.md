@@ -6,6 +6,9 @@
 <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub リリース (日付順の最新)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
 <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub 全リリース" src="https://img.shields.io/github/downloads/reava/UwUtils/total?color=blue&style=for-the-badge"></a>
 </div>
+<br>
+<a href="https://github.com/Reava/UwUtils/blob/main/README.md">English</a> | <a href="https://github.com/Reava/UwUtils/blob/main/README_JP.md">日本語</a>
+<br>
 
 # 🧰 Reava_のUdon UwUtilsツールキット
 
