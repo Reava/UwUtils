@@ -16,7 +16,7 @@
 * This Toolkit is made to use simple scripts in unison to create more in specific behaviors rather than highly specific or overengineered scripts!
 * By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone either for using directly in projects or to grow into new scripts of their own.
 
-**Info**: There are currently 33 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
+**Info**: There are currently 43 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
 
 V1.0 release is planned for 2026 (Planned features: Synchronization, Persistence, new scripts, UI examples, code cleanup)
 
@@ -34,6 +34,8 @@ If you find any issues, need support or think of a script you'd like to see, you
 <details>
 <Summary>Expand me!</summary>
 
+- **[Object State Relay](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/OnObjectStateRelay.cs)**
+Enables sending Udon Events when the object it's attached to is toggled On or Off (disable it on start if you do not want OnEnable events to fire on start)
 - **[Player Teleporter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/PlayerTeleporter.cs)**:
 Literally just TPs you on interact, that's it.
 - **[Objects Toggle](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/ObjectsToggle.cs)**:
@@ -100,6 +102,16 @@ Controls the post processing weight based on a slider or [Slider Manager](https:
 Saves the slider and restores its last known value on rejoin with persistence. Supports function "\_resetValue" to reset the slider value and save without wiping player data.
 - **[Audiolinked Animator](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/AudiolinkedAnimator.cs)**
 Allows driving an animator float with an Audiolink band with history and poll rate. This requires readback to be enabled on Audiolink!
+- **[Environmental Light Switch](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/EnvironmentalLightingSwitch.cs)**
+Enables toggling the Lighting Mode of the scene.
+- **[Skybox Toggle](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/SkyboxToggle.cs)**
+Enables Switching between two Skyboxes
+- **[Unity Fog Color Setter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/UnityFogColorSetter.cs)**
+Enables Setting the color of the fog.
+- **[Unity Fog Settings](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/UnityFogSettings.cs)**
+Enables switching between two presets of Fog settings.
+- **[Image Color Setter](https://github.com/Reava/Reava/UwUtils/blob/main/Runtime/Scripts/ImageColorSetter.cs)**
+Enables setting the color of an UI Image with Udon events.
 - **[Instance Time Actions] > NOT READY <**
 Enables performing actions based on Instance Time (segmented), synced for late joiners.
 
