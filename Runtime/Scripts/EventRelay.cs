@@ -32,13 +32,21 @@ namespace UwUtils
         public override void Interact()
         {
             if (abort) return;
-            stateChecked = stateCheck.activeSelf;
             if (!delayedAction)
             {
                 _relayAction();
             }
             else
             {
+                if (stateChecked == null)
+                {
+                    Debug.LogWarning("[Reava_/UwUtils/EventRelay.cs] No State check object detected for delayed action, please assign it and refer to documentation.", this);
+                    stateChecked = true;
+                }
+                else
+                {
+                    stateChecked = stateCheck.activeSelf;
+                }
                 if (function == 0)
                 {
                     SendCustomEventDelayedSeconds(nameof(_relayAction), delay);

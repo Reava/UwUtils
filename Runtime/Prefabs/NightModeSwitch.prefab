@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7866961933594495985}
   m_Layer: 0
-  m_Name: nightOffObjects
+  m_Name: NighttimeObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,7 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5097159880709776594}
   m_Layer: 0
-  m_Name: nightOnObjects
+  m_Name: DaytimeObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

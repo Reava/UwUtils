@@ -18,10 +18,14 @@ namespace UwUtils
         public bool applyDefaultOnStart = false;
 
         [Header("Lighting Source Options")]
-        public AmbientSourceType sourceOptionA = AmbientSourceType.Skybox;
-        public AmbientSourceType sourceOptionB = AmbientSourceType.Color;
+        public AmbientSourceType sourceOptionDefault = AmbientSourceType.Skybox;
+        public AmbientSourceType sourceOptionToggled = AmbientSourceType.Color;
 
-        [SerializeField] private bool state = false;
+        [Header("Intensity Multipliers")]
+        public float intensityOptionDefault = 1f;
+        public float intensityOptionToggled = 1f;
+
+        private bool state = false;
         private int selectionId = 0;
 
         void Start()
@@ -46,8 +50,13 @@ namespace UwUtils
 
         public void _UpdateAmbientSource()
         {
-            AmbientSourceType selected = state ? sourceOptionB : sourceOptionA;
+            AmbientSourceType selected = state ? sourceOptionToggled : sourceOptionDefault;
             RenderSettings.ambientMode = ConvertAmbientMode(selected);
+
+            float intensity = state ? intensityOptionToggled : intensityOptionDefault;
+            RenderSettings.ambientIntensity = intensity;
+
+            DynamicGI.UpdateEnvironment();
         }
 
         private AmbientMode ConvertAmbientMode(AmbientSourceType source)

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3328876864586167584}
   - component: {fileID: 5471119421492325935}
   - component: {fileID: 1155197562908167970}
+  - component: {fileID: 4075639037949587068}
   m_Layer: 0
   m_Name: SimpleButton
   m_TagString: Untagged
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 6
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!222 &1155197562908167970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -126,6 +127,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244319646239263617}
   m_CullTransparentMesh: 0
+--- !u!65 &4075639037949587068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244319646239263617}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8, y: 8, z: 0.001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2208154410162823619
 GameObject:
   m_ObjectHideFlags: 0
