@@ -55,5 +55,5 @@ namespace UwUtils
     }
 }
 #else
-namespace UwUtils { public class AudiolinkedAnimator : MonoBehaviour { } }
+namespace UwUtils { public class AudiolinkedAnimator : UdonSharpBehaviour { } }
 #endif
