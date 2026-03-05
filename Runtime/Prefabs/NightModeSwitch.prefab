@@ -785,7 +785,8 @@ MonoBehaviour:
   - {fileID: 8578661422280034147}
   - {fileID: 8213158522176061521}
   stateCheck: {fileID: 0}
-  eventNames: []
+  eventNames:
+  - _interact
   delayedAction: 0
   delay: 0
   function: 1
