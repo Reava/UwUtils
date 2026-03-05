@@ -3,7 +3,7 @@ using UdonSharp;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/UnityFogToggle")]
+    [AddComponentMenu("UwUtils/Unity Fog Toggle")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class UnityFogToggle : UdonSharpBehaviour
     {
