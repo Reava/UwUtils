@@ -1,5 +1,3 @@
-using CodiceApp.EventTracking.Plastic;
-using Palmmedia.ReportGenerator.Core;
 using UdonSharp;
 using UnityEngine;
 using VRC.Udon;
