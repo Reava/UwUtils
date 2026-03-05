@@ -16,7 +16,7 @@ namespace UwUtils
         #endregion
         [Range(0, 30)]
         public float updateInterval = 1.5f;
-        [HideInInspector] public bool updateLoop = true;
+        public bool updateLoop = true;
         [SerializeField] private ReflectionProbe reflectionProbeSource;
 
         public void Start()
@@ -47,6 +47,11 @@ namespace UwUtils
         {
             updateLoop = !updateLoop;
             if (updateLoop) _UpdateReflections();
+        }
+
+        public override void Interact()
+        {
+            _UpdateReflections();
         }
     }
 }
