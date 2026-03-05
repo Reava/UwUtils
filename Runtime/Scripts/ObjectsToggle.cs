@@ -58,7 +58,14 @@ namespace UwUtils
 
                 bool recoveredState = PlayerData.GetBool(player, persistenceParameter);
                 // Since we don't know the exact state of GameObjects in the array, we just toggle if it's stored differently from the default the world starts in, that's it.
-                if (!recoveredState) _Toggle();
+                if (!recoveredState)
+                {
+                    isDefault = recoveredState;
+                    foreach (GameObject o in toggleObjects)
+                    {
+                        if (o) o.SetActive(!o.activeSelf);
+                    }
+                }
             }
         }
     }
