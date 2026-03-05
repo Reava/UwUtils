@@ -3,6 +3,7 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
+#if AudioLink
 using AudioLink;
 
 namespace UwUtils
@@ -53,3 +54,6 @@ namespace UwUtils
         }
     }
 }
+#else
+namespace UwUtils { public class AudiolinkedAnimator : MonoBehaviour { } }
+#endif
