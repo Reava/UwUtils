@@ -45,7 +45,6 @@ public class SkyboxToggle : UdonSharpBehaviour
         {
             RenderSettings.skybox = _isActive ? SkyboxToggled : SkyboxDefault;
         }
-        DynamicGI.UpdateEnvironment();
     }
 
     public void ToggleSkybox()
@@ -53,6 +52,5 @@ public class SkyboxToggle : UdonSharpBehaviour
         if (!_isAllowed) return;
         _isActive = !_isActive;
         RenderSettings.skybox = _isActive ? SkyboxToggled : SkyboxDefault;
-        DynamicGI.UpdateEnvironment();
     }
 }

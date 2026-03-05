@@ -55,8 +55,6 @@ namespace UwUtils
 
             float intensity = state ? intensityOptionToggled : intensityOptionDefault;
             RenderSettings.ambientIntensity = intensity;
-
-            DynamicGI.UpdateEnvironment();
         }
 
         private AmbientMode ConvertAmbientMode(AmbientSourceType source)

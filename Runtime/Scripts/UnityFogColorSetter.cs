@@ -27,7 +27,6 @@ namespace UwUtils
         public void _UpdateFogColor()
         {
             RenderSettings.fogColor = state ? colorToggled : colorDefault;
-            DynamicGI.UpdateEnvironment();
         }
 
         public void _SelectionChanged()

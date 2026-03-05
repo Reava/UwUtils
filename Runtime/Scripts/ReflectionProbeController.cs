@@ -7,6 +7,8 @@ namespace UwUtils
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class ReflectionProbeController : UdonSharpBehaviour
     {
+        public bool updateProbeOnStart = true;
+
         #region References
 
         [Header("References")]
@@ -32,19 +34,19 @@ namespace UwUtils
             }
             reflectionProbeSource.mode = UnityEngine.Rendering.ReflectionProbeMode.Realtime;
             reflectionProbeSource.refreshMode = UnityEngine.Rendering.ReflectionProbeRefreshMode.ViaScripting;
-            UpdateReflections();
+            if(updateProbeOnStart) _UpdateReflections();
         }
 
-        public void UpdateReflections()
+        public void _UpdateReflections()
         {
             reflectionProbeSource.RenderProbe();
-            if (updateLoop) SendCustomEventDelayedSeconds(nameof(UpdateReflections), updateInterval);
+            if (updateLoop) SendCustomEventDelayedSeconds(nameof(_UpdateReflections), updateInterval);
         }
 
-        public void ToggleLoop()
+        public void _ToggleLoop()
         {
             updateLoop = !updateLoop;
-            if (updateLoop) UpdateReflections();
+            if (updateLoop) _UpdateReflections();
         }
     }
 }

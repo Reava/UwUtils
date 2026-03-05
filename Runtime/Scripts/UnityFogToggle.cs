@@ -15,8 +15,7 @@ namespace UwUtils
         }
         public void Interact()
         {
-            RenderSettings.fog = !RenderSettings.fog; ;
-            DynamicGI.UpdateEnvironment();
+            RenderSettings.fog = !RenderSettings.fog;
         }
     }
 }
