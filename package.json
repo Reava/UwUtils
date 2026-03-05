@@ -1,7 +1,7 @@
 {
   "name": "chirp.reava.uwutils",
   "displayName": "UwUtils",
-  "version": "1.0.0-pre.10",
+  "version": "1.0.0-pre.11",
   "unity": "2022.3",
   "description": "A collection of -almost- niche UdonSharp scripts as an (almost) all in one Toolkit for World Creators with more than 30 scripts, supports persistence and more.",
   "author": {
@@ -13,7 +13,7 @@
   "vpmDependencies": {
     "com.vrchat.worlds": ">=3.7.4"
   },
-    "legacyFolders": {
-        "Assets\\Reava_\\UwUtils": ""
-    }
+  "legacyFolders": {
+    "Assets\\Reava_\\UwUtils": ""
+  }
 }
