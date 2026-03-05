@@ -22,7 +22,7 @@ namespace UwUtils
 
         public void Start()
         {
-            if (programRelay.Length == null)
+            if (programRelay.Length == 0)
             {
                 abort = true;
                 SendCustomEventDelayedSeconds(nameof(_sendDebugError), 1f);
@@ -38,15 +38,16 @@ namespace UwUtils
             }
             else
             {
-                if (stateChecked == null)
+                if (stateCheck == null)
                 {
-                    Debug.LogWarning("[Reava_/UwUtils/EventRelay.cs] No State check object detected for delayed action, please assign it and refer to documentation.", this);
+                    Debug.LogWarning("[Reava_/UwUtils/EventRelay.cs] No State check object detected for delayed action, please assign it and refer to doc", this);
                     stateChecked = true;
                 }
                 else
                 {
                     stateChecked = stateCheck.activeSelf;
                 }
+
                 if (function == 0)
                 {
                     SendCustomEventDelayedSeconds(nameof(_relayAction), delay);
