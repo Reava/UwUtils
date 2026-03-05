@@ -58,7 +58,7 @@ MonoBehaviour:
   programRelay:
   - {fileID: 8578661422280034147}
   stateCheck: {fileID: 396613050720361251}
-  eventName: _interact
+  eventNames: []
   delayedAction: 1
   delay: 2
   function: 1
@@ -687,7 +687,12 @@ MonoBehaviour:
   - {fileID: 8833081162407001002}
   - {fileID: 8283894877924284135}
   stateCheck: {fileID: 7398319155468582993}
-  eventName: _interact
+  eventNames:
+  - _interact
+  - _interact
+  - _interact
+  - _interact
+  - _interact
   delayedAction: 1
   delay: 2.5
   function: 0
@@ -780,7 +785,7 @@ MonoBehaviour:
   - {fileID: 8578661422280034147}
   - {fileID: 8213158522176061521}
   stateCheck: {fileID: 0}
-  eventName: _interact
+  eventNames: []
   delayedAction: 0
   delay: 0
   function: 1

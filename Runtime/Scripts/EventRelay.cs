@@ -1,3 +1,5 @@
+using CodiceApp.EventTracking.Plastic;
+using Palmmedia.ReportGenerator.Core;
 using UdonSharp;
 using UnityEngine;
 using VRC.Udon;
@@ -12,7 +14,7 @@ namespace UwUtils
         [SerializeField] private UdonBehaviour[] programRelay;
         [SerializeField] private GameObject stateCheck;
         private bool stateChecked;
-        [SerializeField] private string eventName = "_interact";
+        [SerializeField] private string[] eventNames;
         [SerializeField] private bool delayedAction;
         [SerializeField] private float delay;
         [Header("0 = Keep delay, 1 = No delay when object is off, 2 = No delay when object is on")]
@@ -80,9 +82,10 @@ namespace UwUtils
         public void _relayAction()
         {
             if (abort) return;
-            foreach (UdonBehaviour program in programRelay)
+
+            for(int i = 0; i < programRelay.Length; i++)
             {
-                program.SendCustomEvent(eventName);
+                programRelay[i].SendCustomEvent(eventNames[i]);
             }
         }
 
