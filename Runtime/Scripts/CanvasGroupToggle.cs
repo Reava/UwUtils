@@ -50,6 +50,16 @@ namespace UwUtils
             _SetState(!_currentState);
         }
 
+        public void _SetOn()
+        {
+            _SetState(true);
+        }
+
+        public void _SetOff()
+        {
+            _SetState(false);
+        }
+
         public void _SetState(bool state)
         {
             _currentState = state;
