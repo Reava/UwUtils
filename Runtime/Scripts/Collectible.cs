@@ -38,13 +38,13 @@ namespace UwUtils
 
         void Start()
         {
-            if ((persistenceParameter == "UwUtils_Collectible_UNIQUEID" || persistenceParameter == "UwUtils_Collectible_") && persistent)
+            if (UseObjectNameAsPersistenceKey)
             {
-                if (UseObjectNameAsPersistenceKey)
-                {
-                    persistenceParameter += this.gameObject.name;
-                }
-                else
+                persistenceParameter += this.gameObject.name;
+            }
+            else
+            {
+                if ((persistenceParameter == "" || persistenceParameter == "UwUtils_Collectible_UNIQUEID" || persistenceParameter == "UwUtils_Collectible_") && persistent)
                 {
                     Debug.LogError("[Reava_/UwUtils/Collectible.cs]: Collectible does NOT use a custom Persistence parameter, this will break saving! Please update collectible named: " + this.name, this.gameObject);
                     // do something about the user not following instructions to avoid persistence conflicts
