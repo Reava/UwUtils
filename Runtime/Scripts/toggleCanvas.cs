@@ -6,7 +6,7 @@ using VRC.SDKBase;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/ToggleCanvas")]
+    [AddComponentMenu("UwUtils/Canvas Toggle")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class toggleCanvas : UdonSharpBehaviour
     {
