@@ -128,5 +128,3 @@ Check updates before reporting issues.
 Get support & support me here:
 - https://discord.gg/TxYwUFKbUS
 - https://patreon.com/Reava
-
-Some tutorials might be posted on my Youtube: https://www.youtube.com/channel/UCm3RYWUql-2yGt8K2u9eFEg/
