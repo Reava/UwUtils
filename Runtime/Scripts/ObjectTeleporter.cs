@@ -117,6 +117,10 @@ namespace UwUtils
                 ObjectsToTeleport[i].transform.localScale = savedScales[i];
             }
         }
+        public override void OnPickupUseDown()
+        {
+            Interact();
+        }
 
         public override void Interact()
         {

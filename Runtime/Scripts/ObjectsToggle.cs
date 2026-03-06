@@ -36,6 +36,10 @@ namespace UwUtils
         {
             _Toggle();
         }
+        public override void OnPickupUseDown()
+        {
+            Interact();
+        }
 
         public void _Toggle()
         {

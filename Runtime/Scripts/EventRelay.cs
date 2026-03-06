@@ -24,6 +24,12 @@ namespace UwUtils
                 return;
             }
         }
+
+        public override void OnPickupUseDown()
+        {
+            Interact();
+        }
+
         public override void Interact()
         {
             if (abort) return;

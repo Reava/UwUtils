@@ -14,5 +14,9 @@ namespace UwUtils
         {
             Networking.LocalPlayer.TeleportTo(targetLocation.position, targetLocation.rotation);
         }
+        public override void OnPickupUseDown()
+        {
+            Interact();
+        }
     }
 }

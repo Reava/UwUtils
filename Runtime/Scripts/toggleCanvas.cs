@@ -46,6 +46,10 @@ namespace UwUtils
             currentState = !currentState;
             if (usePersistence) PlayerData.SetBool(PersistenceKey, currentState);
         }
+        public override void OnPickupUseDown()
+        {
+            Interact();
+        }
 
         public void _Enable()
         {

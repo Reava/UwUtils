@@ -69,6 +69,10 @@ namespace UwUtils
         {
             _Collect();
         }
+        public override void OnPickupUseDown()
+        {
+            Interact();
+        }
 
         public void _collectTotalTally()
         {

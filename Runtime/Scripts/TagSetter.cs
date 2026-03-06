@@ -15,5 +15,9 @@ namespace UwUtils
             VRCPlayerApi localPlayer = Networking.LocalPlayer;
             localPlayer.SetPlayerTag("rank", playerTag);
         }
+        public override void OnPickupUseDown()
+        {
+            Interact();
+        }
     }
 }
