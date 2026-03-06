@@ -16,7 +16,7 @@
 * This Toolkit is made to use simple scripts in unison to create more in specific behaviors rather than highly specific or overengineered scripts!
 * By all means you are very welcome to pick and choose parts of my code to make your own scripts! These serve as a handy toolbox for everyone either for using directly in projects or to grow into new scripts of their own.
 
-**Info**: There are currently 45 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
+**Info**: There are currently 46 Udon Scripts in UwUtils! This will continue to expand as I find more ideas.
 
 V1.0 release is planned for 2026 (Planned features: Synchronization, Persistence, new scripts, UI examples, code cleanup)
 
