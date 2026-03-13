@@ -1,12 +1,9 @@
-﻿
-using Newtonsoft.Json.Linq;
-using TMPro;
+﻿using TMPro;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.Persistence;
 using VRC.SDKBase;
 using VRC.Udon;
-using VRC.Udon.Common;
 
 namespace UwUtils
 {
