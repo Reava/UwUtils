@@ -5,6 +5,8 @@ using VRC.Udon;
 
 namespace UwUtils
 {
+    [AddComponentMenu("UwUtils/Relay: User Platform")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class PlatformRelay : UdonSharpBehaviour
     {
         [Header("This only works if you build per platform (No multi platform build)")]
