@@ -94,6 +94,8 @@ namespace UwUtils
             if (Networking.IsOwner(gameObject))
             {
                 syncedString = persistentString;
+
+                _UpdateDisplays();
                 RequestSerialization();
             }
 
