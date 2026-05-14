@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: PlayOneshotAudio
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 329ddecbc5344094da1fc0bc51971378,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 252aa4897ba80524d8734800e9821818, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 3f247203c912d814d91e02334465d08c, type: 3}

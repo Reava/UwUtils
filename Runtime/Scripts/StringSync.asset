@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: StringSync
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 2d4fc6952cc3b7e40b54cb245cc3022e,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 4199f56d8371971419ce3181899e7b77, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: a268ea88ddc0ae94fb88281acaf2c9a8, type: 3}
