@@ -25,6 +25,8 @@ namespace UwUtils
             }
         }
 
+        public void _Set() => Interact();
+
         public override void Interact()
         {
             foreach (GameObject toggleObject in toggleObjectsON)
