@@ -6,9 +6,9 @@
     	"email": "reava.vr@gmail.com",
     	"url": "https://github.com/Reava/"
     },
-    "description":"A collection of -almost- niche UdonSharp scripts as an (almost) all in one Toolkit for World Creators with more than 30 scripts, supports persistence and more.",
+    "description":"A collection of 50+ modular UdonSharp scripts as an (almost) all in one Toolkit for World Creators with partial persistence support, helper events, Creator Economy and more.",
     "infoLink":{
-        "url":"https://github.com/Reava/UwUtils/blob/main/README.md",
+        "url":"https://github.com/Reava/UwUtils/",
         "text":"How to Use (Readme)"
     },
     "url":"https://reava.github.io/UwUtils/index.json",
