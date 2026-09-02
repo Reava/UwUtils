@@ -49,7 +49,7 @@ namespace UwUtils
             {
                 if (program) program.SendCustomEvent(eventNameOnExit);
             }
-            foreach (UdonSharpBehaviour program in eventTargetsEnterOnly)
+            foreach (UdonSharpBehaviour program in eventTargetsExitOnly)
             {
                 if (program) program.SendCustomEvent(eventNameOnExit);
             }
@@ -63,7 +63,7 @@ namespace UwUtils
             {
                 if(program) program.SendCustomEvent(eventNameOnEnter);
             }
-            foreach (UdonSharpBehaviour program in eventTargetsExitOnly)
+            foreach (UdonSharpBehaviour program in eventTargetsEnterOnly)
             {
                 if (program) program.SendCustomEvent(eventNameOnEnter);
             }
