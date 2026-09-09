@@ -6,9 +6,9 @@ using VRC.Udon;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/CE Product Relay")]
+    [AddComponentMenu("UwUtils/Creator Economy Product Relay")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class CreatorEconomyProductRelay : UdonSharpBehaviour
+    public class CreatorEconomy_ProductRelay : UdonSharpBehaviour
     {
         [Header("Settings")]
         [Tooltip("Only enable this for testing")]
