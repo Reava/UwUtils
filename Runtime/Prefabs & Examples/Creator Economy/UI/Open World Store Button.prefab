@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3143576906892878354}
   - component: {fileID: 2179262883365534394}
-  - component: {fileID: 8785465401180580641}
-  - component: {fileID: 5433634480773214712}
+  - component: {fileID: 1108182245994875645}
+  - component: {fileID: 9137467950345530828}
   m_Layer: 0
   m_Name: Open World Store Button
   m_TagString: Untagged
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5433634480773214712}
+      - m_Target: {fileID: 9137467950345530828}
         m_TargetAssemblyTypeName: 
         m_MethodName: Interact
         m_Mode: 1
@@ -98,7 +98,7 @@ MonoBehaviour:
           m_StringArgument: _DespawnMenu
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &8785465401180580641
+--- !u!114 &1108182245994875645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1022737442134271170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec72827e444840540974bfdd0fbae132, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c53f51a69072d844abc3f7d8dab5e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -119,17 +119,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 5433634480773214712}
-  product: {fileID: 0}
-  openStoreIfNotOwned: 1
-  listingID: 
-  teleportFallbacks: 1
-  TeleportLocation: {fileID: 0}
-  FallbackTeleportLocation: {fileID: 0}
-  AllowAllUsers: 0
-  isOwned: 0
-  enableLogging: 1
---- !u!114 &5433634480773214712
+  _udonSharpBackingUdonBehaviour: {fileID: 9137467950345530828}
+--- !u!114 &9137467950345530828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,9 +139,9 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 1
-  serializedProgramAsset: {fileID: 11400000, guid: 6086550a2ed0fc5459d6669992a32a6a, type: 2}
-  programSource: {fileID: 11400000, guid: 2c95ef9fe3f81fe40962483edf3d5e4a, type: 2}
+  _syncMethod: 0
+  serializedProgramAsset: {fileID: 11400000, guid: 38a922294d3875a409dd0d686da8ea5b, type: 2}
+  programSource: {fileID: 11400000, guid: 25ab3996952dd7146bbd898d628a812f, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
   publicVariablesUnityEngineObjects: []
   publicVariablesSerializationDataFormat: 0
