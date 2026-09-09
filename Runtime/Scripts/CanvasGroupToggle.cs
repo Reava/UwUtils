@@ -9,10 +9,10 @@ namespace UwUtils
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class CanvasGroupToggle : UdonSharpBehaviour
     {
-        [Header("Targets")]
         public CanvasGroup[] canvasGroups;
 
-        [Header("State")]
+        [Header("Settings")]
+        public bool AlsoSwitchInteractable = true;
         public bool defaultState = true;
 
         [Header("Transition")]
@@ -80,6 +80,14 @@ namespace UwUtils
             _startAlpha = canvasGroups[0].alpha;
             _timer = 0f;
             _isTransitioning = true;
+
+            if (AlsoSwitchInteractable)
+            {
+                foreach (var group in canvasGroups)
+                {
+                    group.interactable = state;
+                }
+            }
 
             SendCustomEventDelayedSeconds(nameof(_TransitionLoop), LOOP_INTERVAL);
         }
