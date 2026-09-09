@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5471119421492325935}
   - component: {fileID: 1155197562908167970}
   m_Layer: 0
-  m_Name: ToggleSingle
+  m_Name: Toggle Single Standalone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 6
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!222 &1155197562908167970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -770,12 +770,20 @@ MonoBehaviour:
   colorOff: {r: 1, g: 0, b: 0, a: 1}
   SwapSprites: 0
   SwapSpritesColor: 1
+  lerpSpriteColorChange: 0
+  lerpSpriteColorDuration: 0.5
+  spriteLerpColorON: {r: 0, g: 1, b: 0, a: 1}
+  spriteLerpColorOFF: {r: 1, g: 0, b: 0, a: 1}
   spriteOn: {fileID: 0}
   spriteOff: {fileID: 0}
   spriteTarget: {fileID: 0}
   spriteTargetColor: {fileID: 168769983375395967}
   SetText: 1
   SetTextColor: 0
+  lerpTextColorChange: 0
+  lerpTextColorDuration: 0.5
+  textLerpColorON: {r: 0, g: 1, b: 0, a: 1}
+  textLerpColorOFF: {r: 1, g: 0, b: 0, a: 1}
   textOn: On
   textOff: Off
   textTarget: {fileID: 4536101925601700588}
@@ -783,6 +791,8 @@ MonoBehaviour:
   audioFeedbackSource: {fileID: 0}
   audioFeedbackClipOn: {fileID: 0}
   audioFeedbackClipOff: {fileID: 0}
+  persistent: 0
+  persistenceKey: UwUtils_AdvUI_Toggle_
   enableLogging: 1
 --- !u!114 &8629147464829104977
 MonoBehaviour:

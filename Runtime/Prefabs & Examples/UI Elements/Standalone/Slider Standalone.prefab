@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 5471119421492325935}
   - component: {fileID: 1155197562908167970}
   m_Layer: 0
-  m_Name: SliderSingle
+  m_Name: Slider Standalone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 6
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!222 &1155197562908167970
 CanvasRenderer:
   m_ObjectHideFlags: 0
