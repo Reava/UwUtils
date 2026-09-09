@@ -7,6 +7,7 @@ namespace UwUtils
 {
     [AddComponentMenu("UwUtils/Creator Economy Exclusive Zone")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    [RequireComponent(typeof(Collider))]
     public class CreatorEconomy_ExclusiveZone : UdonSharpBehaviour
     {
         [Header("Settings")]

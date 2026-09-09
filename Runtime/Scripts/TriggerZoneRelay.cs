@@ -8,6 +8,8 @@ namespace UwUtils
 {
     [AddComponentMenu("UwUtils/Trigger Zone Relay")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    [RequireComponent(typeof(Collider))]
+
     public class TriggerZoneRelay : UdonSharpBehaviour
     {
         [Space]

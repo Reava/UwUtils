@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: CreatorEconomy_ProductRelay
+  m_Name: CreatorEconomy_OwnershipEventSender
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 6c95c4d0d21d7db48a7ad1b9ebce4baa, type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 7a4d4da649a6cc3489e58b57b199ad15, type: 2}
   udonAssembly: 
   assemblyError: 
-  sourceCsScript: {fileID: 11500000, guid: 75fcf7a500b476c4b96d2d15299a627c, type: 3}
+  sourceCsScript: {fileID: 11500000, guid: 99bfff9e43c5cb346913b010b3323808, type: 3}
   scriptVersion: 2
   compiledVersion: 2
   behaviourSyncMode: 1
   hasInteractEvent: 0
-  scriptID: 2645109978688949015
+  scriptID: 8120775876206427520
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 

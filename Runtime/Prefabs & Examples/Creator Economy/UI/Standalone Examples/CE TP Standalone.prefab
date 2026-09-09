@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1288319806861658256, guid: 432f003aee5727c42a3c5c5c98a5187e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 160
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1288319806861658256, guid: 432f003aee5727c42a3c5c5c98a5187e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -193,6 +193,10 @@ PrefabInstance:
     - target: {fileID: 2360905815717935351, guid: 432f003aee5727c42a3c5c5c98a5187e, type: 3}
       propertyPath: m_Name
       value: UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739631342857977160, guid: 432f003aee5727c42a3c5c5c98a5187e, type: 3}
+      propertyPath: m_Size.y
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

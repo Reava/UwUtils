@@ -50,6 +50,9 @@ namespace UwUtils
             _SetState(!_currentState);
         }
 
+        public void _Enable() => _SetOn();
+        public void _Disable() => _SetOff();
+
         public void _SetOn()
         {
             _SetState(true);

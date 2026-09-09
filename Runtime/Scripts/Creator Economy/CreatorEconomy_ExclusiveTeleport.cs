@@ -39,7 +39,7 @@ namespace UwUtils
         {
             if (!Utilities.IsValid(product))
             {
-                Debug.LogError("[Reava_/UwUtils/CreatorEconomy_ExclusiveZone.cs] No UdonProduct Specified, disabling self", gameObject);
+                Debug.LogError("[Reava_/UwUtils/CreatorEconomy_ExclusiveTeleport.cs] No UdonProduct Specified, disabling self", gameObject);
                 this.enabled = false;
                 return;
             }
@@ -50,7 +50,7 @@ namespace UwUtils
             if (!player.isLocal || product == null) return;
             if (eventProduct.ID != product.ID) return;
 
-            if (enableLogging) Debug.Log("[Reava_/UwUtils/CreatorEconomy_ExclusiveZone.cs]: Purchase confirmed " + gameObject.name, gameObject);
+            if (enableLogging) Debug.Log("[Reava_/UwUtils/CreatorEconomy_ExclusiveTeleport.cs]: Purchase confirmed " + gameObject.name, gameObject);
 
             isOwned = true;
         }

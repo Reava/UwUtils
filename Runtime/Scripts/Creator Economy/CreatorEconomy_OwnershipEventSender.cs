@@ -6,9 +6,9 @@ using VRC.Udon;
 
 namespace UwUtils
 {
-    [AddComponentMenu("UwUtils/Creator Economy Product Relay")]
+    [AddComponentMenu("UwUtils/Creator Economy Product Ownership Event Sender")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class CreatorEconomy_ProductRelay : UdonSharpBehaviour
+    public class CreatorEconomy_OwnershipEventSender : UdonSharpBehaviour
     {
         [Header("Settings")]
         [Tooltip("Only enable this for testing")]
@@ -38,7 +38,7 @@ namespace UwUtils
             if(!Utilities.IsValid(product))
             {
                 this.enabled = false;
-                Debug.LogError("[Reava_/UwUtils/CreatorEconomyProductRelay.cs] No UdonProduct Specified, disabling self", gameObject);
+                Debug.LogError("[Reava_/UwUtils/CreatorEconomy_OwnershipEventSender.cs] No UdonProduct Specified, disabling self", gameObject);
                 return;
             }
 
