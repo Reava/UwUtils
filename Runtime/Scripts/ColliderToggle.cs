@@ -46,6 +46,10 @@ namespace UwUtils
             }
             isDefault = !isDefault;
         }
+
+        public void _Enable() => _SetOn();
+        public void _Disable() => _SetOff();
+
         public void _SetOn()
         {
             foreach (Collider col in toggleCols)
@@ -54,6 +58,7 @@ namespace UwUtils
             }
             isDefault = !isDefault;
         }
+
         public void _SetOff()
         {
             foreach (Collider col in toggleCols)

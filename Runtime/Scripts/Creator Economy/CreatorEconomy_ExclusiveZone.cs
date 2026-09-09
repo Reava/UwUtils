@@ -13,20 +13,27 @@ namespace UwUtils
         [SerializeField] private UdonProduct product;
         [Space, Tooltip("If user does not own the produt, they get teleported to this location, if none will respawn them")]
         [SerializeField] private Transform ForcedExitLocation;
-        [SerializeField] private bool AllowAllUsers = false;
+        [Space, SerializeField] private bool openStoreOnDeny = true;
+        [SerializeField] private string listingID = "";
 
         [Header("Debug")]
+        [SerializeField] private bool AllowAllUsers = false;
         [Tooltip("Only enable this for testing")]
         [SerializeField] public bool isOwned = false;
         [Tooltip("Support will only be given if logging is enabled.")]
         [SerializeField] private bool enableLogging = true;
 
+        public void _OpenListing()
+        {
+            Store.OpenListing(listingID);
+        }
+
         private void Start()
         {
             if (!Utilities.IsValid(product))
             {
-                this.enabled = false;
                 Debug.LogError("[Reava_/UwUtils/CreatorEconomy_ExclusiveZone.cs] No UdonProduct Specified, disabling self", gameObject);
+                this.enabled = false;
                 return;
             }
         }
@@ -56,6 +63,7 @@ namespace UwUtils
 
             if (!isOwned && !AllowAllUsers)
             {
+                if (openStoreOnDeny) _OpenListing();
                 if (Utilities.IsValid(ForcedExitLocation))
                 {
                     Networking.LocalPlayer.TeleportTo(ForcedExitLocation.position, ForcedExitLocation.rotation);

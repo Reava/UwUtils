@@ -12,7 +12,6 @@ namespace UwUtils
     {
         [Header("Settings")]
         [Tooltip("Only enable this for testing")]
-        [SerializeField] public bool isOwned = false;
         [SerializeField] private UdonProduct product;
 
         [Header("Purchased Product Event Relays")]
@@ -27,6 +26,12 @@ namespace UwUtils
         [SerializeField] private UdonBehaviour[] ExpiredProgramRelays;
         [Tooltip("ProgramsRelays and EventNames MUST match in array sizes!")]
         [SerializeField] private string[] ExpiredEventNames;
+
+        [Header("Debug")]
+        [Tooltip("Only enable this for testing")]
+        [SerializeField] public bool isOwned = false;
+        [Tooltip("Support will only be given if logging is enabled.")]
+        [SerializeField] private bool enableLogging = true;
 
         private void Start()
         {

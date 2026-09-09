@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5109990623039079272}
   - component: {fileID: 6466089051368959688}
   m_Layer: 18
-  m_Name: Exclusive Zone
+  m_Name: CE Exclusive Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
