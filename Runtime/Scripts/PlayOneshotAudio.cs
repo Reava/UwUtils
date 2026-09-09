@@ -10,6 +10,17 @@ namespace UwUtils
     {
         [Header("References")]
         [SerializeField] private AudioSource AudioSource;
+        [SerializeField] private AudioClip clip;
+
+        public override void Interact()
+        {
+            _PlayAudio();
+        }
+
+        public override void OnPickupUseDown()
+        {
+            _PlayAudio();
+        }
 
         public void _PlayAudio()
         {
@@ -19,8 +30,7 @@ namespace UwUtils
                 return;
             }
 
-            AudioSource.time = 0;
-            AudioSource.PlayOneShot(AudioSource.clip);
+            AudioSource.PlayOneShot(clip);
         }
     }
 }
