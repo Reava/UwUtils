@@ -1,6 +1,6 @@
 
 <div align=left>
-<a href="https://reava.github.io/UwUtils/"><img alt="VCCに追加" src="https://github.com/user-attachments/assets/33d583a7-4f7f-426a-901a-1581bd98001e"></a>
+<a href="https://reava.github.io/VPM-Listings/"><img alt="VCCに追加" src="https://github.com/user-attachments/assets/33d583a7-4f7f-426a-901a-1581bd98001e"></a>
 <img alt="GitHub ワークフローのステータス" src="https://img.shields.io/github/actions/workflow/status/reava/UwUtils/release.yml?style=for-the-badge">
 <img alt="GitHub" src="https://img.shields.io/github/license/Reava/UwUtils?color=blue&style=for-the-badge">
 <a href="https://github.com/Reava/UwUtils/releases/latest/"><img alt="GitHub リリース (日付順の最新)" src="https://img.shields.io/github/v/release/reava/UwUtils?logo=unity&style=for-the-badge"></a>
@@ -30,7 +30,7 @@ V1.0のリリースは2026年を予定しています（計画中の機能：同
 
 問題が見つかった場合、サポートが必要な場合、または追加してほしいスクリプトがある場合は、私の**[Discord](https://discord.gg/TxYwUFKbUS)**に参加するか、Githubでイシューを開いてください！
 
-## 📥 <a href="https://reava.github.io/UwUtils/">VCCにパッケージとして追加！</a>
+## 📥 <a href="https://reava.github.io/VPM-Listings/">VCCにパッケージとして追加！</a>
 
 ## 📋 **スクリプト一覧と説明**
 <details>
